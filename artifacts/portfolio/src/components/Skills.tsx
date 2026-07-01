@@ -131,11 +131,7 @@ function SkillRow({
       : '#3a3a44';
 
   const rowMaxHeight = isFiltered ? 0 : 200;
-  const rowOpacity = isFiltered
-    ? 0
-    : isRevealed
-      ? (isDimmed && !isMobile ? 0.4 : 1)
-      : 0;
+  const rowOpacity = isFiltered ? 0 : isRevealed ? 1 : 0;
 
   return (
     <div
