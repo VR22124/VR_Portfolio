@@ -1,5 +1,6 @@
 import { HeroContent } from "./HeroContent";
 import { HeroScene } from "./HeroScene";
+import { HeroNavigation } from "./HeroNavigation";
 
 export function Hero() {
   return (
@@ -8,6 +9,7 @@ export function Hero() {
       className="relative h-screen w-full overflow-hidden bg-background pl-16"
       aria-label="Hero"
     >
+      <HeroNavigation />
       <div className="grid h-full grid-cols-1 lg:grid-cols-[35fr_65fr]">
         <div className="relative z-10 order-2 lg:order-1">
           <HeroContent />
