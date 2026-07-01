@@ -12,48 +12,55 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     : false;
 
   const formations = useMemo(() => {
-    const sphere = new Float32Array(PARTICLE_COUNT * 3);
-    const helix = new Float32Array(PARTICLE_COUNT * 3);
-    const grid = new Float32Array(PARTICLE_COUNT * 3);
-    const torus = new Float32Array(PARTICLE_COUNT * 3);
-    const side = Math.ceil(Math.cbrt(PARTICLE_COUNT));
-    const step = 6 / side;
+    const galaxy = new Float32Array(PARTICLE_COUNT * 3);
+    const wave = new Float32Array(PARTICLE_COUNT * 3);
+    const knot = new Float32Array(PARTICLE_COUNT * 3);
+    const vortex = new Float32Array(PARTICLE_COUNT * 3);
+    const side = Math.ceil(Math.sqrt(PARTICLE_COUNT));
+    const step = 7 / side;
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
+      const t = i / PARTICLE_COUNT;
 
-      // Sphere — Fibonacci distribution for even coverage
-      const phi = Math.acos(1 - 2 * ((i + 0.5) / PARTICLE_COUNT));
-      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
-      sphere[i3]     = 3.2 * Math.cos(theta) * Math.sin(phi);
-      sphere[i3 + 1] = 3.2 * Math.sin(theta) * Math.sin(phi);
-      sphere[i3 + 2] = 3.2 * Math.cos(phi);
+      // 1) Galaxy — flat spiral disk, 3 arms, radial density falloff
+      const arms = 3;
+      const radiusG = Math.pow(Math.random(), 0.6) * 3.6;
+      const armAngle = (i % arms) * (Math.PI * 2 / arms);
+      const swirl = radiusG * 0.9 + armAngle + Math.random() * 0.25;
+      galaxy[i3]     = Math.cos(swirl) * radiusG;
+      galaxy[i3 + 1] = (Math.random() - 0.5) * 0.35 * (1 - radiusG / 4);
+      galaxy[i3 + 2] = Math.sin(swirl) * radiusG;
 
-      // Helix — double helix with 8 turns
-      const tH = i / PARTICLE_COUNT;
-      const angle = tH * Math.PI * 2 * 8;
-      helix[i3]     = 2.5 * Math.cos(angle);
-      helix[i3 + 1] = (tH - 0.5) * 8;
-      helix[i3 + 2] = 2.5 * Math.sin(angle);
+      // 2) Wave — undulating sheet grid
+      const gx = (i % side) * step - 3.5;
+      const gz = Math.floor(i / side) * step - 3.5;
+      wave[i3]     = gx;
+      wave[i3 + 1] = Math.sin(gx * 0.9) * 0.6 + Math.cos(gz * 0.9) * 0.6;
+      wave[i3 + 2] = gz;
 
-      // Grid — 3D cube
-      const gx = (i % side) * step - 3;
-      const gy = (Math.floor(i / side) % side) * step - 3;
-      const gz = Math.floor(i / (side * side)) * step - 3;
-      grid[i3]     = gx;
-      grid[i3 + 1] = gy;
-      grid[i3 + 2] = gz;
+      // 3) Trefoil knot — mathematical (p=2, q=3) torus knot
+      const uK = t * Math.PI * 2 * 3; // 3 loops
+      const p = 2, q = 3, Rk = 1.6, rk = 0.55;
+      const cx = (Rk + rk * Math.cos(q * uK)) * Math.cos(p * uK);
+      const cy = (Rk + rk * Math.cos(q * uK)) * Math.sin(p * uK);
+      const cz = rk * Math.sin(q * uK);
+      // scatter around tube slightly
+      const jitter = 0.05;
+      knot[i3]     = cx + (Math.random() - 0.5) * jitter;
+      knot[i3 + 1] = cy + (Math.random() - 0.5) * jitter;
+      knot[i3 + 2] = cz + (Math.random() - 0.5) * jitter;
 
-      // Torus
-      const u = Math.random() * Math.PI * 2;
-      const v = Math.random() * Math.PI * 2;
-      const R = 2.8, r = 1.1;
-      torus[i3]     = (R + r * Math.cos(v)) * Math.cos(u);
-      torus[i3 + 1] = (R + r * Math.cos(v)) * Math.sin(u);
-      torus[i3 + 2] = r * Math.sin(v);
+      // 4) Vortex — conical spiral funnel
+      const vT = t;
+      const vAngle = vT * Math.PI * 2 * 10;
+      const vRad = 0.15 + vT * 2.8;
+      vortex[i3]     = Math.cos(vAngle) * vRad;
+      vortex[i3 + 1] = (vT - 0.5) * 6;
+      vortex[i3 + 2] = Math.sin(vAngle) * vRad;
     }
 
-    return { sphere, helix, grid, torus };
+    return { galaxy, wave, knot, vortex };
   }, []);
 
   const positions = useMemo(() => new Float32Array(PARTICLE_COUNT * 3), []);
