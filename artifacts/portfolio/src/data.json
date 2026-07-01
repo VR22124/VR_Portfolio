@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "Alex Rivera",
+    "name": "Vishnu Rohith",
     "role": "Full-Stack Developer",
     "tagline": "I build systems that scale quietly.",
     "loadingLabel": "ENTERING"
@@ -20,11 +20,36 @@
     { "value": "3", "suffix": "", "label": "Countries Worked With" }
   ],
   "journey": [
-    { "year": "2019", "title": "First Line of Code", "description": "Started with HTML/CSS, broke things, kept going.", "tag": "Origin" },
-    { "year": "2020", "title": "First Freelance Client", "description": "Built a booking system for a local business. Got paid. Got hooked.", "tag": "Milestone" },
-    { "year": "2021", "title": "Joined a Startup", "description": "Learned what 'production' actually means under real users.", "tag": "Growth" },
-    { "year": "2023", "title": "Went Full-Stack Architect", "description": "Stopped just writing features. Started designing systems.", "tag": "Pivot" },
-    { "year": "2025", "title": "Independent Practice", "description": "Now building for a small portfolio of serious clients.", "tag": "Today" }
+    {
+      "year": "2019",
+      "title": "First Line of Code",
+      "description": "Started with HTML/CSS, broke things, kept going.",
+      "tag": "Origin"
+    },
+    {
+      "year": "2020",
+      "title": "First Freelance Client",
+      "description": "Built a booking system for a local business. Got paid. Got hooked.",
+      "tag": "Milestone"
+    },
+    {
+      "year": "2021",
+      "title": "Joined a Startup",
+      "description": "Learned what 'production' actually means under real users.",
+      "tag": "Growth"
+    },
+    {
+      "year": "2023",
+      "title": "Went Full-Stack Architect",
+      "description": "Stopped just writing features. Started designing systems.",
+      "tag": "Pivot"
+    },
+    {
+      "year": "2025",
+      "title": "Independent Practice",
+      "description": "Now building for a small portfolio of serious clients.",
+      "tag": "Today"
+    }
   ],
   "experience": [
     {
@@ -39,7 +64,11 @@
       "role": "Full-Stack Developer",
       "period": "2021 — 2023",
       "description": "Owned product end-to-end for a field-operations tool used by logistics teams.",
-      "highlights": ["Shipped offline-first sync engine", "Reduced onboarding time by 40%", "Mentored 2 junior engineers"]
+      "highlights": [
+        "Shipped offline-first sync engine",
+        "Reduced onboarding time by 40%",
+        "Mentored 2 junior engineers"
+      ]
     },
     {
       "company": "Freelance",
@@ -106,20 +135,56 @@
     }
   ],
   "howIWork": [
-    { "step": "01", "title": "Understand the real problem", "description": "Most requests aren't the actual problem. I ask until we find the one worth solving." },
-    { "step": "02", "title": "Design the system, not the screen", "description": "Interfaces are the last 10%. The architecture underneath is what determines if it scales." },
-    { "step": "03", "title": "Ship small, ship often", "description": "Working software in front of real users beats a perfect plan on a whiteboard." },
-    { "step": "04", "title": "Leave it better documented", "description": "Whoever inherits this code — including future me — should never have to guess why." }
+    {
+      "step": "01",
+      "title": "Understand the real problem",
+      "description": "Most requests aren't the actual problem. I ask until we find the one worth solving."
+    },
+    {
+      "step": "02",
+      "title": "Design the system, not the screen",
+      "description": "Interfaces are the last 10%. The architecture underneath is what determines if it scales."
+    },
+    {
+      "step": "03",
+      "title": "Ship small, ship often",
+      "description": "Working software in front of real users beats a perfect plan on a whiteboard."
+    },
+    {
+      "step": "04",
+      "title": "Leave it better documented",
+      "description": "Whoever inherits this code — including future me — should never have to guess why."
+    }
   ],
   "principles": [
-    { "title": "Simplicity is a feature", "description": "Every dependency, abstraction, and clever trick is a future liability. I default to boring technology." },
-    { "title": "Slow is smooth, smooth is fast", "description": "Rushing architecture decisions costs 10x more time later. I take the time upfront." },
-    { "title": "Code is read more than written", "description": "I optimize for the next person reading this — who is usually me, six months from now." },
-    { "title": "Defaults matter", "description": "The right default setting prevents more bugs than the cleverest error handling." }
+    {
+      "title": "Simplicity is a feature",
+      "description": "Every dependency, abstraction, and clever trick is a future liability. I default to boring technology."
+    },
+    {
+      "title": "Slow is smooth, smooth is fast",
+      "description": "Rushing architecture decisions costs 10x more time later. I take the time upfront."
+    },
+    {
+      "title": "Code is read more than written",
+      "description": "I optimize for the next person reading this — who is usually me, six months from now."
+    },
+    {
+      "title": "Defaults matter",
+      "description": "The right default setting prevents more bugs than the cleverest error handling."
+    }
   ],
   "testimonials": [
-    { "quote": "Rebuilt our core data pipeline in three weeks. It hadn't been touched in two years because everyone was scared of it.", "author": "Priya N.", "role": "CTO, Nimbus Systems" },
-    { "quote": "The kind of engineer who tells you the feature is a bad idea before you waste a sprint on it.", "author": "Marcus T.", "role": "Founder, Fieldnote Labs" }
+    {
+      "quote": "Rebuilt our core data pipeline in three weeks. It hadn't been touched in two years because everyone was scared of it.",
+      "author": "Priya N.",
+      "role": "CTO, Nimbus Systems"
+    },
+    {
+      "quote": "The kind of engineer who tells you the feature is a bad idea before you waste a sprint on it.",
+      "author": "Marcus T.",
+      "role": "Founder, Fieldnote Labs"
+    }
   ],
   "contact": {
     "headline": "Let's build something that lasts.",
