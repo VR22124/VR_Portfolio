@@ -80,13 +80,13 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     const shapeA = stages[stageIndex];
     const shapeB = stages[stageIndex + 1];
 
-    // Subtle jitter — barely perceptible, ambient breathing only
-    const jitterAmp = 0.001;
+    // Ambient shimmer — subtle wave that ripples through the field
+    const jitterAmp = 0.012;
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
-      const jitterPhase = i * 0.07;
-      positions[i3]     = shapeA[i3]     + (shapeB[i3]     - shapeA[i3])     * localT + Math.sin(time * 0.8 + jitterPhase)       * jitterAmp;
+      const jitterPhase = i * 0.05;
+      positions[i3]     = shapeA[i3]     + (shapeB[i3]     - shapeA[i3])     * localT + Math.sin(time * 0.9 + jitterPhase)       * jitterAmp;
       positions[i3 + 1] = shapeA[i3 + 1] + (shapeB[i3 + 1] - shapeA[i3 + 1]) * localT + Math.sin(time * 0.7 + jitterPhase + 1.1) * jitterAmp;
       positions[i3 + 2] = shapeA[i3 + 2] + (shapeB[i3 + 2] - shapeA[i3 + 2]) * localT + Math.sin(time * 0.6 + jitterPhase + 2.2) * jitterAmp;
     }
@@ -94,10 +94,11 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     pointsRef.current.geometry.attributes.position.array = positions;
     pointsRef.current.geometry.attributes.position.needsUpdate = true;
 
-    // Slow, steady rotation on idle
-    pointsRef.current.rotation.y = time * 0.04;
+    // Cinematic drift — slow multi-axis rotation
+    pointsRef.current.rotation.y = time * 0.05;
+    pointsRef.current.rotation.z = Math.sin(time * 0.15) * 0.08;
     if (!isReducedMotion) {
-      pointsRef.current.rotation.x = p * Math.PI * 0.25;
+      pointsRef.current.rotation.x = -0.15 + p * Math.PI * 0.35;
     }
   });
 
