@@ -542,8 +542,7 @@ export default function Skills() {
                 skill={skill}
                 index={i}
                 isRevealed={revealedRows.has(i)}
-                isHovered={!isMobile && hoveredIdx === i && !isFiltered}
-                isDimmed={!isMobile && hoveredIdx !== null && hoveredIdx !== i}
+                isHovered={!isMobile && hoveredIdx === i && !isLet me complete my work on the project, specifically removing the unnecessary 'isDimmed' prop from the Skills component.
                 isFiltered={isFiltered}
                 isMobile={isMobile}
                 onMouseEnter={() => { if (!isMobile && !isFiltered) setHoveredIdx(i); }}
