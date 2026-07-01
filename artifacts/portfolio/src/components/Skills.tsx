@@ -84,7 +84,6 @@ function SkillRow({
   index,
   isRevealed,
   isHovered,
-  isDimmed,
   isFiltered,
   isMobile,
   onMouseEnter,
@@ -94,7 +93,6 @@ function SkillRow({
   index: number;
   isRevealed: boolean;
   isHovered: boolean;
-  isDimmed: boolean;
   isFiltered: boolean; // true = hidden by filter
   isMobile: boolean;
   onMouseEnter: () => void;
@@ -118,32 +116,22 @@ function SkillRow({
     ? '#d4d4d0'
     : isHovered
       ? '#f5f5f2'
-      : isDimmed
-        ? '#252530'
-        : '#4a4a52';
+      : '#4a4a52';
 
   const iconColor = isMobile
     ? 'rgba(212,255,79,0.55)'
     : isHovered
       ? ACCENT
-      : isDimmed
-        ? '#1a1a22'
-        : '#3a3a44';
+      : '#3a3a44';
 
   const tagColor = isMobile
     ? '#5a5a64'
     : isHovered
       ? ACCENT
-      : isDimmed
-        ? '#1a1a22'
-        : '#3a3a44';
+      : '#3a3a44';
 
   const rowMaxHeight = isFiltered ? 0 : 200;
-  const rowOpacity = isFiltered
-    ? 0
-    : isRevealed
-      ? (isDimmed && !isMobile ? 0.4 : 1)
-      : 0;
+  const rowOpacity = isFiltered ? 0 : isRevealed ? 1 : 0;
 
   return (
     <div
@@ -555,7 +543,6 @@ export default function Skills() {
                 index={i}
                 isRevealed={revealedRows.has(i)}
                 isHovered={!isMobile && hoveredIdx === i && !isFiltered}
-                isDimmed={!isMobile && hoveredIdx !== null && hoveredIdx !== i}
                 isFiltered={isFiltered}
                 isMobile={isMobile}
                 onMouseEnter={() => { if (!isMobile && !isFiltered) setHoveredIdx(i); }}
