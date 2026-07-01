@@ -1,5 +1,5 @@
 import { spawnSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { cpSync, existsSync, rmSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -67,5 +67,14 @@ const viteArgs = process.argv.slice(2);
 const vite = run(process.execPath, [viteBin, ...viteArgs], {
   cwd: portfolioDir,
 });
+
+if (vite.ok && viteArgs[0] === "build") {
+  const builtDir = path.join(portfolioDir, "dist", "public");
+  const rootDist = path.join(rootDir, "dist");
+  if (existsSync(builtDir)) {
+    rmSync(rootDist, { recursive: true, force: true });
+    cpSync(builtDir, rootDist, { recursive: true });
+  }
+}
 
 process.exit(vite.ok ? 0 : vite.status || 1);
