@@ -9,7 +9,7 @@ const items = [
   { label: "Contact", href: "#contact" },
 ];
 
-export function SideNav() {
+export function HeroNavigation() {
   return (
     <motion.aside
       initial={{ opacity: 0, x: -12 }}
@@ -18,7 +18,6 @@ export function SideNav() {
       className="fixed left-0 top-0 z-40 flex h-screen w-16 flex-col items-center justify-between border-r border-border/60 bg-charcoal/70 py-8 backdrop-blur-sm"
       aria-label="Primary"
     >
-      {/* Seal */}
       <a
         href="#home"
         className="group flex h-10 w-10 items-center justify-center rounded-full border border-vermilion/50 bg-vermilion/10 text-vermilion transition-colors hover:bg-vermilion/20"
@@ -27,7 +26,6 @@ export function SideNav() {
         <span className="font-jp text-sm leading-none">虎</span>
       </a>
 
-      {/* Nav items — vertical rotated labels for editorial feel */}
       <nav className="flex flex-col items-center gap-8">
         {items.map((item) => (
           <a
@@ -46,7 +44,6 @@ export function SideNav() {
         ))}
       </nav>
 
-      {/* Scroll cue */}
       <div className="flex flex-col items-center gap-3">
         <span
           className="text-[9px] uppercase tracking-[0.3em] text-muted-foreground"

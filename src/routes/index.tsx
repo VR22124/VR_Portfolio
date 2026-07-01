@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/hero/Hero";
-import { SideNav } from "@/components/navigation/SideNav";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,7 +25,6 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="relative min-h-screen bg-background text-foreground">
-      <SideNav />
       <Hero />
     </main>
   );
