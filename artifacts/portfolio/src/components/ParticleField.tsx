@@ -87,7 +87,7 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     const smoothstep = (t: number) => t * t * (3 - 2 * t);
     const time = state.clock.elapsedTime;
 
-    const stages = [formations.sphere, formations.knot, formations.hyper, formations.wave];
+    const stages = [formations.knot, formations.mobius, formations.hyper, formations.wave];
     const stageCount = stages.length - 1;
     const stageProgress = p * stageCount;
     const stageIndex = Math.min(Math.floor(stageProgress), stageCount - 1);
