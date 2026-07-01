@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
-    "dev": "cd artifacts/portfolio && PORT=${PORT:-8080} BASE_PATH=${BASE_PATH:-/} bunx vite --host 0.0.0.0",
-    "build": "cd artifacts/portfolio && PORT=${PORT:-8080} BASE_PATH=${BASE_PATH:-/} bunx vite build",
-    "build:dev": "cd artifacts/portfolio && PORT=${PORT:-8080} BASE_PATH=${BASE_PATH:-/} bunx vite build",
+    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*|bun/*) ;; *) echo \"Use pnpm or bun instead\" >&2; exit 1 ;; esac'",
+    "dev": "node scripts/run-portfolio-vite.mjs --host 0.0.0.0",
+    "build": "node scripts/run-portfolio-vite.mjs build",
+    "build:dev": "node scripts/run-portfolio-vite.mjs build",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
