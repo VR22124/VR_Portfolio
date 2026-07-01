@@ -14,7 +14,7 @@ export function SideNav() {
     <motion.aside
       initial={{ opacity: 0, x: -12 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as const, delay: 0.2 }}
       className="fixed left-0 top-0 z-40 flex h-screen w-16 flex-col items-center justify-between border-r border-border/60 bg-charcoal/70 py-8 backdrop-blur-sm"
       aria-label="Primary"
     >

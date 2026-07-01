@@ -26,7 +26,7 @@ export function HeroScene() {
         height={1600}
         initial={{ scale: 1.06, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 2.4, ease: [0.22, 1, 0.36, 1] as const }}
         className="absolute inset-0 h-full w-full object-cover"
       />
 
