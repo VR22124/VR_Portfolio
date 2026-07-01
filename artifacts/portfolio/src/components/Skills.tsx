@@ -555,7 +555,7 @@ export default function Skills() {
                 index={i}
                 isRevealed={revealedRows.has(i)}
                 isHovered={!isMobile && hoveredIdx === i && !isFiltered}
-                isDimmed={!isMobile && hoveredIdx !== null && hoveredIdx !== i}
+                isDimmed={false}
                 isFiltered={isFiltered}
                 isMobile={isMobile}
                 onMouseEnter={() => { if (!isMobile && !isFiltered) setHoveredIdx(i); }}
