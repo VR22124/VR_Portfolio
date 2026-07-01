@@ -107,7 +107,6 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
       positions[i3 + 2] = A[i3 + 2] + (B[i3 + 2] - A[i3 + 2]) * localT;
     }
 
-    pointsRef.current.geometry.attributes.position.array = positions;
     pointsRef.current.geometry.attributes.position.needsUpdate = true;
 
     // Deliberate slow rotation — reads as an architectural model on a turntable
