@@ -7,13 +7,13 @@ const PARTICLE_COUNT = isMobile ? 1800 : 6000;
 
 /**
  * Wireframe Architect — engineered, precise, blueprint aesthetic.
- * Four parametric surfaces sampled on a (u,v) grid so the wireframe reads
- * as an intentional draftsman's structure, not noise.
+ * Every formation is sampled on a clean (u,v) grid so the wireframe reads
+ * as a deliberate draftsman's structure, not noise.
  *
- *  1. Torus knot (p,q = 2,3)
- *  2. Möbius strip
- *  3. Hyperboloid of one sheet
- *  4. Parametric wave surface (sin/cos lattice)
+ *  0. Hero    — Latitude/longitude sphere (a cosmic globe)
+ *  1. Journey — Torus knot as a tube (a woven path)
+ *  2. Skills  — Hyperboloid of one sheet
+ *  3. Projects— Parametric wave surface
  */
 export default function ParticleField({ scrollProgress }: { scrollProgress: React.MutableRefObject<number> }) {
   const pointsRef = useRef<THREE.Points>(null);
@@ -22,45 +22,54 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     : false;
 
   const formations = useMemo(() => {
+    const sphere = new Float32Array(PARTICLE_COUNT * 3);
     const knot   = new Float32Array(PARTICLE_COUNT * 3);
-    const mobius = new Float32Array(PARTICLE_COUNT * 3);
     const hyper  = new Float32Array(PARTICLE_COUNT * 3);
     const wave   = new Float32Array(PARTICLE_COUNT * 3);
 
-    // Grid dims for surface sampling
-    const uCount = Math.round(Math.sqrt(PARTICLE_COUNT * 3));
+    const uCount = Math.round(Math.sqrt(PARTICLE_COUNT));
     const vCount = Math.ceil(PARTICLE_COUNT / uCount);
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
       const iu = i % uCount;
       const iv = Math.floor(i / uCount);
-      const u01 = iu / (uCount - 1);
+      const u01 = iu / uCount;
       const v01 = iv / Math.max(1, vCount - 1);
 
-      // 1) Torus knot (p=2, q=3) — tube sampled around the centerline
-      const tK = (i / PARTICLE_COUNT) * Math.PI * 2;
+      // 0) Globe — latitude/longitude wireframe sphere
+      const lon = u01 * Math.PI * 2;
+      const lat = (v01 - 0.5) * Math.PI;
+      const Rs = 2.1;
+      sphere[i3]     = Rs * Math.cos(lat) * Math.cos(lon);
+      sphere[i3 + 1] = Rs * Math.sin(lat);
+      sphere[i3 + 2] = Rs * Math.cos(lat) * Math.sin(lon);
+
+      // 1) Torus knot (p=2, q=3) tube — v along centerline, u wraps tube
+      const tK = v01 * Math.PI * 2;
       const phiK = u01 * Math.PI * 2;
-      const p = 2, q = 3, Rk = 1.7, rk = 0.35;
-      const cx = (Rk + rk * Math.cos(q * tK)) * Math.cos(p * tK);
-      const cy = (Rk + rk * Math.cos(q * tK)) * Math.sin(p * tK);
-      const cz = rk * Math.sin(q * tK);
-      // small tube offset for wireframe density
-      const tubeR = 0.08;
-      knot[i3]     = cx + Math.cos(phiK) * tubeR;
-      knot[i3 + 1] = cy + Math.sin(phiK) * tubeR;
-      knot[i3 + 2] = cz;
+      const p = 2, q = 3, Rk = 1.5, rk = 0.5, tubeR = 0.2;
+      const ccos = Math.cos(q * tK), csin = Math.sin(q * tK);
+      const px = (Rk + rk * ccos) * Math.cos(p * tK);
+      const py = (Rk + rk * ccos) * Math.sin(p * tK);
+      const pz = rk * csin;
+      const dxdt = -p * (Rk + rk * ccos) * Math.sin(p * tK) - rk * q * csin * Math.cos(p * tK);
+      const dydt =  p * (Rk + rk * ccos) * Math.cos(p * tK) - rk * q * csin * Math.sin(p * tK);
+      const dzdt =  rk * q * ccos;
+      const tLen = Math.hypot(dxdt, dydt, dzdt) || 1;
+      const Tx = dxdt / tLen, Ty = dydt / tLen, Tz = dzdt / tLen;
+      let Nx = -Ty, Ny = Tx, Nz = 0;
+      const nLen = Math.hypot(Nx, Ny, Nz) || 1;
+      Nx /= nLen; Ny /= nLen; Nz /= nLen;
+      const Bx = Ty * Nz - Tz * Ny;
+      const By = Tz * Nx - Tx * Nz;
+      const Bz = Tx * Ny - Ty * Nx;
+      const cphi = Math.cos(phiK) * tubeR, sphi = Math.sin(phiK) * tubeR;
+      knot[i3]     = px + cphi * Nx + sphi * Bx;
+      knot[i3 + 1] = py + cphi * Ny + sphi * By;
+      knot[i3 + 2] = pz + cphi * Nz + sphi * Bz;
 
-      // 2) Möbius strip — classic parametric (u ∈ [0,2π], v ∈ [-w,w])
-      const uM = u01 * Math.PI * 2;
-      const vM = (v01 - 0.5) * 0.9;
-      const Rm = 2.0;
-      const hm = uM / 2;
-      mobius[i3]     = (Rm + vM * Math.cos(hm)) * Math.cos(uM);
-      mobius[i3 + 1] = vM * Math.sin(hm);
-      mobius[i3 + 2] = (Rm + vM * Math.cos(hm)) * Math.sin(uM);
-
-      // 3) Hyperboloid of one sheet — x²+z² - y² = a²
+      // 2) Hyperboloid of one sheet
       const uH = u01 * Math.PI * 2;
       const vH = (v01 - 0.5) * 2.4;
       const aH = 1.1;
@@ -69,7 +78,7 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
       hyper[i3 + 1] = aH * Math.sinh(vH * 0.9);
       hyper[i3 + 2] = rH * Math.sin(uH);
 
-      // 4) Parametric wave surface — lattice sin/cos plane
+      // 3) Parametric wave surface
       const gx = (u01 - 0.5) * 6.5;
       const gz = (v01 - 0.5) * 6.5;
       wave[i3]     = gx;
@@ -77,10 +86,11 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
       wave[i3 + 2] = gz;
     }
 
-    return { knot, mobius, hyper, wave };
+    return { sphere, knot, hyper, wave };
   }, []);
 
   const positions = useMemo(() => new Float32Array(PARTICLE_COUNT * 3), []);
+
 
   useFrame((state) => {
     if (!pointsRef.current) return;
@@ -89,7 +99,7 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     const smoothstep = (t: number) => t * t * (3 - 2 * t);
     const time = state.clock.elapsedTime;
 
-    const stages = [formations.knot, formations.mobius, formations.hyper, formations.wave];
+    const stages = [formations.sphere, formations.knot, formations.hyper, formations.wave];
     const stageCount = stages.length - 1;
     const stageProgress = p * stageCount;
     const stageIndex = Math.min(Math.floor(stageProgress), stageCount - 1);
