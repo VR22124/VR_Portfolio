@@ -3,8 +3,18 @@ import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
 const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-const PARTICLE_COUNT = isMobile ? 1500 : 5000;
+const PARTICLE_COUNT = isMobile ? 1800 : 6000;
 
+/**
+ * Wireframe Architect — engineered, precise, blueprint aesthetic.
+ * Four parametric surfaces sampled on a (u,v) grid so the wireframe reads
+ * as an intentional draftsman's structure, not noise.
+ *
+ *  1. Torus knot (p,q = 2,3)
+ *  2. Möbius strip
+ *  3. Hyperboloid of one sheet
+ *  4. Parametric wave surface (sin/cos lattice)
+ */
 export default function ParticleField({ scrollProgress }: { scrollProgress: React.MutableRefObject<number> }) {
   const pointsRef = useRef<THREE.Points>(null);
   const isReducedMotion = typeof window !== 'undefined'
@@ -12,58 +22,62 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     : false;
 
   const formations = useMemo(() => {
-    // Perfectly deterministic, sacred-geometry inspired formations.
-    // Each formation uses closed-form math (Fibonacci lattice, parametric surfaces)
-    // so the pattern reads as intentional, not random noise.
+    const knot   = new Float32Array(PARTICLE_COUNT * 3);
+    const mobius = new Float32Array(PARTICLE_COUNT * 3);
+    const hyper  = new Float32Array(PARTICLE_COUNT * 3);
+    const wave   = new Float32Array(PARTICLE_COUNT * 3);
 
-    const sphere = new Float32Array(PARTICLE_COUNT * 3);   // 1. Fibonacci sphere
-    const helix  = new Float32Array(PARTICLE_COUNT * 3);   // 2. Double helix
-    const torus  = new Float32Array(PARTICLE_COUNT * 3);   // 3. Torus (Rk,rk)
-    const galaxy = new Float32Array(PARTICLE_COUNT * 3);   // 4. Logarithmic spiral galaxy
-
-    const PHI = Math.PI * (3 - Math.sqrt(5)); // golden angle
+    // Grid dims for surface sampling
+    const uCount = Math.round(Math.sqrt(PARTICLE_COUNT * 3));
+    const vCount = Math.ceil(PARTICLE_COUNT / uCount);
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
-      const t = i / (PARTICLE_COUNT - 1);
+      const iu = i % uCount;
+      const iv = Math.floor(i / uCount);
+      const u01 = iu / (uCount - 1);
+      const v01 = iv / Math.max(1, vCount - 1);
 
-      // 1) Fibonacci sphere — even distribution on a sphere (feels like a planet/cosmos)
-      const yS = 1 - t * 2;              // -1 .. 1
-      const rS = Math.sqrt(1 - yS * yS);
-      const thetaS = PHI * i;
-      const R = 2.4;
-      sphere[i3]     = Math.cos(thetaS) * rS * R;
-      sphere[i3 + 1] = yS * R;
-      sphere[i3 + 2] = Math.sin(thetaS) * rS * R;
+      // 1) Torus knot (p=2, q=3) — tube sampled around the centerline
+      const tK = (i / PARTICLE_COUNT) * Math.PI * 2;
+      const phiK = u01 * Math.PI * 2;
+      const p = 2, q = 3, Rk = 1.7, rk = 0.35;
+      const cx = (Rk + rk * Math.cos(q * tK)) * Math.cos(p * tK);
+      const cy = (Rk + rk * Math.cos(q * tK)) * Math.sin(p * tK);
+      const cz = rk * Math.sin(q * tK);
+      // small tube offset for wireframe density
+      const tubeR = 0.08;
+      knot[i3]     = cx + Math.cos(phiK) * tubeR;
+      knot[i3 + 1] = cy + Math.sin(phiK) * tubeR;
+      knot[i3 + 2] = cz;
 
-      // 2) Double helix — two intertwined strands (DNA / cathedral columns)
-      const strand = i % 2 === 0 ? 1 : -1;
-      const uH = (Math.floor(i / 2) / (PARTICLE_COUNT / 2)) * Math.PI * 8; // 4 turns
-      const rH = 1.4;
-      helix[i3]     = Math.cos(uH) * rH * strand;
-      helix[i3 + 1] = (uH / (Math.PI * 8) - 0.5) * 6;
-      helix[i3 + 2] = Math.sin(uH) * rH * strand;
+      // 2) Möbius strip — classic parametric (u ∈ [0,2π], v ∈ [-w,w])
+      const uM = u01 * Math.PI * 2;
+      const vM = (v01 - 0.5) * 0.9;
+      const Rm = 2.0;
+      const hm = uM / 2;
+      mobius[i3]     = (Rm + vM * Math.cos(hm)) * Math.cos(uM);
+      mobius[i3 + 1] = vM * Math.sin(hm);
+      mobius[i3 + 2] = (Rm + vM * Math.cos(hm)) * Math.sin(uM);
 
-      // 3) Torus — clean donut, uniform (u,v) sampling
-      const uT = t * Math.PI * 2 * 13;   // major loops
-      const vT = t * Math.PI * 2 * 37;   // minor loops (coprime -> full coverage)
-      const Rt = 2.0, rt = 0.65;
-      torus[i3]     = (Rt + rt * Math.cos(vT)) * Math.cos(uT);
-      torus[i3 + 1] = rt * Math.sin(vT);
-      torus[i3 + 2] = (Rt + rt * Math.cos(vT)) * Math.sin(uT);
+      // 3) Hyperboloid of one sheet — x²+z² - y² = a²
+      const uH = u01 * Math.PI * 2;
+      const vH = (v01 - 0.5) * 2.4;
+      const aH = 1.1;
+      const rH = aH * Math.cosh(vH * 0.9);
+      hyper[i3]     = rH * Math.cos(uH);
+      hyper[i3 + 1] = aH * Math.sinh(vH * 0.9);
+      hyper[i3 + 2] = rH * Math.sin(uH);
 
-      // 4) Logarithmic spiral galaxy — 4 clean arms, no jitter
-      const arms = 4;
-      const arm = i % arms;
-      const idxInArm = Math.floor(i / arms) / (PARTICLE_COUNT / arms);
-      const radiusG = 0.15 + idxInArm * 3.2;
-      const angleG = idxInArm * Math.PI * 3 + arm * (Math.PI * 2 / arms);
-      galaxy[i3]     = Math.cos(angleG) * radiusG;
-      galaxy[i3 + 1] = Math.sin(idxInArm * Math.PI * 4) * 0.15 * (1 - idxInArm);
-      galaxy[i3 + 2] = Math.sin(angleG) * radiusG;
+      // 4) Parametric wave surface — lattice sin/cos plane
+      const gx = (u01 - 0.5) * 6.5;
+      const gz = (v01 - 0.5) * 6.5;
+      wave[i3]     = gx;
+      wave[i3 + 1] = Math.sin(gx * 1.1) * 0.55 + Math.cos(gz * 1.1) * 0.55;
+      wave[i3 + 2] = gz;
     }
 
-    return { sphere, helix, torus, galaxy };
+    return { knot, mobius, hyper, wave };
   }, []);
 
   const positions = useMemo(() => new Float32Array(PARTICLE_COUNT * 3), []);
@@ -75,31 +89,30 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     const smoothstep = (t: number) => t * t * (3 - 2 * t);
     const time = state.clock.elapsedTime;
 
-    const stages = [formations.sphere, formations.helix, formations.torus, formations.galaxy];
+    const stages = [formations.knot, formations.mobius, formations.hyper, formations.wave];
     const stageCount = stages.length - 1;
     const stageProgress = p * stageCount;
     const stageIndex = Math.min(Math.floor(stageProgress), stageCount - 1);
     const localT = smoothstep(stageProgress - stageIndex);
-    const shapeA = stages[stageIndex];
-    const shapeB = stages[stageIndex + 1];
+    const A = stages[stageIndex];
+    const B = stages[stageIndex + 1];
 
-    // Very subtle breathing — keeps forms readable
-    const breath = Math.sin(time * 0.4) * 0.006;
+    // Micro-breath so wireframe feels alive without losing structure
+    const breath = Math.sin(time * 0.5) * 0.005;
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
-      positions[i3]     = shapeA[i3]     + (shapeB[i3]     - shapeA[i3])     * localT;
-      positions[i3 + 1] = shapeA[i3 + 1] + (shapeB[i3 + 1] - shapeA[i3 + 1]) * localT + breath;
-      positions[i3 + 2] = shapeA[i3 + 2] + (shapeB[i3 + 2] - shapeA[i3 + 2]) * localT;
+      positions[i3]     = A[i3]     + (B[i3]     - A[i3])     * localT;
+      positions[i3 + 1] = A[i3 + 1] + (B[i3 + 1] - A[i3 + 1]) * localT + breath;
+      positions[i3 + 2] = A[i3 + 2] + (B[i3 + 2] - A[i3 + 2]) * localT;
     }
 
     pointsRef.current.geometry.attributes.position.array = positions;
     pointsRef.current.geometry.attributes.position.needsUpdate = true;
 
-    // Slow, deliberate orbital drift — reads as celestial, not chaotic
-    pointsRef.current.rotation.y = time * 0.04;
-    pointsRef.current.rotation.x = -0.2 + Math.sin(time * 0.1) * 0.05 + p * 0.3;
-    pointsRef.current.rotation.z = 0;
+    // Deliberate slow rotation — reads as an architectural model on a turntable
+    pointsRef.current.rotation.y = time * 0.06;
+    pointsRef.current.rotation.x = -0.25 + Math.sin(time * 0.12) * 0.06 + p * 0.35;
   });
 
   return (
@@ -113,11 +126,11 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.02}
+        size={0.018}
         color="#d4ff4f"
         sizeAttenuation
         transparent
-        opacity={0.78}
+        opacity={0.82}
         depthWrite={false}
       />
     </points>
