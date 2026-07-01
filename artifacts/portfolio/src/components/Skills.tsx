@@ -84,7 +84,6 @@ function SkillRow({
   index,
   isRevealed,
   isHovered,
-  isDimmed,
   isFiltered,
   isMobile,
   onMouseEnter,
@@ -94,7 +93,6 @@ function SkillRow({
   index: number;
   isRevealed: boolean;
   isHovered: boolean;
-  isDimmed: boolean;
   isFiltered: boolean; // true = hidden by filter
   isMobile: boolean;
   onMouseEnter: () => void;
