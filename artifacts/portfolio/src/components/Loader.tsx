@@ -1,301 +1,169 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import data from '../data.json';
 
-type Node = { x: number; y: number; distance: number; angle: number };
-type TextParticle = { x: number; y: number; originX: number; originY: number; vx: number; vy: number };
+const OWNER = data.meta.name.toUpperCase();
 
-const OWNER_NAME = data.meta.name.toUpperCase();
-
-// Portfolio palette
-const BG       = '#08080a';
-const ACCENT   = '#d4ff4f';       // portfolio lime accent
-const ACCENT_A = 'rgba(212,255,79,';  // for alpha usage
-const WHITE    = '#f5f5f2';       // text-primary
-const FONT     = '700 80px "Space Grotesk", sans-serif';
-
+/**
+ * Kinetic Precision Loader
+ * A cinematic, choreographed intro sequence:
+ *   0.0s  Central lime pulse blooms
+ *   0.8s  Geometric frame constructs around the origin (H + V lines)
+ *   1.4s  Owner name resolves from blurred, wide-tracked ghost → sharp lime
+ *   1.8s  "Initializing" caption fades in with corner brackets
+ *   3.2s  Implosion + blur exit reveals the site
+ *
+ * Total runtime ~4.2s. Honors prefers-reduced-motion by skipping instantly.
+ */
 export default function Loader({ onComplete }: { onComplete: () => void }) {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [overlayOpacity, setOverlayOpacity] = useState(1);
+  const [exiting, setExiting] = useState(false);
 
   useEffect(() => {
-    const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (isReducedMotion) { onComplete(); return; }
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) { onComplete(); return; }
 
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d', { willReadFrequently: true });
-    if (!ctx) return;
-
-    let w = window.innerWidth;
-    let h = window.innerHeight;
-    canvas.width  = w;
-    canvas.height = h;
-    let cx = w / 2;
-    let cy = h / 2;
-
-    let rafId: number;
-    const t0 = performance.now();
-
-    // ── Timeline (ms) ─────────────────────────────────────────────────────────
-    const T = {
-      dark:     200,
-      birth:   1100,
-      lines:   2500,
-      nodes:   2850,
-      implode: 3700,
-      morph:   4800,
-      hold:    5400,
-      shatter: 6600,
-    };
-
-    // ── Easing ────────────────────────────────────────────────────────────────
-    const io3 = (t: number) => t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2,3)/2;
-    const oQ5 = (t: number) => 1 - Math.pow(1-t, 5);
-    const iExp= (t: number) => t === 0 ? 0 : Math.pow(2, 10*t-10);
-
-    // ── Constellation nodes ───────────────────────────────────────────────────
-    const buildNodes = (): Node[] => {
-      const list: Node[] = [];
-      const maxD = Math.min(w, h) * 0.42;
-      const count = 22;
-      for (let i = 0; i < count; i++) {
-        const angle    = (i / count) * Math.PI * 2 + (Math.random() - 0.5) * 0.5;
-        const distance = 70 + Math.random() * maxD;
-        list.push({ x: cx + Math.cos(angle)*distance, y: cy + Math.sin(angle)*distance, distance, angle });
-      }
-      for (let i = 0; i < 8; i++) {
-        const angle    = Math.random() * Math.PI * 2;
-        const distance = 90 + Math.random() * maxD * 0.85;
-        list.push({ x: cx + Math.cos(angle)*distance, y: cy + Math.sin(angle)*distance, distance, angle });
-      }
-      return list.sort((a, b) => a.distance - b.distance);
-    };
-
-    let nodes: Node[] = buildNodes();
-
-    // ── Text particle generation (offscreen canvas) ───────────────────────────
-    let textParticles: TextParticle[] = [];
-    let textReady = false;
-    let fadeStarted = false;
-
-    const buildTextParticles = (): TextParticle[] => {
-      const off = document.createElement('canvas');
-      off.width = w; off.height = h;
-      const oc = off.getContext('2d')!;
-      const fs = Math.min(w * 0.085, 88);
-      oc.fillStyle = WHITE;
-      oc.font = `700 ${fs}px "Space Grotesk", sans-serif`;
-      oc.textAlign    = 'center';
-      oc.textBaseline = 'middle';
-      oc.fillText(OWNER_NAME, cx, cy);
-      const px = oc.getImageData(0, 0, w, h).data;
-      const list: TextParticle[] = [];
-      const step = Math.max(3, Math.floor(w / 340));
-      for (let py = 0; py < h; py += step) {
-        for (let bx = 0; bx < w; bx += step) {
-          if (px[(py * w + bx) * 4 + 3] > 128) {
-            list.push({
-              x: cx, y: cy,
-              originX: bx + (Math.random()-0.5)*step,
-              originY: py + (Math.random()-0.5)*step,
-              vx: (Math.random()-0.5)*8,
-              vy: -(2 + Math.random()*6),
-            });
-          }
-        }
-      }
-      return list;
-    };
-
-    // ── Cross-links (circuit look) ─────────────────────────────────────────────
-    const crossThresh = Math.min(w, h) * 0.22;
-    const crossPairs: [Node, Node][] = [];
-    for (let i = 0; i < nodes.length; i++) {
-      for (let j = i+1; j < nodes.length; j++) {
-        const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
-        if (Math.sqrt(dx*dx+dy*dy) < crossThresh) crossPairs.push([nodes[i], nodes[j]]);
-      }
-    }
-
-    // ── Draw helpers ──────────────────────────────────────────────────────────
-    const glow = (blur: number, color = ACCENT) => { ctx.shadowBlur = blur; ctx.shadowColor = color; };
-    const noGlow = () => { ctx.shadowBlur = 0; };
-
-    // ── Main render loop ───────────────────────────────────────────────────────
-    const render = (now: number) => {
-      const e = now - t0;
-
-      ctx.fillStyle = BG;
-      ctx.fillRect(0, 0, w, h);
-      ctx.save();
-
-      // ── Darkness ─────────────────────────────────────────────────────────────
-      if (e < T.dark) { ctx.restore(); rafId = requestAnimationFrame(render); return; }
-
-      // ── Birth pulse ───────────────────────────────────────────────────────────
-      if (e < T.birth) {
-        const t  = (e - T.dark) / (T.birth - T.dark);
-        const p  = Math.sin(t * Math.PI);
-        const sz = 2 + p * 5;
-        glow(35 * p + 5);
-        ctx.fillStyle = ACCENT;
-        ctx.beginPath(); ctx.arc(cx, cy, sz, 0, Math.PI*2); ctx.fill();
-        noGlow();
-        ctx.strokeStyle = ACCENT_A + (p * 0.35) + ')';
-        ctx.lineWidth   = 1;
-        ctx.beginPath(); ctx.arc(cx, cy, sz * 3 + 12*p, 0, Math.PI*2); ctx.stroke();
-        ctx.restore(); rafId = requestAnimationFrame(render); return;
-      }
-
-      // ── Lines drawing ─────────────────────────────────────────────────────────
-      if (e < T.lines) {
-        const t = (e - T.birth) / (T.lines - T.birth);
-        ctx.lineWidth = 0.8;
-        nodes.forEach((nd, i) => {
-          const delay = (i / nodes.length) * 0.38;
-          const lt    = Math.max(0, Math.min(1, (t - delay) / (1 - delay)));
-          const dist  = nd.distance * io3(lt);
-          const px    = cx + Math.cos(nd.angle) * dist;
-          const py    = cy + Math.sin(nd.angle) * dist;
-          const grad  = ctx.createLinearGradient(cx, cy, px, py);
-          grad.addColorStop(0, ACCENT_A + '0.95)');
-          grad.addColorStop(1, ACCENT_A + '0.25)');
-          ctx.strokeStyle = grad;
-          glow(10);
-          ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(px, py); ctx.stroke();
-        });
-        if (t > 0.65) {
-          noGlow();
-          ctx.strokeStyle = ACCENT_A + '0.08)';
-          ctx.lineWidth = 0.5;
-          crossPairs.forEach(([a, b]) => {
-            ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-          });
-        }
-        glow(22);
-        ctx.fillStyle = WHITE;
-        ctx.beginPath(); ctx.arc(cx, cy, 3, 0, Math.PI*2); ctx.fill();
-        ctx.restore(); rafId = requestAnimationFrame(render); return;
-      }
-
-      // ── Node flash ────────────────────────────────────────────────────────────
-      if (e < T.nodes) {
-        const t     = (e - T.lines) / (T.nodes - T.lines);
-        const flash = Math.sin(t * Math.PI);
-        ctx.lineWidth   = 0.8;
-        ctx.strokeStyle = ACCENT_A + '0.85)';
-        glow(8 + 20 * flash);
-        ctx.beginPath();
-        nodes.forEach(nd => { ctx.moveTo(cx, cy); ctx.lineTo(nd.x, nd.y); });
-        ctx.stroke();
-        noGlow();
-        ctx.strokeStyle = ACCENT_A + '0.08)';
-        ctx.lineWidth = 0.5;
-        crossPairs.forEach(([a, b]) => {
-          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-        });
-        nodes.forEach(nd => {
-          glow(24 * flash);
-          ctx.fillStyle = ACCENT_A + (0.5 + 0.5*flash) + ')';
-          ctx.beginPath(); ctx.arc(nd.x, nd.y, 2 + 3*flash, 0, Math.PI*2); ctx.fill();
-        });
-        glow(28);
-        ctx.fillStyle = WHITE;
-        ctx.beginPath(); ctx.arc(cx, cy, 3, 0, Math.PI*2); ctx.fill();
-        ctx.restore(); rafId = requestAnimationFrame(render); return;
-      }
-
-      // ── Implosion ─────────────────────────────────────────────────────────────
-      if (e < T.implode) {
-        const t     = (e - T.nodes) / (T.implode - T.nodes);
-        const ease  = iExp(t);
-        ctx.lineWidth   = 0.8;
-        ctx.strokeStyle = ACCENT_A + (1-t*0.3) + ')';
-        glow(8 * (1 - t));
-        ctx.beginPath();
-        nodes.forEach(nd => {
-          const dist = nd.distance * (1 - ease);
-          ctx.moveTo(cx, cy);
-          ctx.lineTo(cx + Math.cos(nd.angle)*dist, cy + Math.sin(nd.angle)*dist);
-        });
-        ctx.stroke();
-        glow(30 * ease);
-        ctx.fillStyle = ACCENT;
-        ctx.beginPath(); ctx.arc(cx, cy, 2 + ease*8, 0, Math.PI*2); ctx.fill();
-        ctx.restore(); rafId = requestAnimationFrame(render); return;
-      }
-
-      // ── Text morph ────────────────────────────────────────────────────────────
-      if (e < T.morph) {
-        if (!textReady) { textParticles = buildTextParticles(); textReady = true; }
-        const t    = (e - T.implode) / (T.morph - T.implode);
-        const ease = oQ5(t);
-        glow(8 * ease, ACCENT);
-        ctx.fillStyle = ACCENT_A + ease + ')';
-        textParticles.forEach(p => {
-          const px = cx + (p.originX - cx) * ease;
-          const py = cy + (p.originY - cy) * ease;
-          ctx.fillRect(px, py, 1.5, 1.5);
-        });
-        ctx.restore(); rafId = requestAnimationFrame(render); return;
-      }
-
-      // ── Hold ──────────────────────────────────────────────────────────────────
-      if (e < T.hold) {
-        glow(10, ACCENT);
-        ctx.fillStyle = ACCENT;
-        textParticles.forEach(p => ctx.fillRect(p.originX, p.originY, 1.5, 1.5));
-        ctx.restore(); rafId = requestAnimationFrame(render); return;
-      }
-
-      // ── Shatter ───────────────────────────────────────────────────────────────
-      if (e < T.shatter) {
-        const t   = (e - T.hold) / (T.shatter - T.hold);
-        const op  = 1 - iExp(t);
-        glow(6 * op, ACCENT);
-        ctx.fillStyle = ACCENT_A + op + ')';
-        textParticles.forEach(p => {
-          p.originX += p.vx * t * 2.5;
-          p.originY += p.vy * t * 2.5 + t * 4;
-          ctx.fillRect(p.originX, p.originY, 1.5, 1.5);
-        });
-        if (t > 0.75 && !fadeStarted) {
-          fadeStarted = true;
-          setOverlayOpacity(0);
-        }
-        ctx.restore(); rafId = requestAnimationFrame(render); return;
-      }
-
-      // ── Done ──────────────────────────────────────────────────────────────────
-      ctx.restore();
-      onComplete();
-    };
-
-    rafId = requestAnimationFrame(render);
-
-    const onResize = () => {
-      w = window.innerWidth; h = window.innerHeight;
-      cx = w/2; cy = h/2;
-      canvas.width = w; canvas.height = h;
-      nodes = buildNodes();
-      textReady = false;
-    };
-    window.addEventListener('resize', onResize);
-    return () => { cancelAnimationFrame(rafId); window.removeEventListener('resize', onResize); };
+    // Trigger fade-out slightly before onComplete so the site is visible during exit
+    const exitTimer = setTimeout(() => setExiting(true), 3600);
+    const doneTimer = setTimeout(onComplete, 4200);
+    return () => { clearTimeout(exitTimer); clearTimeout(doneTimer); };
   }, [onComplete]);
 
   return (
     <div
-      className="fixed inset-0 z-[100]"
+      className="fixed inset-0 z-[100] bg-[#08080a] flex items-center justify-center overflow-hidden"
       style={{
-        background: BG,
-        opacity: overlayOpacity,
-        transition: overlayOpacity === 0 ? 'opacity 1s ease-out' : 'none',
-        pointerEvents: overlayOpacity === 0 ? 'none' : 'auto',
+        opacity: exiting ? 0 : 1,
+        transition: 'opacity 600ms cubic-bezier(0.7, 0, 0.84, 0)',
+        pointerEvents: exiting ? 'none' : 'auto',
       }}
-      data-testid="awakening-loader"
+      data-testid="kinetic-loader"
     >
-      <canvas ref={canvasRef} className="block w-full h-full" />
+      <style>{`
+        @keyframes kp-pulse {
+          0%   { transform: scale(0); opacity: 0; }
+          40%  { transform: scale(1); opacity: 1; }
+          100% { transform: scale(2.4); opacity: 0; }
+        }
+        @keyframes kp-line-h {
+          0%   { width: 0; opacity: 0; }
+          100% { width: clamp(220px, 34vw, 460px); opacity: 1; }
+        }
+        @keyframes kp-line-v {
+          0%   { height: 0; opacity: 0; }
+          100% { height: clamp(70px, 10vw, 120px); opacity: 1; }
+        }
+        @keyframes kp-reveal {
+          0%   { opacity: 0; letter-spacing: 1em; filter: blur(14px); transform: translateY(8px); }
+          100% { opacity: 1; letter-spacing: 0.22em; filter: blur(0); transform: translateY(0); }
+        }
+        @keyframes kp-fade-up {
+          0%   { opacity: 0; transform: translateY(6px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes kp-implode {
+          0%   { transform: scale(1); filter: blur(0); opacity: 1; }
+          40%  { transform: scale(0.97); filter: blur(2px); opacity: 0.9; }
+          100% { transform: scale(1.45); filter: blur(22px); opacity: 0; }
+        }
+        @keyframes kp-scan {
+          0%   { top: -8%; opacity: 0; }
+          10%  { opacity: 1; }
+          90%  { opacity: 1; }
+          100% { top: 108%; opacity: 0; }
+        }
+        @keyframes kp-tick {
+          0%, 100% { opacity: 0.25; }
+          50%      { opacity: 1; }
+        }
+        .kp-pulse   { animation: kp-pulse 0.9s cubic-bezier(0.16,1,0.3,1) forwards; }
+        .kp-line-h  { animation: kp-line-h 0.7s 0.7s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; }
+        .kp-line-v  { animation: kp-line-v 0.7s 0.7s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; }
+        .kp-reveal  { animation: kp-reveal 1.1s 1.3s cubic-bezier(0.16,1,0.3,1) forwards; opacity: 0; }
+        .kp-caption { animation: kp-fade-up 0.6s 2.0s ease-out forwards; opacity: 0; }
+        .kp-corner  { animation: kp-fade-up 0.5s 2.2s ease-out forwards; opacity: 0; }
+        .kp-exit    { animation: kp-implode 0.9s 3.2s cubic-bezier(0.7,0,0.84,0) forwards; }
+        .kp-scan    { animation: kp-scan 3.4s linear forwards; }
+        .kp-tick    { animation: kp-tick 1.2s ease-in-out infinite; }
+        .kp-grid {
+          background-image: radial-gradient(circle at center, rgba(212,255,79,0.06) 1px, transparent 1px);
+          background-size: 42px 42px;
+        }
+      `}</style>
+
+      {/* Ambient grid */}
+      <div className="absolute inset-0 kp-grid opacity-40" />
+
+      {/* Vignette */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.7) 100%)' }}
+      />
+
+      {/* Scanning beam */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="kp-scan absolute left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#d4ff4f]/40 to-transparent" />
+      </div>
+
+      {/* Main construct */}
+      <div className="relative kp-exit">
+        {/* Central origin pulse */}
+        <div
+          className="kp-pulse absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#d4ff4f]"
+          style={{ boxShadow: '0 0 24px #d4ff4f, 0 0 60px rgba(212,255,79,0.5)' }}
+        />
+
+        {/* Geometric frame (H + V lines emanating from center) */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="kp-line-h absolute left-1/2 -translate-x-1/2 -translate-y-[60px] md:-translate-y-[80px] h-[1px] bg-[#d4ff4f]/40" style={{ boxShadow: '0 0 8px rgba(212,255,79,0.5)' }} />
+          <div className="kp-line-h absolute left-1/2 -translate-x-1/2 translate-y-[60px] md:translate-y-[80px] h-[1px] bg-[#d4ff4f]/40" style={{ boxShadow: '0 0 8px rgba(212,255,79,0.5)' }} />
+          <div className="kp-line-v absolute top-1/2 -translate-y-1/2 -translate-x-[160px] md:-translate-x-[220px] w-[1px] bg-[#d4ff4f]/40" />
+          <div className="kp-line-v absolute top-1/2 -translate-y-1/2 translate-x-[160px] md:translate-x-[220px] w-[1px] bg-[#d4ff4f]/40" />
+        </div>
+
+        {/* Owner name */}
+        <div className="relative px-8 py-10 md:px-14 md:py-12">
+          <h1
+            className="kp-reveal whitespace-nowrap text-2xl sm:text-3xl md:text-5xl font-bold uppercase text-[#d4ff4f]"
+            style={{
+              fontFamily: '"Space Grotesk", sans-serif',
+              textShadow: '0 0 24px rgba(212,255,79,0.35)',
+            }}
+          >
+            {OWNER}
+          </h1>
+
+          {/* Caption */}
+          <div className="kp-caption absolute left-1/2 -translate-x-1/2 -bottom-1 w-full text-center flex items-center justify-center gap-2">
+            <span className="kp-tick w-1 h-1 rounded-full bg-[#d4ff4f]" />
+            <span
+              className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] text-[#d4ff4f]/60"
+              style={{ fontFamily: 'Inter, sans-serif' }}
+            >
+              Initializing Portfolio
+            </span>
+            <span className="kp-tick w-1 h-1 rounded-full bg-[#d4ff4f]" style={{ animationDelay: '0.4s' }} />
+          </div>
+
+          {/* Corner brackets */}
+          <div className="kp-corner absolute -top-0.5 -left-0.5 w-3 h-3 border-t border-l border-[#d4ff4f]" />
+          <div className="kp-corner absolute -top-0.5 -right-0.5 w-3 h-3 border-t border-r border-[#d4ff4f]" />
+          <div className="kp-corner absolute -bottom-0.5 -left-0.5 w-3 h-3 border-b border-l border-[#d4ff4f]" />
+          <div className="kp-corner absolute -bottom-0.5 -right-0.5 w-3 h-3 border-b border-r border-[#d4ff4f]" />
+        </div>
+      </div>
+
+      {/* Telemetry (top-left / bottom-right) */}
+      <div
+        className="kp-caption absolute top-6 left-6 text-[9px] uppercase tracking-[0.35em] text-[#d4ff4f]/40"
+        style={{ fontFamily: 'Inter, sans-serif' }}
+      >
+        REF · 0808-0A
+      </div>
+      <div
+        className="kp-caption absolute bottom-6 right-6 text-[9px] uppercase tracking-[0.35em] text-[#d4ff4f]/40"
+        style={{ fontFamily: 'Inter, sans-serif' }}
+      >
+        BUILD · v.2026.07
+      </div>
     </div>
   );
 }
