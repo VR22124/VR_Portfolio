@@ -116,25 +116,19 @@ function SkillRow({
     ? '#d4d4d0'
     : isHovered
       ? '#f5f5f2'
-      : isDimmed
-        ? '#252530'
-        : '#4a4a52';
+      : '#4a4a52';
 
   const iconColor = isMobile
     ? 'rgba(212,255,79,0.55)'
     : isHovered
       ? ACCENT
-      : isDimmed
-        ? '#1a1a22'
-        : '#3a3a44';
+      : '#3a3a44';
 
   const tagColor = isMobile
     ? '#5a5a64'
     : isHovered
       ? ACCENT
-      : isDimmed
-        ? '#1a1a22'
-        : '#3a3a44';
+      : '#3a3a44';
 
   const rowMaxHeight = isFiltered ? 0 : 200;
   const rowOpacity = isFiltered
