@@ -3,16 +3,8 @@ import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
 
 const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-const PARTICLE_COUNT = isMobile ? 1800 : 6000;
+const PARTICLE_COUNT = isMobile ? 1200 : 4000;
 
-/**
- * Wireframe Architect — engineered, precise, blueprint aesthetic.
- *
- *  1. Torus knot (p,q = 2,3)
- *  2. Möbius strip
- *  3. Hyperboloid of one sheet
- *  4. Parametric wave surface (sin/cos lattice)
- */
 export default function ParticleField({ scrollProgress }: { scrollProgress: React.MutableRefObject<number> }) {
   const pointsRef = useRef<THREE.Points>(null);
   const isReducedMotion = typeof window !== 'undefined'
@@ -20,98 +12,89 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     : false;
 
   const formations = useMemo(() => {
-    const knot   = new Float32Array(PARTICLE_COUNT * 3);
-    const mobius = new Float32Array(PARTICLE_COUNT * 3);
-    const hyper  = new Float32Array(PARTICLE_COUNT * 3);
-    const wave   = new Float32Array(PARTICLE_COUNT * 3);
-
-    const uCount = Math.round(Math.sqrt(PARTICLE_COUNT * 3));
-    const vCount = Math.ceil(PARTICLE_COUNT / uCount);
+    const sphere = new Float32Array(PARTICLE_COUNT * 3);
+    const helix = new Float32Array(PARTICLE_COUNT * 3);
+    const grid = new Float32Array(PARTICLE_COUNT * 3);
+    const torus = new Float32Array(PARTICLE_COUNT * 3);
+    const side = Math.ceil(Math.cbrt(PARTICLE_COUNT));
+    const step = 6 / side;
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
-      const iu = i % uCount;
-      const iv = Math.floor(i / uCount);
-      const u01 = iu / (uCount - 1);
-      const v01 = iv / Math.max(1, vCount - 1);
 
-      // 1) Torus knot (p=2, q=3)
-      const tK = (i / PARTICLE_COUNT) * Math.PI * 2;
-      const phiK = u01 * Math.PI * 2;
-      const p = 2, q = 3, Rk = 1.7, rk = 0.35;
-      const cx = (Rk + rk * Math.cos(q * tK)) * Math.cos(p * tK);
-      const cy = (Rk + rk * Math.cos(q * tK)) * Math.sin(p * tK);
-      const cz = rk * Math.sin(q * tK);
-      const tubeR = 0.08;
-      knot[i3]     = cx + Math.cos(phiK) * tubeR;
-      knot[i3 + 1] = cy + Math.sin(phiK) * tubeR;
-      knot[i3 + 2] = cz;
+      // Sphere — Fibonacci distribution for even coverage
+      const phi = Math.acos(1 - 2 * ((i + 0.5) / PARTICLE_COUNT));
+      const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+      sphere[i3]     = 3.2 * Math.cos(theta) * Math.sin(phi);
+      sphere[i3 + 1] = 3.2 * Math.sin(theta) * Math.sin(phi);
+      sphere[i3 + 2] = 3.2 * Math.cos(phi);
 
-      // 2) Möbius strip
-      const uM = u01 * Math.PI * 2;
-      const vM = (v01 - 0.5) * 0.9;
-      const Rm = 2.0;
-      const hm = uM / 2;
-      mobius[i3]     = (Rm + vM * Math.cos(hm)) * Math.cos(uM);
-      mobius[i3 + 1] = vM * Math.sin(hm);
-      mobius[i3 + 2] = (Rm + vM * Math.cos(hm)) * Math.sin(uM);
+      // Helix — double helix with 8 turns
+      const tH = i / PARTICLE_COUNT;
+      const angle = tH * Math.PI * 2 * 8;
+      helix[i3]     = 2.5 * Math.cos(angle);
+      helix[i3 + 1] = (tH - 0.5) * 8;
+      helix[i3 + 2] = 2.5 * Math.sin(angle);
 
-      // 3) Hyperboloid of one sheet
-      const uH = u01 * Math.PI * 2;
-      const vH = (v01 - 0.5) * 2.4;
-      const aH = 1.1;
-      const rH = aH * Math.cosh(vH * 0.9);
-      hyper[i3]     = rH * Math.cos(uH);
-      hyper[i3 + 1] = aH * Math.sinh(vH * 0.9);
-      hyper[i3 + 2] = rH * Math.sin(uH);
+      // Grid — 3D cube
+      const gx = (i % side) * step - 3;
+      const gy = (Math.floor(i / side) % side) * step - 3;
+      const gz = Math.floor(i / (side * side)) * step - 3;
+      grid[i3]     = gx;
+      grid[i3 + 1] = gy;
+      grid[i3 + 2] = gz;
 
-      // 4) Parametric wave surface
-      const gx = (u01 - 0.5) * 6.5;
-      const gz = (v01 - 0.5) * 6.5;
-      wave[i3]     = gx;
-      wave[i3 + 1] = Math.sin(gx * 1.1) * 0.55 + Math.cos(gz * 1.1) * 0.55;
-      wave[i3 + 2] = gz;
+      // Torus
+      const u = Math.random() * Math.PI * 2;
+      const v = Math.random() * Math.PI * 2;
+      const R = 2.8, r = 1.1;
+      torus[i3]     = (R + r * Math.cos(v)) * Math.cos(u);
+      torus[i3 + 1] = (R + r * Math.cos(v)) * Math.sin(u);
+      torus[i3 + 2] = r * Math.sin(v);
     }
 
-    return { knot, mobius, hyper, wave };
+    return { sphere, helix, grid, torus };
   }, []);
 
   const positions = useMemo(() => new Float32Array(PARTICLE_COUNT * 3), []);
 
-
-
   useFrame((state) => {
     if (!pointsRef.current) return;
 
-    const p = isReducedMotion ? 0 : scrollProgress.current;
+    let p = isReducedMotion ? 0 : scrollProgress.current;
     const smoothstep = (t: number) => t * t * (3 - 2 * t);
     const time = state.clock.elapsedTime;
 
-    const stages = [formations.knot, formations.mobius, formations.hyper, formations.wave];
+    const stages = [formations.sphere, formations.helix, formations.grid, formations.torus];
     const stageCount = stages.length - 1;
     const stageProgress = p * stageCount;
     const stageIndex = Math.min(Math.floor(stageProgress), stageCount - 1);
     const localT = smoothstep(stageProgress - stageIndex);
-    const A = stages[stageIndex];
-    const B = stages[stageIndex + 1];
+    const shapeA = stages[stageIndex];
+    const shapeB = stages[stageIndex + 1];
 
-    // Micro-breath so wireframe feels alive without losing structure
-    const breath = Math.sin(time * 0.5) * 0.005;
+    // Subtle jitter — barely perceptible, ambient breathing only
+    const jitterAmp = 0.001;
 
     for (let i = 0; i < PARTICLE_COUNT; i++) {
       const i3 = i * 3;
-      positions[i3]     = A[i3]     + (B[i3]     - A[i3])     * localT;
-      positions[i3 + 1] = A[i3 + 1] + (B[i3 + 1] - A[i3 + 1]) * localT + breath;
-      positions[i3 + 2] = A[i3 + 2] + (B[i3 + 2] - A[i3 + 2]) * localT;
+      const jitterPhase = i * 0.07;
+      positions[i3]     = shapeA[i3]     + (shapeB[i3]     - shapeA[i3])     * localT + Math.sin(time * 0.8 + jitterPhase)       * jitterAmp;
+      positions[i3 + 1] = shapeA[i3 + 1] + (shapeB[i3 + 1] - shapeA[i3 + 1]) * localT + Math.sin(time * 0.7 + jitterPhase + 1.1) * jitterAmp;
+      positions[i3 + 2] = shapeA[i3 + 2] + (shapeB[i3 + 2] - shapeA[i3 + 2]) * localT + Math.sin(time * 0.6 + jitterPhase + 2.2) * jitterAmp;
     }
 
+    pointsRef.current.geometry.attributes.position.array = positions;
     pointsRef.current.geometry.attributes.position.needsUpdate = true;
 
-    // Deliberate slow rotation — reads as an architectural model on a turntable
-    pointsRef.current.rotation.y = time * 0.06;
-    pointsRef.current.rotation.x = -0.25 + Math.sin(time * 0.12) * 0.06 + p * 0.35;
+    // Slow, steady rotation on idle
+    pointsRef.current.rotation.y = time * 0.04;
+    if (!isReducedMotion) {
+      pointsRef.current.rotation.x = p * Math.PI * 0.25;
+    }
   });
 
+  // Particle opacity: slightly reduced for text-heavy feel (0.7 instead of 0.85)
   return (
     <points ref={pointsRef}>
       <bufferGeometry>
@@ -123,11 +106,11 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.018}
+        size={0.022}
         color="#d4ff4f"
         sizeAttenuation
         transparent
-        opacity={0.82}
+        opacity={0.72}
         depthWrite={false}
       />
     </points>
