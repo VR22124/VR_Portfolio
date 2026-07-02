@@ -84,7 +84,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
         className="font-display"
         style={{
           position: 'absolute',
-          right: isMobile ? '-5%' : '2%',
+          right: isMobile ? '0%' : '4%',
           top: '50%',
           transform: `translateY(-50%) scale(${isRevealed ? 1 : 0.85})`,
           fontWeight: 900,
