@@ -163,13 +163,13 @@
     },
     {
       "name": "Azure",
-      "icon": "SiMicrosoftazure",
+      "icon": "VscAzure",
       "category": "Cloud",
       "level": 82
     },
     {
       "name": "Azure DevOps",
-      "icon": "SiAzuredevops",
+      "icon": "VscAzureDevops",
       "category": "DevOps",
       "level": 82
     },

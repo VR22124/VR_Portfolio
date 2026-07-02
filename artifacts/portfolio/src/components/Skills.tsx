@@ -1,6 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as SiIcons from 'react-icons/si';
+import { VscAzure, VscAzureDevops } from 'react-icons/vsc';
 import data from '../data.json';
+
+const IconMap: Record<string, React.ComponentType<{ size?: number }>> = {
+  ...(SiIcons as Record<string, React.ComponentType<{ size?: number }>>),
+  VscAzure,
+  VscAzureDevops
+};
 
 type Skill = (typeof data.skills)[number];
 
@@ -98,7 +105,7 @@ function SkillRow({
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }) {
-  const Icon = (SiIcons as Record<string, React.ComponentType<{ size?: number }>>)[skill.icon];
+  const Icon = IconMap[skill.icon];
   const stagger = index * 0.09; // 90ms cascade
 
   const [pingKey, setPingKey] = useState(0);
