@@ -132,7 +132,7 @@ export default function Contact() {
                   key={i}
                   href={social.url}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   className="group flex items-center gap-2.5 text-sm text-[#4a4a52] hover:text-[#f5f5f2] transition-colors duration-200"
                 >
                   {Icon && <Icon size={16} />}

@@ -57,6 +57,15 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-helmet-async', 'react-error-boundary'],
+          animations: ['gsap', 'framer-motion'],
+          three: ['three', '@react-three/fiber', '@react-three/drei']
+        }
+      }
+    }
   },
   server: {
     port,

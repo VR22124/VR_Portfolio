@@ -84,6 +84,7 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
       positions[i3 + 2] = shapeA[i3 + 2] + (shapeB[i3 + 2] - shapeA[i3 + 2]) * localT + Math.sin(time * 0.6 + jitterPhase + 2.2) * jitterAmp;
     }
 
+    // @ts-expect-error array is readonly in some typescript versions
     pointsRef.current.geometry.attributes.position.array = positions;
     pointsRef.current.geometry.attributes.position.needsUpdate = true;
 
@@ -98,6 +99,7 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
   return (
     <points ref={pointsRef}>
       <bufferGeometry>
+        {/* @ts-expect-error missing args type in some three-fiber versions */}
         <bufferAttribute
           attach="attributes-position"
           count={PARTICLE_COUNT}

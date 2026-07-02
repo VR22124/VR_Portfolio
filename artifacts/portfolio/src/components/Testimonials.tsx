@@ -108,14 +108,7 @@ export default function Testimonials() {
     };
   }, [active, entered, total]);
 
-  const handleEnter = () => {
-    pausedRef.current = true;
-    progressTweenRef.current?.pause();
-  };
-  const handleLeave = () => {
-    pausedRef.current = false;
-    progressTweenRef.current?.resume();
-  };
+  // Removed hover-to-pause logic to prevent accidental pausing when the user scrolls the card under their stationary mouse pointer.
 
   const goTo = (i: number) => {
     if (i === active) return;
@@ -154,8 +147,6 @@ export default function Testimonials() {
 
       <div
         ref={cardRef}
-        onMouseEnter={handleEnter}
-        onMouseLeave={handleLeave}
         className="relative grid grid-cols-12 overflow-hidden"
         style={{
           border: '1px solid rgba(245,245,242,0.08)',

@@ -18,7 +18,7 @@ const CHAPTERS: Chapter[] = [
     code: 'SCP',
     tag: 'Core',
     name: 'SCP Platform',
-    full: 'ShepherEd Core Platform',
+    full: 'ShepherEd Campus Platform',
     description:
       'The operational backbone of the ecosystem. Manages students, faculty, academics, attendance, departments, examinations, communication, and institutional workflows through a scalable multi-tenant architecture.',
     keywords: [

@@ -42,9 +42,10 @@ export default function Hero({ started = false }: { started?: boolean }) {
 
   const { out: taglineOut, done: taglineDone } = useTypewriter(taglineFull, startTaglineTyper, 28);
 
-  // Trigger entrance shortly after mount (or when `started` flips true)
+  // Trigger entrance only after the loader finishes (`started` flips true)
   useEffect(() => {
-    const t = setTimeout(() => setPlay(true), started ? 80 : 320);
+    if (!started) return;
+    const t = setTimeout(() => setPlay(true), 150);
     return () => clearTimeout(t);
   }, [started]);
 
@@ -162,12 +163,24 @@ export default function Hero({ started = false }: { started?: boolean }) {
           >
             <a
               href={ctaPrimary.target}
+              onClick={(e) => {
+                if (ctaPrimary.target.startsWith('#')) {
+                  e.preventDefault();
+                  const target = document.querySelector(ctaPrimary.target);
+                  if (target) {
+                    const top = target.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                  }
+                }
+              }}
               className="bg-[#d4ff4f] text-[#08080a] px-8 py-4 text-sm font-semibold rounded-[2px] hover:bg-[#c8f03d] transition-colors"
             >
               {ctaPrimary.label}
             </a>
             <a
               href={ctaSecondary.target}
+              target="_blank"
+              rel="noopener noreferrer"
               className="border border-[#2e2e36] text-[#f5f5f2] px-8 py-4 text-sm font-semibold rounded-[2px] hover:border-[#4a4a52] hover:bg-[#111114] transition-colors"
             >
               {ctaSecondary.label}

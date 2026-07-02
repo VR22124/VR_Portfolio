@@ -6,10 +6,10 @@ import data from '../data.json';
 gsap.registerPlugin(ScrollTrigger);
 
 const NAV_LINKS = [
-  { label: 'Work',       href: '#projects' },
-  { label: 'Skills',     href: '#skills' },
   { label: 'Journey',    href: '#journey' },
   { label: 'Experience', href: '#experience' },
+  { label: 'Skills',     href: '#skills' },
+  { label: 'Work',       href: '#projects' },
 ];
 
 export default function Nav() {
@@ -20,6 +20,17 @@ export default function Nav() {
   const progressRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLSpanElement>(null);
   const linkRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const top = target.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }
+  };
 
   // Scroll progress + active section tracking
   useEffect(() => {
@@ -35,7 +46,7 @@ export default function Nav() {
       }
 
       // Active section detection
-      const sections = ['projects', 'skills', 'journey', 'experience'];
+      const sections = ['journey', 'experience', 'skills', 'projects'];
       let current = '';
       for (const id of sections) {
         const el = document.getElementById(id);
@@ -90,7 +101,7 @@ export default function Nav() {
           >
             <div className="w-9 h-9 bg-[#d4ff4f] flex items-center justify-center">
               <span className="font-display font-bold text-[#08080a] text-sm leading-none tracking-tight">
-                {data.meta.name.split(' ').map(n => n[0]).join('')}
+                {data.meta.name.split(' ').slice(0, 2).map(n => n[0]).join('')}
               </span>
             </div>
             <span className="hidden md:block font-display font-medium text-[#f5f5f2] text-sm tracking-tight opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
@@ -112,6 +123,7 @@ export default function Nav() {
                 key={link.label}
                 ref={el => { linkRefs.current[i] = el; }}
                 href={link.href}
+                onClick={(e) => handleScroll(e, link.href)}
                 className={`relative z-10 px-4 py-2 text-[13px] font-medium rounded-full transition-colors duration-200 ${
                   activeSection === link.href.slice(1)
                     ? 'text-[#f5f5f2]'
@@ -131,6 +143,7 @@ export default function Nav() {
             </div>
             <a
               href="#contact"
+              onClick={(e) => handleScroll(e, '#contact')}
               className="text-[13px] font-medium bg-[#d4ff4f] text-[#08080a] px-5 py-2.5 rounded-full hover:bg-[#c8f03d] transition-colors"
             >
               Let's Talk
@@ -162,7 +175,10 @@ export default function Nav() {
                 key={link.label}
                 href={link.href}
                 className="py-3 text-sm font-medium text-[#8c8c94] hover:text-[#f5f5f2] transition-colors border-b border-[#1f1f24]/40"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => {
+                  setMobileOpen(false);
+                  handleScroll(e, link.href);
+                }}
               >
                 {link.label}
               </a>
@@ -170,7 +186,10 @@ export default function Nav() {
             <a
               href="#contact"
               className="mt-3 py-3 text-sm font-medium text-[#d4ff4f] hover:text-[#f5f5f2] transition-colors"
-              onClick={() => setMobileOpen(false)}
+              onClick={(e) => {
+                setMobileOpen(false);
+                handleScroll(e, '#contact');
+              }}
             >
               Let's Talk →
             </a>

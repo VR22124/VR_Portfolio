@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Canvas } from '@react-three/fiber';
@@ -6,6 +6,7 @@ import ParticleField from './components/ParticleField';
 import Loader from './components/Loader';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
+import SEO from './components/SEO';
 import Journey from './components/Journey';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
@@ -69,12 +70,25 @@ function App() {
       history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
+    // Strip any lingering hash from the URL so it stays clean
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname);
+    }
+  }, []);
+
+  // Monitor DOM height changes (like images loading) to keep ScrollTriggers perfectly synced
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      ScrollTrigger.refresh();
+    });
+    resizeObserver.observe(document.body);
+    return () => resizeObserver.disconnect();
   }, []);
 
   useEffect(() => {
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    ScrollTrigger.create({
+    const st = ScrollTrigger.create({
       trigger: document.body,
       start: 'top top',
       end: 'bottom bottom',
@@ -85,12 +99,13 @@ function App() {
     });
 
     return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
+      st.kill();
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <>
+      <SEO />
       {loading && <Loader onComplete={() => setLoading(false)} />}
 
       {/* Particle canvas — shifted right so formation sits at ~60-65% horizontal */}
@@ -99,13 +114,15 @@ function App() {
         style={!isMobile ? { left: '18%', width: '100%' } : undefined}
         aria-hidden="true"
       >
-        {webglSupported ? (
-          <Canvas camera={{ position: [0, 0, 8], fov: 55 }}>
-            <ParticleField scrollProgress={scrollProgress} />
-          </Canvas>
-        ) : (
-          <CSSParticleFallback />
-        )}
+        {!isMobile ? (
+          webglSupported ? (
+            <Canvas camera={{ position: [0, 0, 8], fov: 55 }}>
+              <ParticleField scrollProgress={scrollProgress} />
+            </Canvas>
+          ) : (
+            <CSSParticleFallback />
+          )
+        ) : null}
       </div>
 
       <div className="relative z-10 w-full">
@@ -118,7 +135,6 @@ function App() {
           <ShepherEd />
           <Projects />
           <HowIWork />
-
           <Principles />
           <Testimonials />
         </main>
