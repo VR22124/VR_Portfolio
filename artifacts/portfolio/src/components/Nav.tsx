@@ -90,7 +90,16 @@ export default function Nav() {
         aria-hidden="true"
       />
 
-      <nav ref={navRef} className="fixed top-0 left-0 w-full z-40 py-4">
+      <nav 
+        ref={navRef} 
+        className={`fixed top-0 left-0 w-full z-40 py-4 transition-all duration-300 ${
+          mobileOpen 
+            ? 'bg-[#08080a] border-b border-[#1f1f24]' 
+            : scrolled 
+              ? 'bg-[#08080a]/90 backdrop-blur-md border-b border-[#1f1f24]/40 md:bg-transparent md:backdrop-blur-none md:border-transparent'
+              : ''
+        }`}
+      >
         <div className="container-layout flex items-center gap-4">
 
           {/* Logo / Monogram */}
