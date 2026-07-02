@@ -222,7 +222,7 @@
       "id": "proj-02",
       "title": "Personal Portfolio",
       "subtitle": "Cinematic React Portfolio",
-      "description": "Designed and built a cinematic dark-themed portfolio with a WebGL particle field, GSAP scroll storytelling, and editorial typography. Features include a Kinetic Precision loader, one-shot RGB-split glitch on the hero name, a kinetic Building ShepherEd section, animated Toolkit skills, an asymmetric Selected Work flow, and a framed Verdict testimonials module.",
+      "description": "A cinematic dark-themed portfolio with WebGL particles, GSAP scroll storytelling, and editorial typography.",
       "tags": [
         "React 19",
         "Vite",
