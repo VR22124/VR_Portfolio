@@ -74,7 +74,8 @@ export default function Hero({ started = false }: { started?: boolean }) {
   }, [entranceDone]);
 
   useEffect(() => {
-    if (!taglineDone || !nameRef.current) return;
+    if (!taglineDone || !nameRef.current || hasGlitchedRef.current) return;
+    hasGlitchedRef.current = true;
     const el = nameRef.current;
     const t = window.setTimeout(() => el.classList.add('is-glitching'), 300);
     return () => window.clearTimeout(t);
