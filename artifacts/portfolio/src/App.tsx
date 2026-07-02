@@ -10,6 +10,7 @@ import Journey from './components/Journey';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import ShepherEd from './components/ShepherEd';
 import HowIWork from './components/HowIWork';
 import Principles from './components/Principles';
 import Testimonials from './components/Testimonials';
