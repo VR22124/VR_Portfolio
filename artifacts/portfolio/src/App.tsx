@@ -13,6 +13,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import ShepherEd from './components/ShepherEd';
 import HowIWork from './components/HowIWork';
+import EngineeringWithAI from './components/EngineeringWithAI';
 import Principles from './components/Principles';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
@@ -108,10 +109,9 @@ function App() {
       <SEO />
       {loading && <Loader onComplete={() => setLoading(false)} />}
 
-      {/* Particle canvas — shifted right so formation sits at ~60-65% horizontal */}
       <div
         className="fixed inset-0 z-0 pointer-events-none vignette-overlay"
-        style={!isMobile ? { left: '18%', width: '100%' } : undefined}
+        style={!isMobile ? { transform: 'translateX(18%)', width: '100%' } : undefined}
         aria-hidden="true"
       >
         {!isMobile ? (
@@ -125,7 +125,7 @@ function App() {
         ) : null}
       </div>
 
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full overflow-x-clip">
         <Nav />
         <main>
           <Hero started={!loading} />
@@ -135,6 +135,7 @@ function App() {
           <ShepherEd />
           <Projects />
           <HowIWork />
+          <EngineeringWithAI />
           <Principles />
           <Testimonials />
         </main>

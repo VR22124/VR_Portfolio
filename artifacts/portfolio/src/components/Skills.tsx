@@ -1,17 +1,43 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import * as SiIcons from 'react-icons/si';
-import { VscAzure, VscAzureDevops } from 'react-icons/vsc';
+import { VscAzure, VscAzureDevops, VscVscode } from 'react-icons/vsc';
+import { TbLetterK } from 'react-icons/tb';
+import { FaInfinity, FaBug, FaVial, FaSpaceShuttle, FaHeart, FaMoon } from 'react-icons/fa';
 import data from '../data.json';
+
+const AntigravityIcon = ({ size = 20 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M5 20L12 5L19 20" />
+  </svg>
+);
 
 const IconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   ...(SiIcons as Record<string, React.ComponentType<{ size?: number }>>),
   VscAzure,
-  VscAzureDevops
+  VscAzureDevops,
+  VscVscode,
+  FaInfinity,
+  FaBug,
+  FaVial,
+  FaSpaceShuttle,
+  FaHeart,
+  FaMoon,
+  TbLetterK,
+  AntigravityIcon
 };
 
 type Skill = (typeof data.skills)[number];
 
-const CATEGORY_ORDER = ['Frontend', 'Language', 'Backend', 'API', 'Database', 'Infra', 'Design'];
+const CATEGORY_ORDER = [
+  'Frontend',
+  'Backend',
+  'Database',
+  'Cloud & DevOps',
+  'Testing',
+  'Development Environment'
+  // 'Design & Ideation'
+];
+
 const sorted = [...data.skills].sort(
   (a, b) => CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category)
 );
@@ -29,7 +55,7 @@ function CountUpNumber({
   target: number;
   play: boolean;
   glow: boolean;
-  reroll: number; // increments to trigger a re-roll
+  reroll: number;
   isMobile: boolean;
 }) {
   const [value, setValue] = useState(0);
@@ -100,13 +126,13 @@ function SkillRow({
   index: number;
   isRevealed: boolean;
   isHovered: boolean;
-  isFiltered: boolean; // true = hidden by filter
+  isFiltered: boolean;
   isMobile: boolean;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }) {
   const Icon = IconMap[skill.icon];
-  const stagger = index * 0.09; // 90ms cascade
+  const stagger = index * 0.09;
 
   const [pingKey, setPingKey] = useState(0);
   const [rerollKey, setRerollKey] = useState(0);
@@ -151,7 +177,6 @@ function SkillRow({
         transition: 'max-height 0.6s cubic-bezier(0.7,0,0.3,1), opacity 0.5s ease',
       }}
     >
-      {/* Top rule — draws left-to-right */}
       <div
         aria-hidden="true"
         style={{
@@ -173,7 +198,6 @@ function SkillRow({
           userSelect: 'none',
         }}
       >
-        {/* Icon w/ halo + entrance spin + sonar ping */}
         <span
           aria-hidden="true"
           style={{
@@ -190,7 +214,6 @@ function SkillRow({
             transition: `transform 0.75s cubic-bezier(0.34,1.56,0.64,1) ${stagger + 0.15}s`,
           }}
         >
-          {/* Halo */}
           <span
             aria-hidden="true"
             style={{
@@ -204,7 +227,6 @@ function SkillRow({
               pointerEvents: 'none',
             }}
           />
-          {/* Sonar ping */}
           {pingKey > 0 && (
             <span
               key={pingKey}
@@ -231,11 +253,14 @@ function SkillRow({
           </span>
         </span>
 
-        {/* Skill name */}
         <div
           style={{
             position: 'relative',
             display: 'inline-block',
+            flexShrink: 1,
+            minWidth: 0,
+            whiteSpace: 'normal',
+            wordBreak: 'break-word',
             transformOrigin: 'left center',
             transform: isRevealed
               ? isHovered ? 'translateX(0) scale(1.02)' : 'translateX(0) scale(1)'
@@ -256,7 +281,6 @@ function SkillRow({
           >
             {skill.name}
           </h3>
-          {/* Underline */}
           <span
             aria-hidden="true"
             style={{
@@ -274,10 +298,8 @@ function SkillRow({
           />
         </div>
 
-        {/* Spacer */}
         <div style={{ flex: 1, minWidth: isMobile ? 12 : 24 }} />
 
-        {/* Category + level */}
         <div
           style={{
             display: 'flex',
@@ -298,22 +320,6 @@ function SkillRow({
                 textTransform: 'uppercase',
                 color: tagColor,
                 transition: 'color 0.25s ease',
-              }}
-            >
-              {skill.category}
-            </span>
-          )}
-          {isMobile && (
-            <span
-              style={{
-                fontFamily: 'Menlo, monospace',
-                fontSize: '8px',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'rgba(212,255,79,0.5)',
-                border: '1px solid rgba(212,255,79,0.14)',
-                padding: '2px 6px',
-                borderRadius: 2,
               }}
             >
               {skill.category}
@@ -367,7 +373,7 @@ export default function Skills() {
   const [revealedRows, setRevealedRows] = useState<Set<number>>(new Set());
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const [activeCategory, setActiveCategory] = useState<string>('All');
+  const [activeCategory, setActiveCategory] = useState<string>('Frontend');
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768);
@@ -414,7 +420,7 @@ export default function Skills() {
   const categories = useMemo(() => {
     const set = new Set<string>();
     sorted.forEach((s) => set.add(s.category));
-    return ['All', ...CATEGORY_ORDER.filter((c) => set.has(c))];
+    return CATEGORY_ORDER.filter((c) => set.has(c));
   }, []);
 
   return (
@@ -476,7 +482,7 @@ export default function Skills() {
               textAlign: isMobile ? 'left' : 'right',
             }}
           >
-            {['Picked up over six years of', 'solving real problems in production.'].map((line, i) => (
+            {['The tools and environments', 'powering my development workflows.'].map((line, i) => (
               <span
                 key={line}
                 style={{
@@ -542,7 +548,7 @@ export default function Skills() {
       {/* Rows */}
       <div>
         {sorted.map((skill, i) => {
-          const isFiltered = activeCategory !== 'All' && skill.category !== activeCategory;
+          const isFiltered = skill.category !== activeCategory;
           return (
             <div key={skill.name} ref={(el) => { rowRefs.current[i] = el; }}>
               <SkillRow

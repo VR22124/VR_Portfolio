@@ -96,7 +96,7 @@
     {
       "company": "CodeSizzler",
       "role": "SDE Intern",
-      "period": "Apr 2024 \u2014 Nov 2024",
+      "period": "Apr 2024 — Nov 2024",
       "description": "Served as a core developer, progressing from frontend feature implementation to taking ownership of end-to-end cloud infrastructure and DevOps workflows.",
       "highlights": [
         "Built responsive frontend features for the HackersDock LMS",
@@ -109,87 +109,177 @@
   "skills": [
     {
       "name": "React",
-      "icon": "SiReact",
+      "level": 95,
       "category": "Frontend",
-      "level": 90
+      "icon": "SiReact"
     },
     {
       "name": "Next.js",
-      "icon": "SiNextdotjs",
+      "level": 90,
       "category": "Frontend",
-      "level": 88
+      "icon": "SiNextdotjs"
+    },
+    {
+      "name": "Vite",
+      "level": 85,
+      "category": "Frontend",
+      "icon": "SiVite"
+    },
+    {
+      "name": "TypeScript",
+      "level": 92,
+      "category": "Frontend",
+      "icon": "SiTypescript"
     },
     {
       "name": "Tailwind CSS",
-      "icon": "SiTailwindcss",
+      "level": 95,
       "category": "Frontend",
-      "level": 90
+      "icon": "SiTailwindcss"
+    },
+    {
+      "name": "Framer Motion",
+      "level": 88,
+      "category": "Frontend",
+      "icon": "SiFramer"
+    },
+    {
+      "name": "TanStack Query",
+      "level": 85,
+      "category": "Frontend",
+      "icon": "SiReactquery"
     },
     {
       "name": "Node.js",
-      "icon": "SiNodedotjs",
+      "level": 88,
       "category": "Backend",
-      "level": 88
+      "icon": "SiNodedotjs"
     },
     {
       "name": "Express.js",
-      "icon": "SiExpress",
+      "level": 85,
       "category": "Backend",
-      "level": 86
+      "icon": "SiExpress"
+    },
+    {
+      "name": "Prisma",
+      "level": 90,
+      "category": "Backend",
+      "icon": "SiPrisma"
+    },
+    {
+      "name": "Zod",
+      "level": 88,
+      "category": "Backend",
+      "icon": "SiZod"
+    },
+    {
+      "name": "JWT",
+      "level": 90,
+      "category": "Backend",
+      "icon": "SiJsonwebtokens"
     },
     {
       "name": "MongoDB",
-      "icon": "SiMongodb",
+      "level": 85,
       "category": "Database",
-      "level": 85
+      "icon": "SiMongodb"
     },
     {
-      "name": "Java",
-      "icon": "SiOpenjdk",
-      "category": "Language",
-      "level": 82
-    },
-    {
-      "name": "C++",
-      "icon": "SiCplusplus",
-      "category": "Language",
-      "level": 82
-    },
-    {
-      "name": "SQL",
-      "icon": "SiMysql",
+      "name": "PostgreSQL",
+      "level": 90,
       "category": "Database",
-      "level": 80
+      "icon": "SiPostgresql"
+    },
+    {
+      "name": "Supabase",
+      "level": 88,
+      "category": "Database",
+      "icon": "SiSupabase"
+    },
+    {
+      "name": "Neon",
+      "level": 80,
+      "category": "Database",
+      "icon": "SiNeon"
+    },
+    {
+      "name": "Redis",
+      "level": 82,
+      "category": "Database",
+      "icon": "SiRedis"
     },
     {
       "name": "Azure",
-      "icon": "VscAzure",
-      "category": "Cloud",
-      "level": 82
+      "level": 85,
+      "category": "Cloud & DevOps",
+      "icon": "VscAzure"
     },
     {
       "name": "Azure DevOps",
-      "icon": "VscAzureDevops",
-      "category": "DevOps",
-      "level": 82
+      "level": 82,
+      "category": "Cloud & DevOps",
+      "icon": "VscAzureDevops"
     },
     {
       "name": "GitHub",
-      "icon": "SiGithub",
-      "category": "Tools",
-      "level": 90
+      "level": 95,
+      "category": "Cloud & DevOps",
+      "icon": "SiGithub"
     },
     {
-      "name": "n8n",
-      "icon": "SiN8N",
-      "category": "Automation",
-      "level": 85
+      "name": "CI/CD",
+      "level": 88,
+      "category": "Cloud & DevOps",
+      "icon": "FaInfinity"
     },
     {
-      "name": "Gemini AI",
-      "icon": "SiGooglegemini",
-      "category": "AI",
-      "level": 82
+      "name": "Vercel",
+      "level": 92,
+      "category": "Cloud & DevOps",
+      "icon": "SiVercel"
+    },
+    {
+      "name": "Playwright",
+      "level": 85,
+      "category": "Testing",
+      "icon": "FaBug"
+    },
+    {
+      "name": "Vitest",
+      "level": 88,
+      "category": "Testing",
+      "icon": "SiVitest"
+    },
+    {
+      "name": "Supertest",
+      "level": 82,
+      "category": "Testing",
+      "icon": "FaVial"
+    },
+    {
+      "name": "Postman",
+      "level": 90,
+      "category": "Testing",
+      "icon": "SiPostman"
+    },
+    {
+      "name": "Visual Studio Code",
+      "level": 98,
+      "category": "Development Environment",
+      "icon": "VscVscode"
+    },
+    {
+      "name": "Antigravity",
+      "level": 100,
+      "category": "Development Environment",
+      "icon": "AntigravityIcon"
+    },
+    {
+      "name": "OpenAI Codex",
+      "level": 95,
+      "category": "Development Environment",
+      "icon": "SiOpenaigym"
     }
   ],
   "projects": [
@@ -225,7 +315,6 @@
       "link": "https://id-preview--511ee00f-5198-421a-8529-68565ba6f5f5.lovable.app",
       "featured": true
     },
-
     {
       "id": "proj-03",
       "title": "Email-Based Calendar Automation",
@@ -318,5 +407,87 @@
         "icon": "SiLinkedin"
       }
     ]
-  }
+  },
+  "engineeringWithAI": {
+    "title": "Engineering with AI.",
+    "heroHeading": "Agentic\nOrchestration",
+    "heroStatement": "AI accelerates implementation, but engineering still requires judgment. I don't just write code; I orchestrate swarms of autonomous agents to execute complex architectures at lightspeed.",
+    "heroSubStatement": "I deploy specialized sub-agents to generate, validate, and iterate through codebases—but every architectural decision, security protocol, and production standard remains my absolute responsibility.",
+    "practices": [
+      {
+        "id": "01",
+        "tag": "Strategy",
+        "title": "Multi-Agent Orchestration",
+        "content": "I break monolithic problems into micro-tasks and deploy specialized sub-agents to solve them in parallel. Instead of prompting for entire apps, I conduct an orchestra of intelligent executors."
+      },
+      {
+        "id": "02",
+        "tag": "Execution",
+        "title": "Autonomous Iteration",
+        "content": "Agents generate the foundation, sub-agents review the diffs. I use recursive LLM loops to refine components until they match exact system specifications and API contracts."
+      },
+      {
+        "id": "03",
+        "tag": "Validation",
+        "title": "Zero-Trust Validation",
+        "content": "Agentic output is never trusted blindly. Every autonomous action is strictly validated against context boundaries, security protocols, and strict type definitions before hitting the main branch."
+      },
+      {
+        "id": "04",
+        "tag": "Quality",
+        "title": "Adversarial Testing Matrix",
+        "content": "I leverage adversarial agents to aggressively hunt for edge cases and generate robust test suites. Code only merges when it survives autonomous integration and end-to-end stress testing."
+      },
+      {
+        "id": "05",
+        "tag": "Production",
+        "title": "Owning the Artifact",
+        "content": "Agents write code; engineers build systems. Scalability, deep observability, and clean architecture are what make software production-ready. I take ultimate responsibility for the final deployed artifact."
+      }
+    ]
+  },
+  "_commented_skills": [
+    {
+      "name": "ChatGPT",
+      "level": 95,
+      "category": "Design & Ideation",
+      "icon": "SiOpenaigym"
+    },
+    {
+      "name": "Claude",
+      "level": 90,
+      "category": "Design & Ideation",
+      "icon": "SiClaude"
+    },
+    {
+      "name": "Gemini",
+      "level": 85,
+      "category": "Design & Ideation",
+      "icon": "SiGooglegemini"
+    },
+    {
+      "name": "Lovable",
+      "level": 80,
+      "category": "Design & Ideation",
+      "icon": "FaHeart"
+    },
+    {
+      "name": "Replit",
+      "level": 82,
+      "category": "Design & Ideation",
+      "icon": "SiReplit"
+    },
+    {
+      "name": "Kimi",
+      "level": 75,
+      "category": "Design & Ideation",
+      "icon": "TbLetterK"
+    },
+    {
+      "name": "n8n",
+      "level": 85,
+      "category": "Design & Ideation",
+      "icon": "SiN8N"
+    }
+  ]
 }
