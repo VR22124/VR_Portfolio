@@ -115,8 +115,10 @@ function App() {
           <Journey />
           <Experience />
           <Skills />
+          <ShepherEd />
           <Projects />
           <HowIWork />
+
           <Principles />
           <Testimonials />
         </main>
