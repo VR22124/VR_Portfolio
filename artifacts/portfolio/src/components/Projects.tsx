@@ -86,14 +86,16 @@ function ProjectRow({
         className="font-display"
         style={{
           fontWeight: 300,
-          fontSize: isMobile ? 'clamp(44px, 12vw, 72px)' : 'clamp(56px, 8vw, 128px)',
+          fontSize: isMobile ? 'clamp(38px, 10vw, 64px)' : 'clamp(48px, 6.5vw, 112px)',
           letterSpacing: '-0.04em',
           lineHeight: 0.95,
           margin: '0 0 1.75rem',
           color: isHovered ? ACCENT : '#f5f5f2',
           transition: 'color 0.5s ease, letter-spacing 0.5s ease',
           cursor: 'pointer',
-          whiteSpace: 'nowrap',
+          overflowWrap: 'anywhere',
+          wordBreak: 'break-word',
+          maxWidth: '100%',
         }}
       >
         {project.title}
@@ -379,7 +381,7 @@ export default function Projects() {
       id="projects"
       ref={sectionRef}
       className="container-layout section-padding"
-      style={{ background: 'transparent', position: 'relative' }}
+      style={{ background: 'transparent', position: 'relative', overflowX: 'hidden' }}
     >
       {/* Header */}
       <header
