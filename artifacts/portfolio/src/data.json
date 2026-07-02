@@ -1,199 +1,289 @@
 {
   "meta": {
-    "name": "Vishnu Rohith",
+    "name": "Vishnu Rohith B",
     "role": "Full-Stack Developer",
-    "tagline": "I build systems that scale quietly.",
+    "tagline": "Building scalable web applications and automation solutions.",
     "loadingLabel": "ENTERING"
   },
   "hero": {
-    "eyebrow": "Available for select projects",
-    "headlineLine1": "I build things",
-    "typewriterPhrases": ["that scale.", "that last.", "for real users.", "with purpose.", "to endure."],
-    "subtext": "Full-stack developer specializing in scalable backend architecture and interfaces that don't get in the way.",
-    "ctaPrimary": { "label": "View Work", "target": "#projects" },
-    "ctaSecondary": { "label": "Get in Touch", "target": "#contact" }
+    "eyebrow": "Available for Full-Time Opportunities",
+    "headlineLine1": "I build",
+    "typewriterPhrases": [
+      "scalable applications.",
+      "modern web experiences.",
+      "automation workflows.",
+      "full-stack solutions.",
+      "production-ready software."
+    ],
+    "subtext": "Full-stack developer specializing in MERN Stack, Next.js, cloud deployment, and workflow automation.",
+    "ctaPrimary": {
+      "label": "View Work",
+      "target": "#projects"
+    },
+    "ctaSecondary": {
+      "label": "Get in Touch",
+      "target": "#contact"
+    }
   },
   "stats": [
-    { "value": "6", "suffix": "+", "label": "Years Building" },
-    { "value": "40", "suffix": "+", "label": "Projects Shipped" },
-    { "value": "12", "suffix": "", "label": "Production Systems" },
-    { "value": "3", "suffix": "", "label": "Countries Worked With" }
+    {
+      "value": "1",
+      "suffix": "",
+      "label": "Internship"
+    },
+    {
+      "value": "3",
+      "suffix": "+",
+      "label": "Projects"
+    },
+    {
+      "value": "8",
+      "suffix": "+",
+      "label": "Technologies"
+    },
+    {
+      "value": "100",
+      "suffix": "%",
+      "label": "Learning Mindset"
+    }
   ],
   "journey": [
     {
-      "year": "2019",
-      "title": "First Line of Code",
-      "description": "Started with HTML/CSS, broke things, kept going.",
+      "year": "2022",
+      "title": "Started Programming",
+      "description": "Began learning programming, data structures, and web development.",
       "tag": "Origin"
     },
     {
-      "year": "2020",
-      "title": "First Freelance Client",
-      "description": "Built a booking system for a local business. Got paid. Got hooked.",
-      "tag": "Milestone"
-    },
-    {
-      "year": "2021",
-      "title": "Joined a Startup",
-      "description": "Learned what 'production' actually means under real users.",
+      "year": "2023",
+      "title": "Built First Full-Stack Projects",
+      "description": "Started developing complete web applications using the MERN stack.",
       "tag": "Growth"
     },
     {
-      "year": "2023",
-      "title": "Went Full-Stack Architect",
-      "description": "Stopped just writing features. Started designing systems.",
-      "tag": "Pivot"
+      "year": "2024",
+      "title": "SDE Internship",
+      "description": "Worked at CodeSizzler contributing to HackersDock and cloud deployment workflows.",
+      "tag": "Experience"
     },
     {
       "year": "2025",
-      "title": "Independent Practice",
-      "description": "Now building for a small portfolio of serious clients.",
+      "title": "Advanced Full-Stack Development",
+      "description": "Focused on scalable architectures, automation, AI integrations, and production-ready systems.",
+      "tag": "Growth"
+    },
+    {
+      "year": "2026",
+      "title": "Engineering Graduate",
+      "description": "Graduating with practical experience in full-stack development and cloud technologies.",
       "tag": "Today"
     }
   ],
   "experience": [
     {
-      "company": "Nimbus Systems",
-      "role": "Senior Full-Stack Engineer",
-      "period": "2023 — Present",
-      "description": "Leading backend architecture for a multi-tenant SaaS platform serving 200+ organizations.",
-      "highlights": ["Migrated monolith to modular services", "Cut p95 latency by 60%", "Built internal design system"]
-    },
-    {
-      "company": "Fieldnote Labs",
-      "role": "Full-Stack Developer",
-      "period": "2021 — 2023",
-      "description": "Owned product end-to-end for a field-operations tool used by logistics teams.",
+      "company": "CodeSizzler",
+      "role": "SDE Intern",
+      "period": "Apr 2024 — Nov 2024",
+      "description": "Contributed to HackersDock LMS using React, Node.js, Tailwind CSS, Azure Cloud, and Azure DevOps.",
       "highlights": [
-        "Shipped offline-first sync engine",
-        "Reduced onboarding time by 40%",
-        "Mentored 2 junior engineers"
+        "Developed production-ready features",
+        "Built CI/CD deployment pipelines",
+        "Worked in Agile sprints",
+        "Used Azure Boards and GitHub for collaboration"
       ]
-    },
-    {
-      "company": "Freelance",
-      "role": "Web Developer",
-      "period": "2020 — 2021",
-      "description": "Built websites and small tools for local businesses and startups.",
-      "highlights": ["12 client projects delivered", "100% on-time delivery record"]
     }
   ],
   "skills": [
-    { "name": "React", "icon": "SiReact", "category": "Frontend", "level": 95 },
-    { "name": "TypeScript", "icon": "SiTypescript", "category": "Language", "level": 90 },
-    { "name": "Node.js", "icon": "SiNodedotjs", "category": "Backend", "level": 92 },
-    { "name": "PostgreSQL", "icon": "SiPostgresql", "category": "Database", "level": 85 },
-    { "name": "Python", "icon": "SiPython", "category": "Language", "level": 80 },
-    { "name": "Docker", "icon": "SiDocker", "category": "Infra", "level": 75 },
-    { "name": "AWS", "icon": "SiAmazonaws", "category": "Infra", "level": 78 },
-    { "name": "GraphQL", "icon": "SiGraphql", "category": "API", "level": 82 },
-    { "name": "Tailwind CSS", "icon": "SiTailwindcss", "category": "Frontend", "level": 90 },
-    { "name": "Figma", "icon": "SiFigma", "category": "Design", "level": 70 },
-    { "name": "Redis", "icon": "SiRedis", "category": "Database", "level": 75 },
-    { "name": "Next.js", "icon": "SiNextdotjs", "category": "Frontend", "level": 88 }
+    {
+      "name": "React",
+      "icon": "SiReact",
+      "category": "Frontend",
+      "level": 90
+    },
+    {
+      "name": "Next.js",
+      "icon": "SiNextdotjs",
+      "category": "Frontend",
+      "level": 88
+    },
+    {
+      "name": "Tailwind CSS",
+      "icon": "SiTailwindcss",
+      "category": "Frontend",
+      "level": 90
+    },
+    {
+      "name": "Node.js",
+      "icon": "SiNodedotjs",
+      "category": "Backend",
+      "level": 88
+    },
+    {
+      "name": "Express.js",
+      "icon": "SiExpress",
+      "category": "Backend",
+      "level": 86
+    },
+    {
+      "name": "MongoDB",
+      "icon": "SiMongodb",
+      "category": "Database",
+      "level": 85
+    },
+    {
+      "name": "Java",
+      "icon": "SiOpenjdk",
+      "category": "Language",
+      "level": 82
+    },
+    {
+      "name": "C++",
+      "icon": "SiCplusplus",
+      "category": "Language",
+      "level": 82
+    },
+    {
+      "name": "SQL",
+      "icon": "SiMysql",
+      "category": "Database",
+      "level": 80
+    },
+    {
+      "name": "Azure",
+      "icon": "SiMicrosoftazure",
+      "category": "Cloud",
+      "level": 82
+    },
+    {
+      "name": "Azure DevOps",
+      "icon": "SiAzuredevops",
+      "category": "DevOps",
+      "level": 82
+    },
+    {
+      "name": "GitHub",
+      "icon": "SiGithub",
+      "category": "Tools",
+      "level": 90
+    },
+    {
+      "name": "n8n",
+      "icon": "SiN8N",
+      "category": "Automation",
+      "level": 85
+    },
+    {
+      "name": "Gemini AI",
+      "icon": "SiGooglegemini",
+      "category": "AI",
+      "level": 82
+    },
+    {
+      "name": "Pinecone",
+      "icon": "SiPinecone",
+      "category": "Database",
+      "level": 75
+    }
   ],
   "projects": [
     {
       "id": "proj-01",
-      "title": "Ledger",
-      "subtitle": "Real-time financial reconciliation platform",
-      "description": "A multi-tenant system that reconciles transactions across 12 payment providers in real time, replacing a 6-hour nightly batch job.",
-      "tags": ["React", "Node.js", "PostgreSQL", "Redis"],
+      "title": "EcoVate",
+      "subtitle": "Full-Stack MERN Application",
+      "description": "Built a complete MERN stack application featuring authentication, form handling, deployment, and end-to-end ownership from development to production.",
+      "tags": ["React", "Node.js", "MongoDB", "Express"],
       "year": "2025",
-      "link": "#",
+      "link": "YOUR_LIVE_PORTFOLIO",
       "featured": true
     },
     {
       "id": "proj-02",
-      "title": "Fieldnote",
-      "subtitle": "Offline-first field operations tool",
-      "description": "Lets logistics teams log inspections without signal and sync automatically when back online. Used daily by 800+ field agents.",
-      "tags": ["React Native", "GraphQL", "SQLite"],
-      "year": "2023",
-      "link": "#",
+      "title": "Personal Portfolio",
+      "subtitle": "Responsive Next.js Portfolio",
+      "description": "Developed a responsive portfolio website using Next.js and Tailwind CSS with dark mode and modern UI animations.",
+      "tags": ["Next.js", "Tailwind CSS"],
+      "year": "2025",
+      "link": "YOUR_LIVE_PORTFOLIO",
       "featured": true
     },
     {
       "id": "proj-03",
-      "title": "Arc",
-      "subtitle": "Internal design system & component library",
-      "description": "A token-driven design system adopted across 5 product teams, cutting new-feature build time by a third.",
-      "tags": ["TypeScript", "Storybook", "Figma"],
-      "year": "2024",
-      "link": "#",
-      "featured": false
-    },
-    {
-      "id": "proj-04",
-      "title": "Pulse",
-      "subtitle": "Observability dashboard for microservices",
-      "description": "Self-hosted alternative to Datadog for a 30-service architecture — built for a fifth of the cost.",
-      "tags": ["Next.js", "Python", "Docker"],
-      "year": "2024",
-      "link": "#",
-      "featured": false
+      "title": "Email-Based Calendar Automation",
+      "subtitle": "AI Workflow Automation",
+      "description": "Created an intelligent workflow using n8n and Gemini AI that extracts event details from emails and automatically creates Google Calendar events.",
+      "tags": ["n8n", "Gemini AI", "Google Calendar API"],
+      "year": "2025",
+      "link": "YOUR_GITHUB",
+      "featured": true
     }
   ],
   "howIWork": [
     {
       "step": "01",
-      "title": "Understand the real problem",
-      "description": "Most requests aren't the actual problem. I ask until we find the one worth solving."
+      "title": "Understand the problem",
+      "description": "Focus on solving real user problems before writing code."
     },
     {
       "step": "02",
-      "title": "Design the system, not the screen",
-      "description": "Interfaces are the last 10%. The architecture underneath is what determines if it scales."
+      "title": "Build scalable solutions",
+      "description": "Create maintainable applications using modern technologies and clean architecture."
     },
     {
       "step": "03",
-      "title": "Ship small, ship often",
-      "description": "Working software in front of real users beats a perfect plan on a whiteboard."
+      "title": "Deploy with confidence",
+      "description": "Leverage cloud platforms, CI/CD pipelines, and automation for reliable deployments."
     },
     {
       "step": "04",
-      "title": "Leave it better documented",
-      "description": "Whoever inherits this code — including future me — should never have to guess why."
+      "title": "Keep learning",
+      "description": "Continuously improve by exploring new technologies and best engineering practices."
     }
   ],
   "principles": [
     {
-      "title": "Simplicity is a feature",
-      "description": "Every dependency, abstraction, and clever trick is a future liability. I default to boring technology."
+      "title": "Keep learning",
+      "description": "Technology evolves constantly, and so should developers."
     },
     {
-      "title": "Slow is smooth, smooth is fast",
-      "description": "Rushing architecture decisions costs 10x more time later. I take the time upfront."
+      "title": "Build with purpose",
+      "description": "Every feature should solve a meaningful problem."
     },
     {
-      "title": "Code is read more than written",
-      "description": "I optimize for the next person reading this — who is usually me, six months from now."
+      "title": "Write maintainable code",
+      "description": "Readable, scalable code outlives clever shortcuts."
     },
     {
-      "title": "Defaults matter",
-      "description": "The right default setting prevents more bugs than the cleverest error handling."
+      "title": "Automation saves time",
+      "description": "If something is repetitive, automate it."
     }
   ],
   "testimonials": [
     {
-      "quote": "Rebuilt our core data pipeline in three weeks. It hadn't been touched in two years because everyone was scared of it.",
-      "author": "Priya N.",
-      "role": "CTO, Nimbus Systems"
+      "quote": "I highly recommend Vishnu Rohith for his exceptional frontend development skills. During his time at CodeSizzler, Vishnu played a pivotal role in the development of HackersDock products. He impressed me with his proficiency in C++, Java, and the MERN stack. His ability to excel across these technologies makes him a valuable asset to any team.",
+      "author": "Jayasurya S M",
+      "role": "AI Engineer & Data Strategist, PRUDENT GLOBALTECH SOLUTIONS"
     },
     {
-      "quote": "The kind of engineer who tells you the feature is a bad idea before you waste a sprint on it.",
-      "author": "Marcus T.",
-      "role": "Founder, Fieldnote Labs"
+      "quote": "Vishnu Rohith is an exceptionally talented and dedicated full-stack developer with strong proficiency in both frontend and backend development. He possesses excellent problem-solving skills, a passion for continuous learning, and is a dependable team player who consistently contributes positively. I highly recommend him for any opportunity that demands a skilled and self-driven software developer.",
+      "author": "Dr. Kirthika Natarajan",
+      "role": "Assistant Professor, Department of ECE, Sri Krishna College of Technology"
     }
   ],
   "contact": {
-    "headline": "Let's build something that lasts.",
-    "subtext": "Currently taking on a small number of new projects per quarter. If the problem is interesting, I'm listening.",
-    "email": "hello@alexrivera.dev",
+    "headline": "Let's build something impactful.",
+    "subtext": "Open to full-time software engineering opportunities, collaborations, and innovative projects.",
+    "email": "b.vishnurohith@gmail.com",
     "socials": [
-      { "label": "GitHub", "url": "https://github.com", "icon": "SiGithub" },
-      { "label": "LinkedIn", "url": "https://linkedin.com", "icon": "SiLinkedin" },
-      { "label": "Twitter", "url": "https://twitter.com", "icon": "SiX" }
+      {
+        "label": "GitHub",
+        "url": "YOUR_GITHUB",
+        "icon": "SiGithub"
+      },
+      {
+        "label": "LinkedIn",
+        "url": "YOUR_LINKEDIN",
+        "icon": "SiLinkedin"
+      }
     ]
   }
 }
