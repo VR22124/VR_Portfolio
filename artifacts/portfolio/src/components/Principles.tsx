@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import data from '../data.json';
 
-const ACCENT_WORDS = ['Simplicity', 'smooth', 'read', 'Defaults'];
+const ACCENT_WORDS = ['Think', 'Architecture', 'Modular', 'Why', 'Last'];
 
 const HEADER_WORDS = ['What', 'I', 'believe', '.'];
 

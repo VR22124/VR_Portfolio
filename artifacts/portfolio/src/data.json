@@ -270,20 +270,24 @@
   ],
   "principles": [
     {
-      "title": "Keep learning",
-      "description": "Technology evolves constantly, and so should developers."
+      "title": "Think Before You Build",
+      "description": "Every decision starts with understanding the problem."
     },
     {
-      "title": "Build with purpose",
-      "description": "Every feature should solve a meaningful problem."
+      "title": "Architecture Matters",
+      "description": "Strong foundations make future development easier."
     },
     {
-      "title": "Write maintainable code",
-      "description": "Readable, scalable code outlives clever shortcuts."
+      "title": "Keep It Modular",
+      "description": "Independent systems are easier to scale and maintain."
     },
     {
-      "title": "Automation saves time",
-      "description": "If something is repetitive, automate it."
+      "title": "Document the Why",
+      "description": "Good documentation preserves decisions, not just code."
+    },
+    {
+      "title": "Build to Last",
+      "description": "Create robust systems that can evolve and scale."
     }
   ],
   "testimonials": [
