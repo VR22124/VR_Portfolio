@@ -190,12 +190,6 @@
       "icon": "SiGooglegemini",
       "category": "AI",
       "level": 82
-    },
-    {
-      "name": "Pinecone",
-      "icon": "SiPinecone",
-      "category": "Database",
-      "level": 75
     }
   ],
   "projects": [
