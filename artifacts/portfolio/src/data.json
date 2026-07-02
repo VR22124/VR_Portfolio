@@ -7,23 +7,40 @@
   },
   "hero": {
     "eyebrow": "Available for Full-Time Opportunities",
-    "headlineLine1": "I build",
-    "typewriterPhrases": [
-      "scalable applications.",
-      "modern web experiences.",
-      "automation workflows.",
-      "full-stack solutions.",
-      "production-ready software."
-    ],
-    "subtext": "Full-stack developer specializing in MERN Stack, Next.js, cloud deployment, and workflow automation.",
+    "name": {
+      "first": "Vishnu",
+      "accent": "Rohith",
+      "last": "B"
+    },
+    "role": "Full-Stack Engineer",
+    "location": "Bangalore, India",
+    "tagline": {
+      "prefix": "I build systems that think, scale, and ",
+      "accent": "endure",
+      "suffix": "."
+    },
     "ctaPrimary": {
-      "label": "View Work",
+      "label": "View My Work",
       "target": "#projects"
     },
     "ctaSecondary": {
-      "label": "Get in Touch",
-      "target": "#contact"
-    }
+      "label": "Download CV",
+      "target": "/cv.pdf"
+    },
+    "socials": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://linkedin.com"
+      },
+      {
+        "label": "Twitter",
+        "href": "https://twitter.com"
+      }
+    ]
   },
   "stats": [
     {
@@ -83,7 +100,7 @@
     {
       "company": "CodeSizzler",
       "role": "SDE Intern",
-      "period": "Apr 2024 — Nov 2024",
+      "period": "Apr 2024 \u2014 Nov 2024",
       "description": "Contributed to HackersDock LMS using React, Node.js, Tailwind CSS, Azure Cloud, and Azure DevOps.",
       "highlights": [
         "Developed production-ready features",
@@ -191,7 +208,12 @@
       "title": "EcoVate",
       "subtitle": "Full-Stack MERN Application",
       "description": "Built a complete MERN stack application featuring authentication, form handling, deployment, and end-to-end ownership from development to production.",
-      "tags": ["React", "Node.js", "MongoDB", "Express"],
+      "tags": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Express"
+      ],
       "year": "2025",
       "link": "YOUR_LIVE_PORTFOLIO",
       "featured": true
@@ -201,7 +223,10 @@
       "title": "Personal Portfolio",
       "subtitle": "Responsive Next.js Portfolio",
       "description": "Developed a responsive portfolio website using Next.js and Tailwind CSS with dark mode and modern UI animations.",
-      "tags": ["Next.js", "Tailwind CSS"],
+      "tags": [
+        "Next.js",
+        "Tailwind CSS"
+      ],
       "year": "2025",
       "link": "YOUR_LIVE_PORTFOLIO",
       "featured": true
@@ -211,7 +236,11 @@
       "title": "Email-Based Calendar Automation",
       "subtitle": "AI Workflow Automation",
       "description": "Created an intelligent workflow using n8n and Gemini AI that extracts event details from emails and automatically creates Google Calendar events.",
-      "tags": ["n8n", "Gemini AI", "Google Calendar API"],
+      "tags": [
+        "n8n",
+        "Gemini AI",
+        "Google Calendar API"
+      ],
       "year": "2025",
       "link": "YOUR_GITHUB",
       "featured": true
