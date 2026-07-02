@@ -31,6 +31,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
   const chevronRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLSpanElement>(null);
+  const hasGlitchedRef = useRef(false);
   const [play, setPlay] = useState(false);
   const [entranceDone, setEntranceDone] = useState(false);
   const [startTaglineTyper, setStartTaglineTyper] = useState(false);
@@ -73,7 +74,8 @@ export default function Hero({ started = false }: { started?: boolean }) {
   }, [entranceDone]);
 
   useEffect(() => {
-    if (!taglineDone || !nameRef.current) return;
+    if (!taglineDone || !nameRef.current || hasGlitchedRef.current) return;
+    hasGlitchedRef.current = true;
     const el = nameRef.current;
     const t = window.setTimeout(() => el.classList.add('is-glitching'), 300);
     return () => window.clearTimeout(t);
