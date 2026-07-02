@@ -5,11 +5,44 @@ import data from '../data.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
+function useTypewriter(text: string, start: boolean, speed = 55) {
+  const [out, setOut] = useState('');
+  const [done, setDone] = useState(false);
+  useEffect(() => {
+    if (!start) return;
+    let i = 0;
+    setOut('');
+    setDone(false);
+    const id = window.setInterval(() => {
+      i += 1;
+      setOut(text.slice(0, i));
+      if (i >= text.length) {
+        window.clearInterval(id);
+        setDone(true);
+      }
+    }, speed);
+    return () => window.clearInterval(id);
+  }, [text, start, speed]);
+  return { out, done };
+}
+
 export default function Hero({ started = false }: { started?: boolean }) {
   const sectionRef = useRef<HTMLElement>(null);
   const chevronRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const nameRef = useRef<HTMLSpanElement>(null);
   const [play, setPlay] = useState(false);
+  const [entranceDone, setEntranceDone] = useState(false);
+  const [startRoleTyper, setStartRoleTyper] = useState(false);
+  const [startTaglineTyper, setStartTaglineTyper] = useState(false);
+
+  const { name, role, location, tagline, ctaPrimary, ctaSecondary, socials } = data.hero as any;
+
+  const roleText = 'Full Stack Developer';
+  const taglineFull = `${tagline.prefix}${tagline.accent}${tagline.suffix}`;
+
+  const { out: roleOut, done: roleDone } = useTypewriter(roleText, startRoleTyper, 60);
+  const { out: taglineOut, done: taglineDone } = useTypewriter(taglineFull, startTaglineTyper, 28);
 
   // Trigger entrance shortly after mount (or when `started` flips true)
   useEffect(() => {
@@ -17,7 +50,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
     return () => clearTimeout(t);
   }, [started]);
 
-  // Staggered entrance for hero content
+  // Staggered entrance
   useEffect(() => {
     if (!play || !contentRef.current) return;
     const els = contentRef.current.querySelectorAll<HTMLElement>('[data-hero-anim]');
@@ -30,9 +63,30 @@ export default function Hero({ started = false }: { started?: boolean }) {
         duration: 0.9,
         ease: 'expo.out',
         stagger: 0.09,
+        onComplete: () => setEntranceDone(true),
       }
     );
   }, [play]);
+
+  // Sequence: entrance → role typer → tagline typer → glitch
+  useEffect(() => {
+    if (!entranceDone) return;
+    const t = window.setTimeout(() => setStartRoleTyper(true), 250);
+    return () => window.clearTimeout(t);
+  }, [entranceDone]);
+
+  useEffect(() => {
+    if (!roleDone) return;
+    const t = window.setTimeout(() => setStartTaglineTyper(true), 350);
+    return () => window.clearTimeout(t);
+  }, [roleDone]);
+
+  useEffect(() => {
+    if (!taglineDone || !nameRef.current) return;
+    const el = nameRef.current;
+    const t = window.setTimeout(() => el.classList.add('is-glitching'), 450);
+    return () => window.clearTimeout(t);
+  }, [taglineDone]);
 
   // Chevron scroll fade
   useEffect(() => {
@@ -49,8 +103,6 @@ export default function Hero({ started = false }: { started?: boolean }) {
     });
     return () => trigger.kill();
   }, []);
-
-  const { name, role, location, tagline, ctaPrimary, ctaSecondary, socials } = data.hero as any;
 
   return (
     <section
@@ -77,7 +129,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
             </span>
           </div>
 
-          {/* Name — single line, uppercase, glitch (red/black split) */}
+          {/* Name */}
           <h1
             data-hero-anim
             className="font-display font-bold uppercase tracking-[-0.02em] leading-[0.95] text-[#f5f5f2] whitespace-nowrap"
@@ -87,6 +139,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
             }}
           >
             <span
+              ref={nameRef}
               className="glitch"
               data-text={`${name.first} ${name.accent} ${name.last}`.toUpperCase()}
             >
@@ -94,15 +147,32 @@ export default function Hero({ started = false }: { started?: boolean }) {
             </span>
           </h1>
 
-          {/* Tagline */}
+          {/* Typewriter role */}
+          <div
+            data-hero-anim
+            className="mt-6 text-[#f5f5f2] font-display font-medium tracking-[0.02em]"
+            style={{ opacity: 0, fontSize: 'clamp(1.1rem, 2.2vw, 1.5rem)', minHeight: '1.6em' }}
+          >
+            <span
+              className={`${startRoleTyper && !roleDone ? 'tw-caret' : ''}`}
+              aria-label={roleText}
+            >
+              {roleOut}
+            </span>
+          </div>
+
+          {/* Typewriter tagline */}
           <p
             data-hero-anim
-            className="mt-8 max-w-[520px] text-lg md:text-xl text-[#8c8c94] leading-relaxed"
-            style={{ opacity: 0 }}
+            className="mt-5 max-w-[520px] text-lg md:text-xl text-[#8c8c94] leading-relaxed"
+            style={{ opacity: 0, minHeight: '3em' }}
           >
-            {tagline.prefix}
-            <span className="text-[#f5f5f2]">{tagline.accent}</span>
-            {tagline.suffix}
+            <span
+              className={`${startTaglineTyper && !taglineDone ? 'tw-caret' : ''}`}
+              aria-label={taglineFull}
+            >
+              {taglineOut}
+            </span>
           </p>
 
           {/* CTAs */}
