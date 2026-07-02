@@ -221,16 +221,21 @@
     {
       "id": "proj-02",
       "title": "Personal Portfolio",
-      "subtitle": "Responsive Next.js Portfolio",
-      "description": "Developed a responsive portfolio website using Next.js and Tailwind CSS with dark mode and modern UI animations.",
+      "subtitle": "Cinematic React Portfolio",
+      "description": "Designed and built a cinematic dark-themed portfolio with a WebGL particle field, GSAP scroll storytelling, and editorial typography. Features include a Kinetic Precision loader, one-shot RGB-split glitch on the hero name, a kinetic Building ShepherEd section, animated Toolkit skills, an asymmetric Selected Work flow, and a framed Verdict testimonials module.",
       "tags": [
-        "Next.js",
-        "Tailwind CSS"
+        "React 19",
+        "Vite",
+        "TypeScript",
+        "Tailwind v4",
+        "GSAP",
+        "React Three Fiber"
       ],
-      "year": "2025",
-      "link": "YOUR_LIVE_PORTFOLIO",
+      "year": "2026",
+      "link": "https://id-preview--511ee00f-5198-421a-8529-68565ba6f5f5.lovable.app",
       "featured": true
     },
+
     {
       "id": "proj-03",
       "title": "Email-Based Calendar Automation",
