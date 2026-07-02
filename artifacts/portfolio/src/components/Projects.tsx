@@ -381,7 +381,7 @@ export default function Projects() {
       id="projects"
       ref={sectionRef}
       className="container-layout section-padding"
-      style={{ background: 'transparent', position: 'relative' }}
+      style={{ background: 'transparent', position: 'relative', overflowX: 'hidden' }}
     >
       {/* Header */}
       <header
