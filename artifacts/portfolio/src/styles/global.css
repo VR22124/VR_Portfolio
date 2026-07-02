@@ -327,34 +327,59 @@ h1, h2, h3, h4, h5, h6, .font-display {
 }
 .glitch::before {
   color: var(--glitch-red);
-  transform: translate(2px, 0);
-  clip-path: inset(0 0 0 0);
+  transform: translate(0, 0);
+  clip-path: inset(0 0 100% 0);
   mix-blend-mode: screen;
-  animation: glitchTop 3.6s steps(1) infinite;
   text-shadow: 0 0 1px var(--glitch-red);
 }
 .glitch::after {
   color: var(--glitch-shadow);
-  transform: translate(-2px, 0);
-  clip-path: inset(0 0 0 0);
+  transform: translate(0, 0);
+  clip-path: inset(100% 0 0 0);
   mix-blend-mode: multiply;
-  animation: glitchBottom 3.6s steps(1) infinite;
 }
-@keyframes glitchTop {
-  0%, 92%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0, 0); }
-  93%           { clip-path: inset(0 0 78% 0);  transform: translate(3px, -1px); }
-  94%           { clip-path: inset(20% 0 55% 0); transform: translate(-2px, 1px); }
-  95%           { clip-path: inset(40% 0 30% 0); transform: translate(2px, 0); }
-  96%           { clip-path: inset(10% 0 65% 0); transform: translate(-3px, -1px); }
-  97%           { clip-path: inset(60% 0 15% 0); transform: translate(2px, 1px); }
-  98%           { clip-path: inset(30% 0 45% 0); transform: translate(-2px, 0); }
+.glitch.is-glitching::before {
+  animation: glitchTopOnce 1.6s steps(1) 1 both;
 }
-@keyframes glitchBottom {
-  0%, 92%, 100% { clip-path: inset(100% 0 0 0); transform: translate(0, 0); }
-  93%           { clip-path: inset(70% 0 12% 0); transform: translate(-3px, 1px); }
-  94%           { clip-path: inset(45% 0 30% 0); transform: translate(2px, -1px); }
-  95%           { clip-path: inset(20% 0 55% 0); transform: translate(-2px, 0); }
-  96%           { clip-path: inset(65% 0 8% 0);  transform: translate(3px, 1px); }
-  97%           { clip-path: inset(15% 0 60% 0); transform: translate(-2px, -1px); }
-  98%           { clip-path: inset(50% 0 25% 0); transform: translate(2px, 0); }
+.glitch.is-glitching::after {
+  animation: glitchBottomOnce 1.6s steps(1) 1 both;
+}
+@keyframes glitchTopOnce {
+  0%   { clip-path: inset(0 0 100% 0); transform: translate(0, 0); }
+  10%  { clip-path: inset(0 0 78% 0);  transform: translate(4px, -1px); }
+  22%  { clip-path: inset(20% 0 55% 0); transform: translate(-3px, 1px); }
+  35%  { clip-path: inset(40% 0 30% 0); transform: translate(3px, 0); }
+  48%  { clip-path: inset(10% 0 65% 0); transform: translate(-4px, -1px); }
+  62%  { clip-path: inset(60% 0 15% 0); transform: translate(3px, 1px); }
+  76%  { clip-path: inset(30% 0 45% 0); transform: translate(-3px, 0); }
+  88%  { clip-path: inset(5% 0 80% 0);  transform: translate(2px, 0); }
+  100% { clip-path: inset(0 0 100% 0); transform: translate(0, 0); }
+}
+@keyframes glitchBottomOnce {
+  0%   { clip-path: inset(100% 0 0 0); transform: translate(0, 0); }
+  10%  { clip-path: inset(70% 0 12% 0); transform: translate(-4px, 1px); }
+  22%  { clip-path: inset(45% 0 30% 0); transform: translate(3px, -1px); }
+  35%  { clip-path: inset(20% 0 55% 0); transform: translate(-3px, 0); }
+  48%  { clip-path: inset(65% 0 8% 0);  transform: translate(4px, 1px); }
+  62%  { clip-path: inset(15% 0 60% 0); transform: translate(-3px, -1px); }
+  76%  { clip-path: inset(50% 0 25% 0); transform: translate(3px, 0); }
+  88%  { clip-path: inset(80% 0 5% 0);  transform: translate(-2px, 0); }
+  100% { clip-path: inset(100% 0 0 0); transform: translate(0, 0); }
+}
+
+/* ─── Typewriter caret ─── */
+.tw-caret::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 0.9em;
+  margin-left: 4px;
+  background: #d4ff4f;
+  vertical-align: -0.05em;
+  animation: twBlink 0.9s steps(1) infinite;
+}
+.tw-caret.tw-done::after { display: none; }
+@keyframes twBlink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
 }
