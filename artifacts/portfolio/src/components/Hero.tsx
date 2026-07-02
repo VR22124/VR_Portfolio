@@ -33,15 +33,12 @@ export default function Hero({ started = false }: { started?: boolean }) {
   const nameRef = useRef<HTMLSpanElement>(null);
   const [play, setPlay] = useState(false);
   const [entranceDone, setEntranceDone] = useState(false);
-  const [startRoleTyper, setStartRoleTyper] = useState(false);
   const [startTaglineTyper, setStartTaglineTyper] = useState(false);
 
   const { name, role, location, tagline, ctaPrimary, ctaSecondary, socials } = data.hero as any;
 
-  const roleText = 'Full Stack Developer';
   const taglineFull = `${tagline.prefix}${tagline.accent}${tagline.suffix}`;
 
-  const { out: roleOut, done: roleDone } = useTypewriter(roleText, startRoleTyper, 60);
   const { out: taglineOut, done: taglineDone } = useTypewriter(taglineFull, startTaglineTyper, 28);
 
   // Trigger entrance shortly after mount (or when `started` flips true)
@@ -68,23 +65,17 @@ export default function Hero({ started = false }: { started?: boolean }) {
     );
   }, [play]);
 
-  // Sequence: entrance → role typer → tagline typer → glitch
+  // Sequence: entrance → tagline typer → glitch
   useEffect(() => {
     if (!entranceDone) return;
-    const t = window.setTimeout(() => setStartRoleTyper(true), 250);
+    const t = window.setTimeout(() => setStartTaglineTyper(true), 400);
     return () => window.clearTimeout(t);
   }, [entranceDone]);
 
   useEffect(() => {
-    if (!roleDone) return;
-    const t = window.setTimeout(() => setStartTaglineTyper(true), 350);
-    return () => window.clearTimeout(t);
-  }, [roleDone]);
-
-  useEffect(() => {
     if (!taglineDone || !nameRef.current) return;
     const el = nameRef.current;
-    const t = window.setTimeout(() => el.classList.add('is-glitching'), 450);
+    const t = window.setTimeout(() => el.classList.add('is-glitching'), 300);
     return () => window.clearTimeout(t);
   }, [taglineDone]);
 
@@ -146,20 +137,6 @@ export default function Hero({ started = false }: { started?: boolean }) {
               {name.first} <span className="text-[#d4ff4f]">{name.accent}</span> {name.last}
             </span>
           </h1>
-
-          {/* Typewriter role */}
-          <div
-            data-hero-anim
-            className="mt-6 text-[#f5f5f2] font-display font-medium tracking-[0.02em]"
-            style={{ opacity: 0, fontSize: 'clamp(1.1rem, 2.2vw, 1.5rem)', minHeight: '1.6em' }}
-          >
-            <span
-              className={`${startRoleTyper && !roleDone ? 'tw-caret' : ''}`}
-              aria-label={roleText}
-            >
-              {roleOut}
-            </span>
-          </div>
 
           {/* Typewriter tagline */}
           <p
