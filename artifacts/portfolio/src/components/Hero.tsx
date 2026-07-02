@@ -33,15 +33,12 @@ export default function Hero({ started = false }: { started?: boolean }) {
   const nameRef = useRef<HTMLSpanElement>(null);
   const [play, setPlay] = useState(false);
   const [entranceDone, setEntranceDone] = useState(false);
-  const [startRoleTyper, setStartRoleTyper] = useState(false);
   const [startTaglineTyper, setStartTaglineTyper] = useState(false);
 
   const { name, role, location, tagline, ctaPrimary, ctaSecondary, socials } = data.hero as any;
 
-  const roleText = 'Full Stack Developer';
   const taglineFull = `${tagline.prefix}${tagline.accent}${tagline.suffix}`;
 
-  const { out: roleOut, done: roleDone } = useTypewriter(roleText, startRoleTyper, 60);
   const { out: taglineOut, done: taglineDone } = useTypewriter(taglineFull, startTaglineTyper, 28);
 
   // Trigger entrance shortly after mount (or when `started` flips true)
