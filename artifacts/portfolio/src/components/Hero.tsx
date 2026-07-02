@@ -65,23 +65,17 @@ export default function Hero({ started = false }: { started?: boolean }) {
     );
   }, [play]);
 
-  // Sequence: entrance → role typer → tagline typer → glitch
+  // Sequence: entrance → tagline typer → glitch
   useEffect(() => {
     if (!entranceDone) return;
-    const t = window.setTimeout(() => setStartRoleTyper(true), 250);
+    const t = window.setTimeout(() => setStartTaglineTyper(true), 400);
     return () => window.clearTimeout(t);
   }, [entranceDone]);
 
   useEffect(() => {
-    if (!roleDone) return;
-    const t = window.setTimeout(() => setStartTaglineTyper(true), 350);
-    return () => window.clearTimeout(t);
-  }, [roleDone]);
-
-  useEffect(() => {
     if (!taglineDone || !nameRef.current) return;
     const el = nameRef.current;
-    const t = window.setTimeout(() => el.classList.add('is-glitching'), 450);
+    const t = window.setTimeout(() => el.classList.add('is-glitching'), 300);
     return () => window.clearTimeout(t);
   }, [taglineDone]);
 
