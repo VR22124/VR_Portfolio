@@ -31,6 +31,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
   const chevronRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const nameRef = useRef<HTMLSpanElement>(null);
+  const hasGlitchedRef = useRef(false);
   const [play, setPlay] = useState(false);
   const [entranceDone, setEntranceDone] = useState(false);
   const [startTaglineTyper, setStartTaglineTyper] = useState(false);
