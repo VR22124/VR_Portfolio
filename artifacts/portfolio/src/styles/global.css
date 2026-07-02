@@ -307,3 +307,54 @@ h1, h2, h3, h4, h5, h6, .font-display {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ─── Glitch (red / black RGB-split) ─── */
+.glitch {
+  position: relative;
+  display: inline-block;
+  color: var(--text-primary);
+  --glitch-red: #ff2233;
+  --glitch-shadow: #08080a;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: transparent;
+  overflow: hidden;
+}
+.glitch::before {
+  color: var(--glitch-red);
+  transform: translate(2px, 0);
+  clip-path: inset(0 0 0 0);
+  mix-blend-mode: screen;
+  animation: glitchTop 3.6s steps(1) infinite;
+  text-shadow: 0 0 1px var(--glitch-red);
+}
+.glitch::after {
+  color: var(--glitch-shadow);
+  transform: translate(-2px, 0);
+  clip-path: inset(0 0 0 0);
+  mix-blend-mode: multiply;
+  animation: glitchBottom 3.6s steps(1) infinite;
+}
+@keyframes glitchTop {
+  0%, 92%, 100% { clip-path: inset(0 0 100% 0); transform: translate(0, 0); }
+  93%           { clip-path: inset(0 0 78% 0);  transform: translate(3px, -1px); }
+  94%           { clip-path: inset(20% 0 55% 0); transform: translate(-2px, 1px); }
+  95%           { clip-path: inset(40% 0 30% 0); transform: translate(2px, 0); }
+  96%           { clip-path: inset(10% 0 65% 0); transform: translate(-3px, -1px); }
+  97%           { clip-path: inset(60% 0 15% 0); transform: translate(2px, 1px); }
+  98%           { clip-path: inset(30% 0 45% 0); transform: translate(-2px, 0); }
+}
+@keyframes glitchBottom {
+  0%, 92%, 100% { clip-path: inset(100% 0 0 0); transform: translate(0, 0); }
+  93%           { clip-path: inset(70% 0 12% 0); transform: translate(-3px, 1px); }
+  94%           { clip-path: inset(45% 0 30% 0); transform: translate(2px, -1px); }
+  95%           { clip-path: inset(20% 0 55% 0); transform: translate(-2px, 0); }
+  96%           { clip-path: inset(65% 0 8% 0);  transform: translate(3px, 1px); }
+  97%           { clip-path: inset(15% 0 60% 0); transform: translate(-2px, -1px); }
+  98%           { clip-path: inset(50% 0 25% 0); transform: translate(2px, 0); }
+}

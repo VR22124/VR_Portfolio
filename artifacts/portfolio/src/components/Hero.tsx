@@ -77,7 +77,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
             </span>
           </div>
 
-          {/* Name — single line, uppercase, lime middle word */}
+          {/* Name — single line, uppercase, glitch (red/black split) */}
           <h1
             data-hero-anim
             className="font-display font-bold uppercase tracking-[-0.02em] leading-[0.95] text-[#f5f5f2] whitespace-nowrap"
@@ -86,9 +86,12 @@ export default function Hero({ started = false }: { started?: boolean }) {
               fontSize: 'clamp(2.4rem, 7.2vw, 5.75rem)',
             }}
           >
-            {name.first}{' '}
-            <span className="text-[#d4ff4f]">{name.accent}</span>{' '}
-            {name.last}
+            <span
+              className="glitch"
+              data-text={`${name.first} ${name.accent} ${name.last}`.toUpperCase()}
+            >
+              {name.first} <span className="text-[#d4ff4f]">{name.accent}</span> {name.last}
+            </span>
           </h1>
 
           {/* Tagline */}
