@@ -138,20 +138,6 @@ export default function Hero({ started = false }: { started?: boolean }) {
             </span>
           </h1>
 
-          {/* Typewriter role */}
-          <div
-            data-hero-anim
-            className="mt-6 text-[#f5f5f2] font-display font-medium tracking-[0.02em]"
-            style={{ opacity: 0, fontSize: 'clamp(1.1rem, 2.2vw, 1.5rem)', minHeight: '1.6em' }}
-          >
-            <span
-              className={`${startRoleTyper && !roleDone ? 'tw-caret' : ''}`}
-              aria-label={roleText}
-            >
-              {roleOut}
-            </span>
-          </div>
-
           {/* Typewriter tagline */}
           <p
             data-hero-anim
