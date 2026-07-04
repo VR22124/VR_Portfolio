@@ -46,8 +46,8 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-helmet-async', 'react-error-boundary'],
-          animations: ['gsap', 'framer-motion'],
-          three: ['three', '@react-three/fiber', '@react-three/drei']
+          animations: ['gsap'],
+          three: ['three', '@react-three/fiber']
         }
       }
     }
