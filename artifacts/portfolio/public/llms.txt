@@ -1,0 +1,36 @@
+# Vishnu Rohith B
+
+Full-Stack Developer based in Salem, Tamil Nadu, India.
+
+## Summary
+
+Vishnu Rohith B is a full-stack developer who builds scalable web applications, enterprise SaaS platforms, and AI-driven automation workflows. He specializes in React, Node.js, TypeScript, and the MERN stack, with hands-on experience in cloud deployment (Azure, Vercel), CI/CD pipelines, and agentic AI orchestration.
+
+## Current Work
+
+Vishnu works at ShepherEd, building an enterprise college ERP and SaaS platform. He uses multi-agent AI orchestration to accelerate development — deploying specialized sub-agents to generate, validate, and iterate through codebases while maintaining full ownership of architecture, security, and production standards.
+
+## Experience
+
+- SDE Intern at CodeSizzler (Apr 2024 — Nov 2024): Built responsive frontend features for the HackersDock LMS, managed cloud hosting via Azure App Services, and engineered automated CI/CD workflows using Azure Pipelines.
+
+## Projects
+
+- EcoVate: Full-stack MERN application with authentication, form handling, and end-to-end production deployment. https://ecovate-global.vercel.app/
+- Personal Portfolio: Cinematic dark-themed portfolio with WebGL particles, GSAP scroll storytelling, and editorial typography. https://vishnurohithb.dev
+- Email-Based Calendar Automation: AI workflow using n8n and Gemini AI that extracts event details from emails and automatically creates Google Calendar events.
+
+## Tech Stack
+
+Frontend: React, Next.js, Vite, TypeScript, Tailwind CSS, Framer Motion, TanStack Query
+Backend: Node.js, Express.js, Prisma, Zod, JWT
+Database: PostgreSQL, MongoDB, Supabase, Redis, Neon
+Cloud & DevOps: Azure, Azure DevOps, GitHub, Vercel, CI/CD
+Testing: Playwright, Vitest, Supertest, Postman
+
+## Links
+
+- Website: https://vishnurohithb.dev
+- GitHub: https://github.com/VR22124
+- LinkedIn: https://www.linkedin.com/in/vishnurohithb
+- Email: b.vishnurohith@gmail.com

@@ -1,9 +1,11 @@
-import React, { useEffect, useRef, useState, useLayoutEffect } from 'react';
+import React, { useEffect, useRef, useState, useLayoutEffect, Suspense } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Canvas } from '@react-three/fiber';
-import ParticleField from './components/ParticleField';
 import Loader from './components/Loader';
+
+// Lazy-load Three.js canvas so it doesn't block first paint of text content (LCP)
+const LazyCanvas = React.lazy(() => import('@react-three/fiber').then(m => ({ default: m.Canvas })));
+const LazyParticleField = React.lazy(() => import('./components/ParticleField'));
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import SEO from './components/SEO';
@@ -116,9 +118,11 @@ function App() {
       >
         {!isMobile ? (
           webglSupported ? (
-            <Canvas camera={{ position: [0, 0, 8], fov: 55 }}>
-              <ParticleField scrollProgress={scrollProgress} />
-            </Canvas>
+            <Suspense fallback={null}>
+              <LazyCanvas camera={{ position: [0, 0, 8], fov: 55 }}>
+                <LazyParticleField scrollProgress={scrollProgress} />
+              </LazyCanvas>
+            </Suspense>
           ) : (
             <CSSParticleFallback />
           )

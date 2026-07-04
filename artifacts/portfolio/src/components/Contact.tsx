@@ -120,44 +120,59 @@ export default function Contact() {
         {/* Footer strip */}
         <div
           ref={footerRef}
-          className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pt-10 border-t border-[#1f1f24]"
+          className="flex flex-col gap-8 pt-10 border-t border-[#1f1f24]"
           style={{ opacity: 0 }}
         >
-          {/* Socials */}
-          <div className="flex items-center gap-6">
-            {data.contact.socials.map((social, i) => {
-              const Icon = (SiIcons as Record<string, React.ComponentType<{ size?: number }>>)[social.icon];
-              return (
-                <a
-                  key={i}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-2.5 text-sm text-[#4a4a52] hover:text-[#f5f5f2] transition-colors duration-200"
-                >
-                  {Icon && <Icon size={16} />}
-                  <span className="text-xs font-medium tracking-wide">{social.label}</span>
-                </a>
-              );
-            })}
+          {/* Name + Contact — NAP consistency for SEO */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <p className="text-sm font-semibold text-[#f5f5f2] tracking-wide">{data.meta.name}</p>
+              <p className="text-xs text-[#4a4a52] mt-1">Full-Stack Developer · Salem, Tamil Nadu, India</p>
+            </div>
+            <a
+              href={`mailto:${data.contact.email}`}
+              className="text-xs text-[#4a4a52] hover:text-[#d4ff4f] transition-colors duration-200"
+            >
+              {data.contact.email}
+            </a>
           </div>
 
-          {/* Right: copyright + back to top */}
-          <div className="flex items-center gap-8 text-xs text-[#2e2e36]">
-            <span>© {new Date().getFullYear()} {data.meta.name}</span>
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="group flex items-center gap-2 hover:text-[#8c8c94] transition-colors duration-200"
-            >
-              Back to top
-              <svg
-                width="10" height="10" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="2"
-                className="group-hover:-translate-y-0.5 transition-transform duration-200"
+          {/* Socials + copyright + back to top */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div className="flex items-center gap-6">
+              {data.contact.socials.map((social, i) => {
+                const Icon = (SiIcons as Record<string, React.ComponentType<{ size?: number }>>)[social.icon];
+                return (
+                  <a
+                    key={i}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-2.5 text-sm text-[#4a4a52] hover:text-[#f5f5f2] transition-colors duration-200"
+                  >
+                    {Icon && <Icon size={16} />}
+                    <span className="text-xs font-medium tracking-wide">{social.label}</span>
+                  </a>
+                );
+              })}
+            </div>
+
+            <div className="flex items-center gap-8 text-xs text-[#2e2e36]">
+              <span>© {new Date().getFullYear()} {data.meta.name}</span>
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="group flex items-center gap-2 hover:text-[#8c8c94] transition-colors duration-200"
               >
-                <path d="M12 19V5M5 12l7-7 7 7" />
-              </svg>
-            </button>
+                Back to top
+                <svg
+                  width="10" height="10" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" strokeWidth="2"
+                  className="group-hover:-translate-y-0.5 transition-transform duration-200"
+                >
+                  <path d="M12 19V5M5 12l7-7 7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
