@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import data from '../data.json';
+import projects from '../data/projects.json';
 
-type Project = (typeof data.projects)[number];
+type Project = (typeof projects)[number];
 
 const ACCENT = '#d4ff4f';
-const projects = data.projects;
 
 function pad(n: number) {
   return String(n + 1).padStart(2, '0');

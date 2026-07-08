@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import data from '../data.json';
+import hero from '../data/hero.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,7 +36,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
   const [entranceDone, setEntranceDone] = useState(false);
   const [startTaglineTyper, setStartTaglineTyper] = useState(false);
 
-  const { name, role, location, tagline, ctaPrimary, ctaSecondary, socials } = data.hero as any;
+  const { name, role, location, tagline, ctaPrimary, ctaSecondary, socials } = hero as any;
 
   const taglineFull = `${tagline.prefix}${tagline.accent}${tagline.suffix}`;
 

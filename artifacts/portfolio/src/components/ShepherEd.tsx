@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
+import { Link } from 'react-router-dom';
 type Chapter = {
   num: string;
   code: string;
@@ -100,18 +100,21 @@ export default function ShepherEd() {
 
     const ctx = gsap.context(() => {
       // Intro
-      gsap.from('[data-shep-intro]', {
-        opacity: 0,
-        y: 24,
-        duration: reduced ? 0 : 0.9,
-        ease: 'power3.out',
-        stagger: 0.08,
-        scrollTrigger: {
-          trigger: root,
-          start: 'top 75%',
-          once: true,
-        },
-      });
+      const introEls = root.querySelectorAll('[data-shep-intro]');
+      if (introEls.length > 0) {
+        gsap.from(introEls, {
+          opacity: 0,
+          y: 24,
+          duration: reduced ? 0 : 0.9,
+          ease: 'power3.out',
+          stagger: 0.08,
+          scrollTrigger: {
+            trigger: root,
+            start: 'top 75%',
+            once: true,
+          },
+        });
+      }
 
       // Chapters
       const chapters = gsap.utils.toArray<HTMLElement>('[data-shep-chapter]');
@@ -127,18 +130,21 @@ export default function ShepherEd() {
             once: true,
           },
         });
-        gsap.from(el.querySelectorAll('[data-shep-chip]'), {
-          opacity: 0,
-          y: 8,
-          duration: reduced ? 0 : 0.5,
-          ease: 'power2.out',
-          stagger: 0.04,
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 78%',
-            once: true,
-          },
-        });
+        const chips = el.querySelectorAll('[data-shep-chip]');
+        if (chips.length > 0) {
+          gsap.from(chips, {
+            opacity: 0,
+            y: 8,
+            duration: reduced ? 0 : 0.5,
+            ease: 'power2.out',
+            stagger: 0.04,
+            scrollTrigger: {
+              trigger: el,
+              start: 'top 78%',
+              once: true,
+            },
+          });
+        }
       });
 
       // Progress rail fill based on scroll through the right column
@@ -205,7 +211,7 @@ export default function ShepherEd() {
               learning, operations, and observability — modular, scalable, connected.
             </p>
 
-            <div data-shep-intro className="pt-4">
+            <div data-shep-intro className="pt-4 flex flex-col items-start gap-5">
               <div className="inline-flex items-center gap-3 py-2.5 px-5 rounded-full border border-[#f5f5f2]/10 bg-white/[0.04] backdrop-blur-sm">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4ff4f] opacity-60" />
@@ -215,6 +221,19 @@ export default function ShepherEd() {
                   Status · In Active Development
                 </span>
               </div>
+
+              <Link
+                to="/case-studies/shephered"
+                className="group relative inline-flex items-center gap-3 px-6 py-3.5 bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-[#d4ff4f]/40 text-[#f5f5f2] rounded-full overflow-hidden transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#d4ff4f]/10 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-out" />
+                <span className="font-display font-medium text-sm tracking-wide uppercase group-hover:text-[#d4ff4f] transition-colors">
+                  Read Engineering Case Study
+                </span>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/40 group-hover:text-[#d4ff4f] transition-all group-hover:translate-x-1">
+                  <path d="M2.91669 7H11.0834M11.0834 7L7.00002 2.91667M11.0834 7L7.00002 11.0833" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </Link>
             </div>
           </div>
 

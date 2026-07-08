@@ -1,0 +1,33 @@
+{
+  "eyebrow": "Available for Full-Time Opportunities",
+  "name": {
+    "first": "Vishnu",
+    "accent": "Rohith",
+    "last": "B"
+  },
+  "role": "Full-Stack Engineer",
+  "location": "Salem, Tamil Nadu, India",
+  "tagline": {
+    "prefix": "I build systems that think, scale, and ",
+    "accent": "endure",
+    "suffix": "."
+  },
+  "ctaPrimary": {
+    "label": "View My Work",
+    "target": "#projects"
+  },
+  "ctaSecondary": {
+    "label": "Download CV",
+    "target": "/Vishnu_Rohith_B.pdf"
+  },
+  "socials": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/VR22124"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/vishnurohithb"
+    }
+  ]
+}

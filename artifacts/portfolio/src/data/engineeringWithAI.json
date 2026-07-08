@@ -1,0 +1,38 @@
+{
+  "title": "Engineering with AI.",
+  "heroHeading": "Agentic\nOrchestration",
+  "heroStatement": "AI accelerates implementation, but engineering still requires judgment. I don't just write code; I orchestrate swarms of autonomous agents to execute complex architectures at lightspeed.",
+  "heroSubStatement": "I deploy specialized sub-agents to generate, validate, and iterate through codebases—but every architectural decision, security protocol, and production standard remains my absolute responsibility.",
+  "practices": [
+    {
+      "id": "01",
+      "tag": "Strategy",
+      "title": "Multi-Agent Orchestration",
+      "content": "I break monolithic problems into micro-tasks and deploy specialized sub-agents to solve them in parallel. Instead of prompting for entire apps, I conduct an orchestra of intelligent executors."
+    },
+    {
+      "id": "02",
+      "tag": "Execution",
+      "title": "Autonomous Iteration",
+      "content": "Agents generate the foundation, sub-agents review the diffs. I use recursive LLM loops to refine components until they match exact system specifications and API contracts."
+    },
+    {
+      "id": "03",
+      "tag": "Validation",
+      "title": "Zero-Trust Validation",
+      "content": "Agentic output is never trusted blindly. Every autonomous action is strictly validated against context boundaries, security protocols, and strict type definitions before hitting the main branch."
+    },
+    {
+      "id": "04",
+      "tag": "Quality",
+      "title": "Adversarial Testing Matrix",
+      "content": "I leverage adversarial agents to aggressively hunt for edge cases and generate robust test suites. Code only merges when it survives autonomous integration and end-to-end stress testing."
+    },
+    {
+      "id": "05",
+      "tag": "Production",
+      "title": "Owning the Artifact",
+      "content": "Agents write code; engineers build systems. Scalability, deep observability, and clean architecture are what make software production-ready. I take ultimate responsibility for the final deployed artifact."
+    }
+  ]
+}

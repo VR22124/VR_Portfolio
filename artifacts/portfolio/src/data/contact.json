@@ -1,0 +1,17 @@
+{
+  "headline": "Let's build something impactful.",
+  "subtext": "Open to full-time software engineering opportunities, collaborations, and innovative projects.",
+  "email": "b.vishnurohith@gmail.com",
+  "socials": [
+    {
+      "label": "GitHub",
+      "url": "https://github.com/VR22124",
+      "icon": "SiGithub"
+    },
+    {
+      "label": "LinkedIn",
+      "url": "https://www.linkedin.com/in/vishnurohithb",
+      "icon": "SiLinkedin"
+    }
+  ]
+}

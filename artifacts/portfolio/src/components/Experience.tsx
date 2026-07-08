@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import data from '../data.json';
+import experience from '../data/experience.json';
 
-type Exp = (typeof data.experience)[number];
+type Exp = (typeof experience)[number];
 
 function SplitText({ text, isActive }: { text: string; isActive: boolean }) {
   return (
@@ -263,7 +263,7 @@ export default function Experience() {
   useEffect(() => {
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (isReducedMotion) {
-      setEnteredChapters(new Set(data.experience.map((_, i) => i)));
+      setEnteredChapters(new Set(experience.map((_, i) => i)));
       setActiveChapter(0);
       return;
     }
@@ -316,7 +316,7 @@ export default function Experience() {
           alignItems: 'flex-end',
         }}
       >
-        {data.experience.map((_, i) => {
+        {experience.map((_, i) => {
           const isAct = activeChapter === i;
           const isPast = i < activeChapter;
           return (
@@ -340,7 +340,7 @@ export default function Experience() {
         aria-hidden="true"
         className="md:hidden flex gap-1.5 px-6 pt-6 pb-2"
       >
-        {data.experience.map((_, i) => (
+        {experience.map((_, i) => (
           <div
             key={i}
             style={{
@@ -372,7 +372,7 @@ export default function Experience() {
       </div>
 
       {/* ── Chapters ── */}
-      {data.experience.map((exp, i) => {
+      {experience.map((exp, i) => {
         const isActive = enteredChapters.has(i);
 
         if (isMobile) {

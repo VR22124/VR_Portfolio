@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import data from '../data.json';
+import principles from '../data/principles.json';
 
 const ACCENT_WORDS = ['Think', 'Architecture', 'Modular', 'Why', 'Last'];
 
@@ -16,7 +16,7 @@ function splitWithAccent(title: string, accentWord: string) {
 }
 
 interface PrincipleRowProps {
-  principle: (typeof data.principles)[number];
+  principle: (typeof principles)[number];
   index: number;
   accentWord: string;
   isRevealed: boolean;
@@ -167,7 +167,7 @@ export default function Principles() {
   useEffect(() => {
     const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (isReduced) {
-      setRevealedRows(new Set(data.principles.map((_, i) => i)));
+      setRevealedRows(new Set(principles.map((_, i) => i)));
       return;
     }
     const cleanups: (() => void)[] = [];
@@ -262,7 +262,7 @@ export default function Principles() {
       />
 
       {/* Principle rows */}
-      {data.principles.map((p, i) => (
+      {principles.map((p, i) => (
         <div key={i} ref={(el) => { rowRefs.current[i] = el; }}>
           <PrincipleRow
             principle={p}

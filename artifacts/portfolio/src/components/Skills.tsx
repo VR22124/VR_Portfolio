@@ -3,7 +3,7 @@ import * as SiIcons from 'react-icons/si';
 import { VscAzure, VscAzureDevops, VscVscode } from 'react-icons/vsc';
 import { TbLetterK } from 'react-icons/tb';
 import { FaInfinity, FaBug, FaVial, FaSpaceShuttle, FaHeart, FaMoon } from 'react-icons/fa';
-import data from '../data.json';
+import skills from '../data/skills.json';
 
 const AntigravityIcon = ({ size = 20 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round">
@@ -26,7 +26,7 @@ const IconMap: Record<string, React.ComponentType<{ size?: number }>> = {
   AntigravityIcon
 };
 
-type Skill = (typeof data.skills)[number];
+type Skill = (typeof skills)[number];
 
 const CATEGORY_ORDER = [
   'Frontend',
@@ -35,10 +35,9 @@ const CATEGORY_ORDER = [
   'Cloud & DevOps',
   'Testing',
   'Development Environment'
-  // 'Design & Ideation'
 ];
 
-const sorted = [...data.skills].sort(
+const sorted = [...skills].sort(
   (a, b) => CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category)
 );
 

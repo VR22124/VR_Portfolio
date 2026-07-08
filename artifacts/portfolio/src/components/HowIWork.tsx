@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import data from '../data.json';
+import howIWork from '../data/howIWork.json';
 
 const PHASES = ['Discover', 'Architect', 'Execute', 'Handover'];
-const TOTAL = data.howIWork.length;
+const TOTAL = howIWork.length;
 
 interface StepProps {
-  step: (typeof data.howIWork)[number];
+  step: (typeof howIWork)[number];
   phase: string;
   isRevealed: boolean;
   isHovered: boolean;
@@ -260,7 +260,7 @@ export default function HowIWork() {
   useEffect(() => {
     const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (isReduced) {
-      setRevealedSteps(new Set(data.howIWork.map((_, i) => i)));
+      setRevealedSteps(new Set(howIWork.map((_, i) => i)));
       return;
     }
     const cleanups: (() => void)[] = [];
@@ -359,7 +359,7 @@ export default function HowIWork() {
             transition: 'opacity 0.6s ease 0.4s',
           }}
         >
-          {data.howIWork.map((_, i) => {
+          {howIWork.map((_, i) => {
             const isHov = hoveredIndex === i;
             const isRev = revealedSteps.has(i);
             return (
@@ -382,7 +382,7 @@ export default function HowIWork() {
 
       {/* Steps */}
       <div>
-        {data.howIWork.map((step, i) => (
+        {howIWork.map((step, i) => (
           <div key={i} ref={(el) => { stepRefs.current[i] = el; }}>
             <Step
               step={step}

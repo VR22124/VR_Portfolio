@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import data from '../data.json';
+import engineeringWithAI from '../data/engineeringWithAI.json';
 
 export default function EngineeringWithAI() {
   const rootRef = useRef<HTMLElement>(null);
@@ -63,7 +63,7 @@ export default function EngineeringWithAI() {
     return () => ctx.revert();
   }, []);
 
-  const { heroHeading, heroStatement, heroSubStatement, practices } = data.engineeringWithAI as any;
+  const { heroHeading, heroStatement, heroSubStatement, practices } = engineeringWithAI as any;
 
   return (
     <section

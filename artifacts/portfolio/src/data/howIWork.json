@@ -1,0 +1,27 @@
+[
+  {
+    "step": "01",
+    "title": "Understand Before Building",
+    "description": "Every project starts with understanding the problem before writing code."
+  },
+  {
+    "step": "02",
+    "title": "Design the Architecture First",
+    "description": "I define the system, its modules, and data flow before implementation begins."
+  },
+  {
+    "step": "03",
+    "title": "Build One Layer at a Time",
+    "description": "I develop incrementally, validating each layer before moving to the next."
+  },
+  {
+    "step": "04",
+    "title": "Prioritize Quality Over Speed",
+    "description": "Clean, maintainable, and production-ready software always comes first."
+  },
+  {
+    "step": "05",
+    "title": "Build for the Future",
+    "description": "I design systems that can evolve, scale, and adapt over time."
+  }
+]

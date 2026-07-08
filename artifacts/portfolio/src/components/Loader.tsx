@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import data from '../data.json';
+import meta from '../data/meta.json';
 
-const OWNER = data.meta.name.toUpperCase();
+const OWNER = meta.name.toUpperCase();
 
 /**
  * Kinetic Precision Loader

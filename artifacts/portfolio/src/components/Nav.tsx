@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import data from '../data.json';
+import meta from '../data/meta.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -110,11 +110,11 @@ export default function Nav() {
           >
             <div className="w-9 h-9 bg-[#d4ff4f] flex items-center justify-center">
               <span className="font-display font-bold text-[#08080a] text-sm leading-none tracking-tight">
-                {data.meta.name.split(' ').slice(0, 2).map(n => n[0]).join('')}
+                {meta.name.split(' ').slice(0, 2).map(n => n[0]).join('')}
               </span>
             </div>
             <span className="hidden md:block font-display font-medium text-[#f5f5f2] text-sm tracking-tight opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 pointer-events-none">
-              {data.meta.name}
+              {meta.name}
             </span>
           </a>
 

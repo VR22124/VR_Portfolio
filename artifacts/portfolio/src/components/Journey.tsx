@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import data from '../data.json';
+import journey from '../data/journey.json';
 
-type JourneyItem = (typeof data.journey)[number];
+type JourneyItem = (typeof journey)[number];
 
 function MilestoneContent({
   item,
@@ -167,27 +167,30 @@ export default function Journey() {
   useEffect(() => {
     const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (isReduced) {
-      setRevealedRows(new Set(data.journey.map((_, i) => i)));
-      setActiveRow(0);
-      return;
+      setRevealedRows(new Set(journey.map((_, i) => i)));
     }
 
     const cleanups: (() => void)[] = [];
 
     rowRefs.current.forEach((el, i) => {
       if (!el) return;
-
-      const revealObs = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            setRevealedRows((prev) => { const n = new Set(prev); n.add(i); return n; });
-            revealObs.disconnect();
-          }
+      const obs = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              setRevealedRows(prev => {
+                if (prev.has(i)) return prev;
+                const next = new Set(prev);
+                next.add(i);
+                return next;
+              });
+            }
+          });
         },
-        { threshold: 0.1, rootMargin: '0px 0px -5% 0px' }
+        { threshold: 0.15 }
       );
-      revealObs.observe(el);
-      cleanups.push(() => revealObs.disconnect());
+      obs.observe(el);
+      cleanups.push(() => obs.disconnect());
 
       const activeObs = new IntersectionObserver(
         (entries) => { if (entries[0].isIntersecting) setActiveRow(i); },
@@ -270,7 +273,7 @@ export default function Journey() {
           />
         </div>
 
-        {data.journey.map((item, i) => {
+        {journey.map((item, i) => {
           const isLeft = i % 2 === 0;
           const isRevealed = revealedRows.has(i);
           const isActive = activeRow === i;
@@ -280,7 +283,7 @@ export default function Journey() {
             <div
               key={i}
               ref={(el) => { rowRefs.current[i] = el; }}
-              style={{ position: 'relative', paddingBottom: i < data.journey.length - 1 ? 'clamp(56px, 8vh, 100px)' : 0 }}
+              style={{ position: 'relative', paddingBottom: i < journey.length - 1 ? 'clamp(56px, 8vh, 100px)' : 0 }}
             >
               {/* Desktop bilateral layout */}
               <div className="hidden md:grid" style={{ gridTemplateColumns: '1fr 56px 1fr' }}>

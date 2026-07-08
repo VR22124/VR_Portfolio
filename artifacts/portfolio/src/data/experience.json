@@ -1,0 +1,14 @@
+[
+  {
+    "company": "CodeSizzler",
+    "role": "SDE Intern",
+    "period": "Apr 2024 — Nov 2024",
+    "description": "Served as a core developer, progressing from frontend feature implementation to taking ownership of end-to-end cloud infrastructure and DevOps workflows.",
+    "highlights": [
+      "Built responsive frontend features for the HackersDock LMS",
+      "Managed cloud hosting and continuous deployment via Azure App Services",
+      "Engineered automated CI/CD workflows using Azure Pipelines",
+      "Streamlined task management and version control utilizing Azure DevOps Kanban and Git"
+    ]
+  }
+]

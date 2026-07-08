@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Think Before You Build",
+    "description": "Every decision starts with understanding the problem."
+  },
+  {
+    "title": "Architecture Matters",
+    "description": "Strong foundations make future development easier."
+  },
+  {
+    "title": "Keep It Modular",
+    "description": "Independent systems are easier to scale and maintain."
+  },
+  {
+    "title": "Document the Why",
+    "description": "Good documentation preserves decisions, not just code."
+  },
+  {
+    "title": "Build to Last",
+    "description": "Create robust systems that can evolve and scale."
+  }
+]

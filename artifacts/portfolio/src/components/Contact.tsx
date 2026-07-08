@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as SiIcons from 'react-icons/si';
-import data from '../data.json';
+import contact from '../data/contact.json';
+import meta from '../data/meta.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -88,13 +89,13 @@ export default function Contact() {
           className="text-body text-[#8c8c94] max-w-md mb-14"
           style={{ opacity: 0 }}
         >
-          {data.contact.subtext}
+          {contact.subtext}
         </p>
 
         {/* Email CTA — the centrepiece */}
         <a
           ref={emailRef}
-          href={`mailto:${data.contact.email}`}
+          href={`mailto:${contact.email}`}
           className="group inline-flex items-center gap-5 mb-24"
           style={{ opacity: 0 }}
         >
@@ -102,7 +103,7 @@ export default function Contact() {
             className="font-display font-bold text-[#f5f5f2] group-hover:text-[#d4ff4f] transition-colors duration-300"
             style={{ fontSize: 'clamp(22px, 3.5vw, 52px)', letterSpacing: '-0.02em' }}
           >
-            {data.contact.email}
+            {contact.email}
           </span>
           <span
             className="flex items-center justify-center w-12 h-12 border border-[#2e2e36] rounded-full group-hover:border-[#d4ff4f] group-hover:bg-[#d4ff4f] transition-all duration-300 shrink-0"
@@ -126,21 +127,21 @@ export default function Contact() {
           {/* Name + Contact — NAP consistency for SEO */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <p className="text-sm font-semibold text-[#f5f5f2] tracking-wide">{data.meta.name}</p>
+              <p className="text-sm font-semibold text-[#f5f5f2] tracking-wide">{meta.name}</p>
               <p className="text-xs text-[#4a4a52] mt-1">Full-Stack Developer · Salem, Tamil Nadu, India</p>
             </div>
             <a
-              href={`mailto:${data.contact.email}`}
+              href={`mailto:${contact.email}`}
               className="text-xs text-[#4a4a52] hover:text-[#d4ff4f] transition-colors duration-200"
             >
-              {data.contact.email}
+              {contact.email}
             </a>
           </div>
 
           {/* Socials + copyright + back to top */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-center gap-6">
-              {data.contact.socials.map((social, i) => {
+              {contact.socials.map((social, i) => {
                 const Icon = (SiIcons as Record<string, React.ComponentType<{ size?: number }>>)[social.icon];
                 return (
                   <a
@@ -158,7 +159,7 @@ export default function Contact() {
             </div>
 
             <div className="flex items-center gap-8 text-xs text-[#2e2e36]">
-              <span>© {new Date().getFullYear()} {data.meta.name}</span>
+              <span>© {new Date().getFullYear()} {meta.name}</span>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 className="group flex items-center gap-2 hover:text-[#8c8c94] transition-colors duration-200"

@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async';
-import data from '../data.json';
+import meta from '../data/meta.json';
 
 const SITE_URL = import.meta.env.VITE_SITE_URL || 'https://vishnurohithb.dev';
 
@@ -10,10 +10,8 @@ interface SEOProps {
 }
 
 export default function SEO({ title, description, path = '/' }: SEOProps) {
-  const seoTitle = title || `Vishnu Rohith B — Full-Stack Developer | Portfolio`;
-  const seoDescription =
-    description ||
-    'Portfolio of Vishnu Rohith B, a full-stack developer based in Salem, Tamil Nadu, building scalable web applications, enterprise SaaS platforms, and AI-driven automation workflows.';
+  const seoTitle = title || `${meta.name} | ${meta.role}`;
+  const seoDescription = description || meta.tagline;
   const canonicalUrl = `${SITE_URL}${path}`;
   const ogImageUrl = `${SITE_URL}/og-image.png`;
 

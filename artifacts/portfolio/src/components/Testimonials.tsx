@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import data from '../data.json';
+import testimonials from '../data/testimonials.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +31,7 @@ export default function Testimonials() {
   const progressTweenRef = useRef<gsap.core.Tween | null>(null);
   const advanceTimeoutRef = useRef<number | null>(null);
 
-  const testimonials = data.testimonials;
+  // removed const testimonials = data.testimonials;
   const t = testimonials[active];
   const total = testimonials.length;
 
