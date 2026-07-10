@@ -1,0 +1,510 @@
+[
+  {
+    "id": "arch-01",
+    "category": "Architecture",
+    "title": "Start with the Problem",
+    "lines": [
+      "Don't choose the stack first.",
+      "Understand the domain.",
+      "Understand the users.",
+      "Then design the system."
+    ],
+    "tags": ["architecture", "planning"]
+  },
+  {
+    "id": "arch-02",
+    "category": "Architecture",
+    "title": "Foundations Before Features",
+    "lines": [
+      "Identity.",
+      "Academic structure.",
+      "Relationships.",
+      "Features come after."
+    ],
+    "tags": ["architecture", "foundations"]
+  },
+  {
+    "id": "arch-03",
+    "category": "Architecture",
+    "title": "Architecture Evolves",
+    "lines": [
+      "The first architecture isn't the final architecture.",
+      "Refactor when the project grows.",
+      "Don't predict everything upfront."
+    ],
+    "tags": ["architecture", "refactoring"]
+  },
+  {
+    "id": "arch-04",
+    "category": "Architecture",
+    "title": "Platform Boundaries",
+    "lines": [
+      "Separate systems by responsibility.",
+      "Not by technology."
+    ],
+    "tags": ["architecture", "design"]
+  },
+  {
+    "id": "arch-05",
+    "category": "Architecture",
+    "title": "Modular Before Distributed",
+    "lines": [
+      "Build clear module boundaries.",
+      "Distributed systems can come later.",
+      "Don't over-engineer."
+    ],
+    "tags": ["architecture", "modules"]
+  },
+  {
+    "id": "arch-06",
+    "category": "Architecture",
+    "title": "Don't Overengineer",
+    "lines": [
+      "Today's complexity rarely needs tomorrow's architecture."
+    ],
+    "tags": ["architecture", "simplicity"]
+  },
+  {
+    "id": "arch-07",
+    "category": "Architecture",
+    "title": "Every Module Needs One Responsibility",
+    "lines": [
+      "One module.",
+      "One purpose.",
+      "No mixed responsibilities."
+    ],
+    "tags": ["architecture", "design"]
+  },
+  {
+    "id": "plan-01",
+    "category": "Planning",
+    "title": "Think in Iterations",
+    "lines": [
+      "Never build large features.",
+      "Split everything into the smallest deliverable iteration."
+    ],
+    "tags": ["planning", "process"]
+  },
+  {
+    "id": "plan-02",
+    "category": "Planning",
+    "title": "Build a Roadmap",
+    "lines": [
+      "Know Version 1.",
+      "Know what isn't Version 1."
+    ],
+    "tags": ["planning", "scope"]
+  },
+  {
+    "id": "plan-03",
+    "category": "Planning",
+    "title": "Every Iteration Needs an Exit Condition",
+    "lines": [
+      "Know when the iteration is complete.",
+      "Avoid endless development."
+    ],
+    "tags": ["planning", "process"]
+  },
+  {
+    "id": "plan-04",
+    "category": "Planning",
+    "title": "Freeze Scope",
+    "lines": [
+      "Don't add features halfway through an iteration."
+    ],
+    "tags": ["planning", "scope"]
+  },
+  {
+    "id": "ai-01",
+    "category": "AI Engineering",
+    "title": "AI Suggests",
+    "lines": [
+      "AI suggests.",
+      "You decide."
+    ],
+    "tags": ["ai", "engineering"]
+  },
+  {
+    "id": "ai-02",
+    "category": "AI Engineering",
+    "title": "Compare Multiple Models",
+    "lines": [
+      "Never trust one model.",
+      "Compare reasoning.",
+      "Validate."
+    ],
+    "tags": ["ai", "validation"]
+  },
+  {
+    "id": "ai-03",
+    "category": "AI Engineering",
+    "title": "Don't Add Every Tool",
+    "lines": [
+      "AI loves adding dependencies.",
+      "Question every recommendation."
+    ],
+    "tags": ["ai", "dependencies"]
+  },
+  {
+    "id": "ai-04",
+    "category": "AI Engineering",
+    "title": "AI Doesn't Own Architecture",
+    "lines": [
+      "Implementation can be assisted.",
+      "Architecture stays human."
+    ],
+    "tags": ["ai", "architecture"]
+  },
+  {
+    "id": "ai-05",
+    "category": "AI Engineering",
+    "title": "Small Prompts Win",
+    "lines": [
+      "Small iterations.",
+      "Small prompts.",
+      "Better output."
+    ],
+    "tags": ["ai", "prompting"]
+  },
+  {
+    "id": "ai-06",
+    "category": "AI Engineering",
+    "title": "Give Agents Boundaries",
+    "lines": [
+      "Read. Write. Create. Delete.",
+      "Every permission should be intentional."
+    ],
+    "tags": ["ai", "agents"]
+  },
+  {
+    "id": "be-01",
+    "category": "Backend",
+    "title": "Validate First",
+    "lines": [
+      "Never let invalid data reach business logic."
+    ],
+    "tags": ["backend", "validation"]
+  },
+  {
+    "id": "be-02",
+    "category": "Backend",
+    "title": "Authentication ≠ Authorization",
+    "lines": [
+      "Knowing who a user is",
+      "is different from",
+      "knowing what they can access."
+    ],
+    "tags": ["backend", "security"]
+  },
+  {
+    "id": "be-03",
+    "category": "Backend",
+    "title": "Business Logic Doesn't Belong in Routes",
+    "lines": [
+      "Routes should orchestrate.",
+      "Services should think."
+    ],
+    "tags": ["backend", "design"]
+  },
+  {
+    "id": "be-04",
+    "category": "Backend",
+    "title": "Every API Needs One Purpose",
+    "lines": [
+      "Avoid endpoints that do too many things."
+    ],
+    "tags": ["backend", "design"]
+  },
+  {
+    "id": "db-01",
+    "category": "Database",
+    "title": "Structure Core Entities",
+    "lines": [
+      "Keep core models relational.",
+      "Don't make everything dynamic."
+    ],
+    "tags": ["database", "design"]
+  },
+  {
+    "id": "db-02",
+    "category": "Database",
+    "title": "JSONB Is Configuration",
+    "lines": [
+      "Configuration belongs in JSONB.",
+      "Business entities don't."
+    ],
+    "tags": ["database", "jsonb"]
+  },
+  {
+    "id": "db-03",
+    "category": "Database",
+    "title": "Relationships First",
+    "lines": [
+      "Entities are easy.",
+      "Relationships define the system."
+    ],
+    "tags": ["database", "design"]
+  },
+  {
+    "id": "db-04",
+    "category": "Database",
+    "title": "Query Simplicity Matters",
+    "lines": [
+      "Readable queries",
+      "beat clever queries."
+    ],
+    "tags": ["database", "readability"]
+  },
+  {
+    "id": "prod-01",
+    "category": "Production",
+    "title": "Production Starts Early",
+    "lines": [
+      "Production isn't deployment.",
+      "It's every decision before deployment."
+    ],
+    "tags": ["production", "mindset"]
+  },
+  {
+    "id": "prod-02",
+    "category": "Production",
+    "title": "Security Isn't Optional",
+    "lines": [
+      "Never leave security",
+      "for the final sprint."
+    ],
+    "tags": ["production", "security"]
+  },
+  {
+    "id": "prod-03",
+    "category": "Production",
+    "title": "Reliability Before Features",
+    "lines": [
+      "Stable software",
+      "beats feature-rich software."
+    ],
+    "tags": ["production", "reliability"]
+  },
+  {
+    "id": "prod-04",
+    "category": "Production",
+    "title": "Logging Matters",
+    "lines": [
+      "If it can't be observed,",
+      "it can't be debugged."
+    ],
+    "tags": ["production", "observability"]
+  },
+  {
+    "id": "prod-05",
+    "category": "Production",
+    "title": "Documentation Is Part of the Product",
+    "lines": [
+      "Document why.",
+      "Code explains how."
+    ],
+    "tags": ["production", "documentation"]
+  },
+  {
+    "id": "test-01",
+    "category": "Testing",
+    "title": "Test Every Iteration",
+    "lines": [
+      "Don't wait until the end."
+    ],
+    "tags": ["testing", "process"]
+  },
+  {
+    "id": "test-02",
+    "category": "Testing",
+    "title": "APIs Before UI",
+    "lines": [
+      "Validate the backend first.",
+      "Then test the interface."
+    ],
+    "tags": ["testing", "backend"]
+  },
+  {
+    "id": "test-03",
+    "category": "Testing",
+    "title": "Playwright Is a Safety Net",
+    "lines": [
+      "Protect user flows.",
+      "Regression should never surprise you."
+    ],
+    "tags": ["testing", "playwright"]
+  },
+  {
+    "id": "test-04",
+    "category": "Testing",
+    "title": "Don't Ignore Edge Cases",
+    "lines": [
+      "Happy paths sell demos.",
+      "Edge cases build products."
+    ],
+    "tags": ["testing", "quality"]
+  },
+  {
+    "id": "dev-01",
+    "category": "Development",
+    "title": "Refactoring Isn't Failure",
+    "lines": [
+      "Changing architecture",
+      "means learning."
+    ],
+    "tags": ["development", "refactoring"]
+  },
+  {
+    "id": "dev-02",
+    "category": "Development",
+    "title": "Keep the Codebase Clean",
+    "lines": [
+      "Delete dead code.",
+      "Don't keep 'maybe later.'"
+    ],
+    "tags": ["development", "quality"]
+  },
+  {
+    "id": "dev-03",
+    "category": "Development",
+    "title": "One Source of Truth",
+    "lines": [
+      "Avoid duplicate logic.",
+      "Reuse.",
+      "Don't copy."
+    ],
+    "tags": ["development", "design"]
+  },
+  {
+    "id": "dev-04",
+    "category": "Development",
+    "title": "Naming Matters",
+    "lines": [
+      "Good names",
+      "reduce documentation."
+    ],
+    "tags": ["development", "readability"]
+  },
+  {
+    "id": "shep-01",
+    "category": "ShepherEd Lessons",
+    "title": "Dynamic Isn't Always Better",
+    "lines": [
+      "Unlimited flexibility",
+      "created unlimited complexity."
+    ],
+    "tags": ["shephered", "architecture"]
+  },
+  {
+    "id": "shep-02",
+    "category": "ShepherEd Lessons",
+    "title": "Identity Became a Platform",
+    "lines": [
+      "Authentication grew beyond ERP.",
+      "It deserved its own platform."
+    ],
+    "tags": ["shephered", "sip"]
+  },
+  {
+    "id": "shep-03",
+    "category": "ShepherEd Lessons",
+    "title": "Reliability Before Growth",
+    "lines": [
+      "Pause features.",
+      "Strengthen the foundation."
+    ],
+    "tags": ["shephered", "reliability"]
+  },
+  {
+    "id": "shep-04",
+    "category": "ShepherEd Lessons",
+    "title": "Monorepo Came Last",
+    "lines": [
+      "Architecture first.",
+      "Repositories second."
+    ],
+    "tags": ["shephered", "monorepo"]
+  },
+  {
+    "id": "shep-05",
+    "category": "ShepherEd Lessons",
+    "title": "Build for Institutions",
+    "lines": [
+      "Software should adapt to institutions.",
+      "Not the other way around."
+    ],
+    "tags": ["shephered", "product"]
+  },
+  {
+    "id": "pers-01",
+    "category": "Personal Rules",
+    "title": "Think Long Term",
+    "lines": [
+      "Build software",
+      "you'll enjoy maintaining."
+    ],
+    "tags": ["personal", "mindset"]
+  },
+  {
+    "id": "pers-02",
+    "category": "Personal Rules",
+    "title": "Don't Chase Trends",
+    "lines": [
+      "Use technology",
+      "because it solves a problem."
+    ],
+    "tags": ["personal", "mindset"]
+  },
+  {
+    "id": "pers-03",
+    "category": "Personal Rules",
+    "title": "Simplicity Wins",
+    "lines": [
+      "Simple systems",
+      "are easier to evolve."
+    ],
+    "tags": ["personal", "simplicity"]
+  },
+  {
+    "id": "pers-04",
+    "category": "Personal Rules",
+    "title": "Keep Learning",
+    "lines": [
+      "Every project",
+      "should change how you think."
+    ],
+    "tags": ["personal", "growth"]
+  },
+  {
+    "id": "pers-05",
+    "category": "Personal Rules",
+    "title": "Ask Why",
+    "lines": [
+      "Understanding 'why'",
+      "is more valuable",
+      "than memorizing 'how.'"
+    ],
+    "tags": ["personal", "mindset"]
+  },
+  {
+    "id": "pre-01",
+    "category": "Pre-Development",
+    "title": "Pre-Development Checklist",
+    "lines": [
+      "What problem am I solving?",
+      "Why this architecture?",
+      "Why this tech stack?",
+      "What is Version 1?",
+      "What belongs outside Version 1?",
+      "Can this be simpler?",
+      "What are the platform boundaries?",
+      "What will need testing?",
+      "What will need documentation?",
+      "What does production require?",
+      "What are the security implications?",
+      "Where will this be deployed?",
+      "How will this evolve in one year?"
+    ],
+    "tags": ["planning", "checklist", "pre-development"]
+  }
+]

@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Home from './pages/Home';
 import ShepherEdCaseStudy from './pages/ShepherEdCaseStudy';
+import EngineeringPrinciples from './pages/EngineeringPrinciples';
+import EngineeringNotes from './pages/EngineeringNotes';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -32,6 +34,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/case-studies/shephered" element={<ShepherEdCaseStudy />} />
+        <Route path="/principles" element={<EngineeringPrinciples />} />
+        <Route path="/notes" element={<EngineeringNotes />} />
       </Routes>
     </BrowserRouter>
   );

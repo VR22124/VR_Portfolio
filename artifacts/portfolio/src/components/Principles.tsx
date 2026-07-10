@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import principles from '../data/principles.json';
 
-const ACCENT_WORDS = ['Think', 'Architecture', 'Modular', 'Why', 'Last'];
-
-const HEADER_WORDS = ['What', 'I', 'believe', '.'];
+const HEADER_WORDS = ['Engineering', 'Principles', '.'];
 
 function splitWithAccent(title: string, accentWord: string) {
   const idx = title.indexOf(accentWord);
@@ -18,7 +17,6 @@ function splitWithAccent(title: string, accentWord: string) {
 interface PrincipleRowProps {
   principle: (typeof principles)[number];
   index: number;
-  accentWord: string;
   isRevealed: boolean;
   isHovered: boolean;
   isDimmed: boolean;
@@ -29,7 +27,6 @@ interface PrincipleRowProps {
 function PrincipleRow({
   principle,
   index,
-  accentWord,
   isRevealed,
   isHovered,
   isDimmed,
@@ -37,7 +34,7 @@ function PrincipleRow({
   onMouseLeave,
 }: PrincipleRowProps) {
   const isRight = index % 2 === 1;
-  const { before, accent, after } = splitWithAccent(principle.title, accentWord);
+  const { before, accent, after } = splitWithAccent(principle.title, principle.accentWord);
 
   return (
     <div
@@ -65,7 +62,7 @@ function PrincipleRow({
           transition: 'opacity 0.5s ease 0.2s',
         }}
       >
-        {String(index + 1).padStart(2, '0')}
+        {principle.num}
       </div>
 
       {/* Title — clip-path wipe reveal */}
@@ -139,7 +136,7 @@ function PrincipleRow({
           transition: 'opacity 0.6s ease 0.75s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.75s, color 0.35s ease',
         }}
       >
-        {principle.description}
+        {principle.preview}
       </p>
     </div>
   );
@@ -152,6 +149,8 @@ export default function Principles() {
   const [headerVisible, setHeaderVisible] = useState(false);
   const [revealedRows, setRevealedRows] = useState<Set<number>>(new Set());
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [ctaVisible, setCtaVisible] = useState(false);
+  const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -159,6 +158,17 @@ export default function Principles() {
     const obs = new IntersectionObserver(
       (entries) => { if (entries[0].isIntersecting) { setHeaderVisible(true); obs.disconnect(); } },
       { threshold: 0.05 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = ctaRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      (entries) => { if (entries[0].isIntersecting) { setCtaVisible(true); obs.disconnect(); } },
+      { threshold: 0.1 }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -214,7 +224,7 @@ export default function Principles() {
         {/* Word-rise headline */}
         <h2
           className="font-display"
-          aria-label="What I believe."
+          aria-label="Engineering Principles."
           style={{
             fontWeight: 500,
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
@@ -247,6 +257,22 @@ export default function Principles() {
             </span>
           ))}
         </h2>
+
+        <p
+          style={{
+            fontFamily: 'Menlo, monospace',
+            fontSize: 'clamp(13px, 1.1vw, 15px)',
+            color: '#5a5a64',
+            lineHeight: 1.75,
+            margin: 'clamp(1.2rem, 2vh, 1.75rem) 0 0 0',
+            maxWidth: '520px',
+            opacity: headerVisible ? 1 : 0,
+            transform: headerVisible ? 'translateY(0)' : 'translateY(10px)',
+            transition: 'opacity 0.6s ease 0.5s, transform 0.6s cubic-bezier(0.16,1,0.3,1) 0.5s',
+          }}
+        >
+          The principles that shape how I design systems, make technical decisions, and approach software engineering.
+        </p>
       </div>
 
       {/* Top divider */}
@@ -267,7 +293,6 @@ export default function Principles() {
           <PrincipleRow
             principle={p}
             index={i}
-            accentWord={ACCENT_WORDS[i]}
             isRevealed={revealedRows.has(i)}
             isHovered={hoveredIndex === i}
             isDimmed={hoveredIndex !== null && hoveredIndex !== i}
@@ -292,6 +317,46 @@ export default function Principles() {
           />
         </div>
       ))}
+
+      {/* CTA */}
+      <div
+        ref={ctaRef}
+        style={{
+          padding: 'clamp(3rem, 6vh, 5rem) 5vw 0',
+          opacity: ctaVisible ? 1 : 0,
+          transform: ctaVisible ? 'translateY(0)' : 'translateY(16px)',
+          transition: 'opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1)',
+        }}
+      >
+        <Link
+          to="/principles"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '0.6em',
+            fontFamily: 'Menlo, monospace',
+            fontSize: 'clamp(11px, 0.9vw, 13px)',
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            color: '#d4ff4f',
+            textDecoration: 'none',
+            borderBottom: '1px solid rgba(212,255,79,0.3)',
+            paddingBottom: '3px',
+            transition: 'border-color 0.3s ease, gap 0.3s ease',
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(212,255,79,0.8)';
+            e.currentTarget.style.gap = '0.9em';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.borderColor = 'rgba(212,255,79,0.3)';
+            e.currentTarget.style.gap = '0.6em';
+          }}
+        >
+          Explore My Engineering Principles
+          <span aria-hidden="true" style={{ fontSize: '1em' }}>→</span>
+        </Link>
+      </div>
     </section>
   );
 }

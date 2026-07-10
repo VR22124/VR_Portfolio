@@ -1,22 +1,53 @@
 [
   {
-    "title": "Think Before You Build",
-    "description": "Every decision starts with understanding the problem."
+    "num": "01",
+    "title": "Understand Before Building",
+    "accentWord": "Understand",
+    "preview": "Every project begins with understanding the problem before choosing the solution.",
+    "why": "I've noticed that when I jump straight into building, I often end up solving the wrong problem well. So I take time to understand what I'm actually dealing with—the domain, the responsibilities, the constraints—before I write a single line of code or pick a framework.",
+    "evolution": "When I started ShepherEd, my initial thought was to build an ERP. But as I spent more time thinking through the problem, I realized I wasn't dealing with a typical ERP challenge. I was designing a platform ecosystem—one where different institutions would need completely different configurations. That shift in understanding completely changed the architecture.",
+    "today": "Before I think about implementation, I spend time understanding what the project is actually trying to solve."
   },
   {
-    "title": "Architecture Matters",
-    "description": "Strong foundations make future development easier."
+    "num": "02",
+    "title": "Build the Foundation First",
+    "accentWord": "Foundation",
+    "preview": "Strong foundations make future features easier to build.",
+    "why": "I used to think that building features quickly was the right measure of progress. It isn't. I've learned that rushing through the foundation to get to features means I'll end up rebuilding the foundation later—usually at the worst possible time.",
+    "evolution": "Early in ShepherEd, I kept pushing myself to build attendance tracking, mark management, placements, academic workflows. Eventually I stopped and asked what was actually missing underneath all of it. The answer was identity, onboarding, and a stable academic structure. I spent months building those before touching anything else. That decision made everything that followed significantly easier.",
+    "today": "I build the core of the system first. Features come after the foundation is stable."
   },
   {
-    "title": "Keep It Modular",
-    "description": "Independent systems are easier to scale and maintain."
+    "num": "03",
+    "title": "Let Architecture Evolve",
+    "accentWord": "Evolve",
+    "preview": "Architecture should adapt as systems grow, not try to predict every future requirement.",
+    "why": "I don't think it's possible to design the perfect architecture upfront. Every major decision I've made has been a response to something I learned—something that only became clear after building. Trying to anticipate every future problem leads to overengineering. Letting the architecture respond to real problems leads to something that actually fits.",
+    "evolution": "ShepherEd went through four distinct architectural stages—a single Next.js application, a client-server modular monolith, clearly defined platform boundaries, and finally a monorepo. None of these were planned ahead of time. Each change was a response to complexity that had built up to the point where the current architecture couldn't absorb it anymore.",
+    "evolutionStages": [
+      "Single Next.js application",
+      "Client-server modular monolith",
+      "Platform boundaries",
+      "Monorepo architecture"
+    ],
+    "today": "I don't try to predict what the architecture needs to become. I let it respond to what the system is actually asking for."
   },
   {
-    "title": "Document the Why",
-    "description": "Good documentation preserves decisions, not just code."
+    "num": "04",
+    "title": "Verify Before Trusting",
+    "accentWord": "Verify",
+    "preview": "Every recommendation is validated before it becomes part of the system.",
+    "why": "Working with AI tools has made me much more deliberate about validation. AI suggestions can sound authoritative and completely correct—until they introduce a dependency that doesn't fit, or an architectural pattern that solves a problem I don't have. I've learned to treat every suggestion, from any source, as something that needs to be tested against my actual context.",
+    "evolution": "During ShepherEd's development, AI recommended several tools and patterns that I initially found compelling. Some genuinely improved the project. Others, after closer inspection, added complexity without solving anything real. The difference wasn't obvious from the recommendation itself—it only became clear after I tested it against what the project actually needed.",
+    "today": "I don't adopt something because it sounds right. I validate it against the actual problem I'm trying to solve."
   },
   {
-    "title": "Build to Last",
-    "description": "Create robust systems that can evolve and scale."
+    "num": "05",
+    "title": "Build Beyond the Demo",
+    "accentWord": "Beyond",
+    "preview": "Reliable software is defined by maintainability, security, and production readiness.",
+    "why": "There's a version of a project that works in a demo—and a version that actually holds up in production. Early on, I was focused on the first one. Over time, I started caring more about the second one. The things that make software reliable—testing, documentation, security, maintainability—aren't finishing touches. They're part of the engineering.",
+    "evolution": "Somewhere during ShepherEd's development, I stopped measuring progress by features completed. I had a long list of things I wanted to build, but I found myself slowing down instead—refining authentication, improving test coverage, tightening documentation, thinking about reliability. It felt slower at the time. Looking back, it's what made the system trustworthy.",
+    "today": "I measure progress by whether the system is getting more reliable, not just bigger."
   }
 ]
