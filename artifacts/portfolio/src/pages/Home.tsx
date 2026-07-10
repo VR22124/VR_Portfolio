@@ -15,7 +15,7 @@ import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import ShepherEd from '../components/ShepherEd';
 import HowIWork from '../components/HowIWork';
-import EngineeringWithAI from '../components/EngineeringWithAI';
+// import EngineeringWithAI from '../components/EngineeringWithAI';
 import Principles from '../components/Principles';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
@@ -127,7 +127,7 @@ export default function Home() {
           <ShepherEd />
           <Projects />
           <HowIWork />
-          <EngineeringWithAI />
+          {/* <EngineeringWithAI /> */}
           <Principles />
           <Testimonials />
         </main>
