@@ -81,6 +81,7 @@ function NoteCard({ note, index = 0 }: { note: Note; index?: number }) {
         opacity: 0,
         animation: 'slideFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         animationDelay: `${index * 0.08}s`,
+        minWidth: 0,
       }}
     >
       {/* IDE Window Header */}
@@ -135,6 +136,9 @@ function NoteCard({ note, index = 0 }: { note: Note; index?: number }) {
             letterSpacing: '-0.02em',
             color: '#ffffff',
             margin: 0,
+            wordBreak: 'break-word',
+            overflowWrap: 'break-word',
+            minWidth: 0,
           }}
         >
           {note.title}
