@@ -470,6 +470,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
   .notes-container {
     flex-direction: column;
     gap: 2rem;
+    align-items: stretch;
   }
   .notes-sidebar {
     position: relative;
