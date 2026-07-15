@@ -607,6 +607,12 @@ export default function ShepherEdCaseStudy() {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as any).__INITIAL_LOAD_DONE__ = true;
+    }
+  }, []);
+
   return (
     <div ref={rootRef} className="min-h-screen bg-[#0a0a0a] text-[#f5f5f2] selection:bg-[#d4ff4f] selection:text-black font-body overflow-x-hidden relative">
       <Helmet>
@@ -617,13 +623,13 @@ export default function ShepherEdCaseStudy() {
 
       {/* Nav Header */}
       <header className="fixed top-0 left-0 right-0 z-50 px-6 py-6 md:px-12 backdrop-blur-md bg-[#0a0a0a]/50 border-b border-white/5 flex items-center justify-between">
-        <a href="/#shephered" className="group inline-flex items-center gap-2 text-[#8c8c94] hover:text-[#f5f5f2] transition-colors">
+        <Link to="/#shephered" className="group inline-flex items-center gap-2 text-[#8c8c94] hover:text-[#f5f5f2] transition-colors">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover:-translate-x-1">
             <line x1="19" y1="12" x2="5" y2="12"></line>
             <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
           <span className="font-display text-sm tracking-widest uppercase">Back to Portfolio</span>
-        </a>
+        </Link>
         <div className="font-display font-bold text-[#d4ff4f] tracking-widest uppercase text-xs">
           Engineering Case Study
         </div>

@@ -9,7 +9,11 @@
       "Understand the users.",
       "Then design the system."
     ],
-    "tags": ["architecture", "planning"]
+    "tags": [
+      "architecture",
+      "planning"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "arch-02",
@@ -21,7 +25,11 @@
       "Relationships.",
       "Features come after."
     ],
-    "tags": ["architecture", "foundations"]
+    "tags": [
+      "architecture",
+      "foundations"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "arch-03",
@@ -32,7 +40,11 @@
       "Refactor when the project grows.",
       "Don't predict everything upfront."
     ],
-    "tags": ["architecture", "refactoring"]
+    "tags": [
+      "architecture",
+      "refactoring"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "arch-04",
@@ -42,7 +54,11 @@
       "Separate systems by responsibility.",
       "Not by technology."
     ],
-    "tags": ["architecture", "design"]
+    "tags": [
+      "architecture",
+      "design"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "arch-05",
@@ -53,7 +69,11 @@
       "Distributed systems can come later.",
       "Don't over-engineer."
     ],
-    "tags": ["architecture", "modules"]
+    "tags": [
+      "architecture",
+      "modules"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "arch-06",
@@ -62,7 +82,11 @@
     "lines": [
       "Today's complexity rarely needs tomorrow's architecture."
     ],
-    "tags": ["architecture", "simplicity"]
+    "tags": [
+      "architecture",
+      "simplicity"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "arch-07",
@@ -73,7 +97,11 @@
       "One purpose.",
       "No mixed responsibilities."
     ],
-    "tags": ["architecture", "design"]
+    "tags": [
+      "architecture",
+      "design"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "plan-01",
@@ -83,7 +111,11 @@
       "Never build large features.",
       "Split everything into the smallest deliverable iteration."
     ],
-    "tags": ["planning", "process"]
+    "tags": [
+      "planning",
+      "process"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "plan-02",
@@ -93,7 +125,11 @@
       "Know Version 1.",
       "Know what isn't Version 1."
     ],
-    "tags": ["planning", "scope"]
+    "tags": [
+      "planning",
+      "scope"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "plan-03",
@@ -103,7 +139,11 @@
       "Know when the iteration is complete.",
       "Avoid endless development."
     ],
-    "tags": ["planning", "process"]
+    "tags": [
+      "planning",
+      "process"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "plan-04",
@@ -112,7 +152,11 @@
     "lines": [
       "Don't add features halfway through an iteration."
     ],
-    "tags": ["planning", "scope"]
+    "tags": [
+      "planning",
+      "scope"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "ai-01",
@@ -122,7 +166,11 @@
       "AI suggests.",
       "You decide."
     ],
-    "tags": ["ai", "engineering"]
+    "tags": [
+      "ai",
+      "engineering"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "ai-02",
@@ -133,7 +181,11 @@
       "Compare reasoning.",
       "Validate."
     ],
-    "tags": ["ai", "validation"]
+    "tags": [
+      "ai",
+      "validation"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "ai-03",
@@ -143,7 +195,11 @@
       "AI loves adding dependencies.",
       "Question every recommendation."
     ],
-    "tags": ["ai", "dependencies"]
+    "tags": [
+      "ai",
+      "dependencies"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "ai-04",
@@ -153,7 +209,11 @@
       "Implementation can be assisted.",
       "Architecture stays human."
     ],
-    "tags": ["ai", "architecture"]
+    "tags": [
+      "ai",
+      "architecture"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "ai-05",
@@ -164,7 +224,11 @@
       "Small prompts.",
       "Better output."
     ],
-    "tags": ["ai", "prompting"]
+    "tags": [
+      "ai",
+      "prompting"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "ai-06",
@@ -174,7 +238,11 @@
       "Read. Write. Create. Delete.",
       "Every permission should be intentional."
     ],
-    "tags": ["ai", "agents"]
+    "tags": [
+      "ai",
+      "agents"
+    ],
+    "date": "11/07/2026"
   },
   {
     "id": "be-01",
@@ -183,7 +251,11 @@
     "lines": [
       "Never let invalid data reach business logic."
     ],
-    "tags": ["backend", "validation"]
+    "tags": [
+      "backend",
+      "validation"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "be-02",
@@ -194,7 +266,11 @@
       "is different from",
       "knowing what they can access."
     ],
-    "tags": ["backend", "security"]
+    "tags": [
+      "backend",
+      "security"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "be-03",
@@ -204,7 +280,11 @@
       "Routes should orchestrate.",
       "Services should think."
     ],
-    "tags": ["backend", "design"]
+    "tags": [
+      "backend",
+      "design"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "be-04",
@@ -213,7 +293,11 @@
     "lines": [
       "Avoid endpoints that do too many things."
     ],
-    "tags": ["backend", "design"]
+    "tags": [
+      "backend",
+      "design"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "db-01",
@@ -223,7 +307,11 @@
       "Keep core models relational.",
       "Don't make everything dynamic."
     ],
-    "tags": ["database", "design"]
+    "tags": [
+      "database",
+      "design"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "db-02",
@@ -233,7 +321,11 @@
       "Configuration belongs in JSONB.",
       "Business entities don't."
     ],
-    "tags": ["database", "jsonb"]
+    "tags": [
+      "database",
+      "jsonb"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "db-03",
@@ -243,7 +335,11 @@
       "Entities are easy.",
       "Relationships define the system."
     ],
-    "tags": ["database", "design"]
+    "tags": [
+      "database",
+      "design"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "db-04",
@@ -253,7 +349,11 @@
       "Readable queries",
       "beat clever queries."
     ],
-    "tags": ["database", "readability"]
+    "tags": [
+      "database",
+      "readability"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "prod-01",
@@ -263,7 +363,11 @@
       "Production isn't deployment.",
       "It's every decision before deployment."
     ],
-    "tags": ["production", "mindset"]
+    "tags": [
+      "production",
+      "mindset"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "prod-02",
@@ -273,7 +377,11 @@
       "Never leave security",
       "for the final sprint."
     ],
-    "tags": ["production", "security"]
+    "tags": [
+      "production",
+      "security"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "prod-03",
@@ -283,7 +391,11 @@
       "Stable software",
       "beats feature-rich software."
     ],
-    "tags": ["production", "reliability"]
+    "tags": [
+      "production",
+      "reliability"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "prod-04",
@@ -293,7 +405,11 @@
       "If it can't be observed,",
       "it can't be debugged."
     ],
-    "tags": ["production", "observability"]
+    "tags": [
+      "production",
+      "observability"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "prod-05",
@@ -303,7 +419,11 @@
       "Document why.",
       "Code explains how."
     ],
-    "tags": ["production", "documentation"]
+    "tags": [
+      "production",
+      "documentation"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "test-01",
@@ -312,7 +432,11 @@
     "lines": [
       "Don't wait until the end."
     ],
-    "tags": ["testing", "process"]
+    "tags": [
+      "testing",
+      "process"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "test-02",
@@ -322,7 +446,11 @@
       "Validate the backend first.",
       "Then test the interface."
     ],
-    "tags": ["testing", "backend"]
+    "tags": [
+      "testing",
+      "backend"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "test-03",
@@ -332,7 +460,11 @@
       "Protect user flows.",
       "Regression should never surprise you."
     ],
-    "tags": ["testing", "playwright"]
+    "tags": [
+      "testing",
+      "playwright"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "test-04",
@@ -342,7 +474,11 @@
       "Happy paths sell demos.",
       "Edge cases build products."
     ],
-    "tags": ["testing", "quality"]
+    "tags": [
+      "testing",
+      "quality"
+    ],
+    "date": "12/07/2026"
   },
   {
     "id": "dev-01",
@@ -352,7 +488,11 @@
       "Changing architecture",
       "means learning."
     ],
-    "tags": ["development", "refactoring"]
+    "tags": [
+      "development",
+      "refactoring"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "dev-02",
@@ -362,7 +502,11 @@
       "Delete dead code.",
       "Don't keep 'maybe later.'"
     ],
-    "tags": ["development", "quality"]
+    "tags": [
+      "development",
+      "quality"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "dev-03",
@@ -373,7 +517,11 @@
       "Reuse.",
       "Don't copy."
     ],
-    "tags": ["development", "design"]
+    "tags": [
+      "development",
+      "design"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "dev-04",
@@ -383,7 +531,11 @@
       "Good names",
       "reduce documentation."
     ],
-    "tags": ["development", "readability"]
+    "tags": [
+      "development",
+      "readability"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "shep-01",
@@ -393,7 +545,11 @@
       "Unlimited flexibility",
       "created unlimited complexity."
     ],
-    "tags": ["shephered", "architecture"]
+    "tags": [
+      "shephered",
+      "architecture"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "shep-02",
@@ -403,7 +559,11 @@
       "Authentication grew beyond ERP.",
       "It deserved its own platform."
     ],
-    "tags": ["shephered", "sip"]
+    "tags": [
+      "shephered",
+      "sip"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "shep-03",
@@ -413,7 +573,11 @@
       "Pause features.",
       "Strengthen the foundation."
     ],
-    "tags": ["shephered", "reliability"]
+    "tags": [
+      "shephered",
+      "reliability"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "shep-04",
@@ -423,7 +587,11 @@
       "Architecture first.",
       "Repositories second."
     ],
-    "tags": ["shephered", "monorepo"]
+    "tags": [
+      "shephered",
+      "monorepo"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "shep-05",
@@ -433,7 +601,11 @@
       "Software should adapt to institutions.",
       "Not the other way around."
     ],
-    "tags": ["shephered", "product"]
+    "tags": [
+      "shephered",
+      "product"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "pers-01",
@@ -443,7 +615,11 @@
       "Build software",
       "you'll enjoy maintaining."
     ],
-    "tags": ["personal", "mindset"]
+    "tags": [
+      "personal",
+      "mindset"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "pers-02",
@@ -453,7 +629,11 @@
       "Use technology",
       "because it solves a problem."
     ],
-    "tags": ["personal", "mindset"]
+    "tags": [
+      "personal",
+      "mindset"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "pers-03",
@@ -463,7 +643,11 @@
       "Simple systems",
       "are easier to evolve."
     ],
-    "tags": ["personal", "simplicity"]
+    "tags": [
+      "personal",
+      "simplicity"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "pers-04",
@@ -473,7 +657,11 @@
       "Every project",
       "should change how you think."
     ],
-    "tags": ["personal", "growth"]
+    "tags": [
+      "personal",
+      "growth"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "pers-05",
@@ -484,7 +672,11 @@
       "is more valuable",
       "than memorizing 'how.'"
     ],
-    "tags": ["personal", "mindset"]
+    "tags": [
+      "personal",
+      "mindset"
+    ],
+    "date": "13/07/2026"
   },
   {
     "id": "pre-01",
@@ -505,6 +697,613 @@
       "Where will this be deployed?",
       "How will this evolve in one year?"
     ],
-    "tags": ["planning", "checklist", "pre-development"]
+    "tags": [
+      "planning",
+      "checklist",
+      "pre-development"
+    ],
+    "date": "13/07/2026"
+  },
+  {
+    "id": "port-01",
+    "category": "Portfolio Stack",
+    "title": "Building this Portfolio",
+    "lines": [
+      "Started the initial project in Replit.",
+      "Iterated and refined the UI using Lovable.",
+      "Made it production-ready in Antigravity.",
+      "Domain purchased from Name.com.",
+      "Tracking with Google Analytics and Vercel Analytics."
+    ],
+    "tags": [
+      "portfolio",
+      "stack",
+      "tools"
+    ],
+    "date": "13/07/2026"
+  },
+  {
+    "id": "tools-01",
+    "category": "Tool Insights",
+    "title": "Replit: Great for Foundations",
+    "lines": [
+      "Excellent for rapidly prototyping ideas.",
+      "Generates solid UI, including fluid animations.",
+      "The predefined project structure often needs clean-up.",
+      "Perfect for the initial spark, but requires restructuring."
+    ],
+    "tags": [
+      "tools",
+      "replit",
+      "prototyping"
+    ],
+    "date": "13/07/2026"
+  },
+  {
+    "id": "tools-02",
+    "category": "Tool Insights",
+    "title": "Lovable: Unmatched for Ideation",
+    "lines": [
+      "One of the best tools for UI innovation and exploring new ideas.",
+      "Incredible for the ideation phase.",
+      "Not production-ready out of the box.",
+      "Requires engineering effort to finalize and scale."
+    ],
+    "tags": [
+      "tools",
+      "lovable",
+      "ui"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-03",
+    "category": "Tool Insights",
+    "title": "Kimi 2.6: Design to Backend",
+    "lines": [
+      "Highly impressive reasoning model.",
+      "Excels at generating compelling, high-quality UI designs.",
+      "Equally capable at handling complex backend logic.",
+      "A strong companion for full-stack exploration."
+    ],
+    "tags": [
+      "tools",
+      "kimi",
+      "ai",
+      "fullstack"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "port-02",
+    "category": "Portfolio Stack",
+    "title": "Production Readiness",
+    "lines": [
+      "Removed unused code and uninstalled bloated packages.",
+      "Optimized the Vite build for maximum efficiency.",
+      "Thoroughly validated cross-device responsiveness.",
+      "All production-ready steps executed using Antigravity."
+    ],
+    "tags": [
+      "portfolio",
+      "production",
+      "antigravity"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "port-03",
+    "category": "Portfolio Stack",
+    "title": "SEO & Observability",
+    "lines": [
+      "Optimized index.html with favicons and Open Graph images for social previews.",
+      "Uploaded sitemaps to Google Search Console for indexing.",
+      "Deployed Google Analytics and Vercel Insights to track the user base."
+    ],
+    "tags": [
+      "portfolio",
+      "seo",
+      "analytics"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-04",
+    "category": "Tool Insights",
+    "title": "Antigravity",
+    "lines": [
+      "The best agentic tool I have used.",
+      "Really high performance and a good token limit.",
+      "Perfect for agent orchestration and deploying subagents.",
+      "The attention to detail when planning complex systems is extreme."
+    ],
+    "tags": [
+      "tools",
+      "antigravity",
+      "ai",
+      "agents"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-05",
+    "category": "Tool Insights",
+    "title": "Antigravity IDE",
+    "lines": [
+      "Highly efficient and consistently delivers clean work.",
+      "Provides high-quality code reviews.",
+      "Excellent at maintaining clean project structures."
+    ],
+    "tags": [
+      "tools",
+      "antigravity-ide",
+      "ai",
+      "ide"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-06",
+    "category": "Tool Insights",
+    "title": "Supabase",
+    "lines": [
+      "Stands first when it comes to cloud databases.",
+      "Incredible amount of features even in the free tier.",
+      "Built-in Auth and Storage make it a complete backend solution.",
+      "The CLI is fantastic and integration is incredibly easy."
+    ],
+    "tags": [
+      "tools",
+      "supabase",
+      "database",
+      "backend"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-07",
+    "category": "Tool Insights",
+    "title": "Neon DB",
+    "lines": [
+      "A great database with powerful branching capabilities.",
+      "Perfect for managing multiple environments (dev, test, prod) in a single project.",
+      "The CLI is highly efficient and the setup is effortless."
+    ],
+    "tags": [
+      "tools",
+      "neon",
+      "database",
+      "serverless"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-08",
+    "category": "Tool Insights",
+    "title": "Animation Libraries",
+    "lines": [
+      "Aceternity UI: Incredible for modern, sleek animated components.",
+      "Magic UI: Great for highly polished, drop-in micro-interactions.",
+      "React Bits: Excellent collection of reusable animation snippets."
+    ],
+    "tags": [
+      "tools",
+      "animations",
+      "ui",
+      "react"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-09",
+    "category": "Tool Insights",
+    "title": "Design & Inspiration",
+    "lines": [
+      "21st.dev is an excellent resource for finding modern web design inspiration.",
+      "The 'getdesign.md' skill pack provides strong foundational rules for agentic design.",
+      "The 'UI UX Pro Max' skill pack drives phenomenal agent-based aesthetic execution."
+    ],
+    "tags": [
+      "tools",
+      "design",
+      "inspiration",
+      "skill-packs"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "arch-08",
+    "category": "Architecture",
+    "title": "The Architecture Spectrum",
+    "lines": [
+      "Monolith: A single codebase deployed as one unit. Simple to build, but tightly coupled and harder to scale as teams grow.",
+      "Modular Monolith: Still one deployment unit, but strictly separated into independent logical modules. The best of both worlds for most projects.",
+      "Monorepo: A single version-controlled repository that holds multiple distinct projects or services. Simplifies dependency management and code sharing.",
+      "Microservices: Independently deployable services communicating over a network. Infinite scalability, but introduces heavy operational complexity."
+    ],
+    "tags": [
+      "architecture",
+      "patterns",
+      "scaling"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-10",
+    "category": "Tool Insights",
+    "title": "GetLayers.ai",
+    "lines": [
+      "An excellent resource for premium animated 3D site prompts.",
+      "Offers incredibly cool designs with a mix of free and paid prompts.",
+      "A perfect tool to explore for sparking innovative UI ideas."
+    ],
+    "tags": [
+      "tools",
+      "design",
+      "inspiration",
+      "3d"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-11",
+    "category": "Tool Insights",
+    "title": "Agent Skill Packs (GitHub)",
+    "lines": [
+      "freshtechbro/claudedesignskills (https://github.com/freshtechbro/claudedesignskills) - This pack is amazing. It forces the AI to output actual high-quality, modern UI instead of generic 'AI slop'. Super useful for pushing aesthetic boundaries.",
+      "greensock/gsap-skills (https://github.com/greensock/gsap-skills) - An absolute lifesaver. Most AI models are stuck in the past with deprecated GSAP syntax. This official pack teaches the agents to use modern hooks and best practices seamlessly."
+    ],
+    "tags": [
+      "tools",
+      "agents",
+      "skills",
+      "github"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-12",
+    "category": "Tool Insights",
+    "title": "TanStack Query",
+    "lines": [
+      "Discovered this while looking to implement caching for a dev project.",
+      "It handles client-side caching by storing data in-memory rather than on the server.",
+      "An absolute game-changer for improving overall UI performance and data fetching."
+    ],
+    "tags": [
+      "tools",
+      "tanstack",
+      "caching",
+      "performance"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-13",
+    "category": "Tool Insights",
+    "title": "Specialized Design Resources",
+    "lines": [
+      "shadergradient.co (https://www.shadergradient.co) - Excellent for creating beautiful, complex gradients.",
+      "dark.design (https://www.dark.design) - Perfect for dark site inspiration and finding free templates.",
+      "supahero.io (https://supahero.io) - A great resource specifically for hero page inspiration."
+    ],
+    "tags": [
+      "tools",
+      "design",
+      "inspiration",
+      "ui"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-14",
+    "category": "Tool Insights",
+    "title": "Google Flow",
+    "lines": [
+      "A really cool tool for generating videos specifically for websites.",
+      "Highly effective for creating scroll-based 3D animations."
+    ],
+    "tags": [
+      "tools",
+      "google-flow",
+      "video",
+      "animations",
+      "3d"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "tools-15",
+    "category": "Tool Insights",
+    "title": "NVIDIA Build API",
+    "lines": [
+      "Recently came across build.nvidia.com for accessing frontier models.",
+      "They offer a limited free API, perfect for experimenting with powerful new models.",
+      "Need to explore this further, especially the GLM 5.2 model by z.ai which looks really good."
+    ],
+    "tags": [
+      "tools",
+      "nvidia",
+      "api",
+      "ai-models"
+    ],
+    "date": "14/07/2026"
+  },
+  {
+    "id": "be-05",
+    "category": "Backend",
+    "title": "HTTP QUERY Method",
+    "lines": [
+      "After years, HTTP has launched a new verb: QUERY.",
+      "It allows safely fetching data using a complex request body (solving the 'GET with a body' dilemma while remaining cacheable).",
+      "I haven't tried it yet, but it's on my list to explore soon."
+    ],
+    "tags": [
+      "backend",
+      "http",
+      "api"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-16",
+    "category": "Tool Insights",
+    "title": "Antigravity Awesome Skills",
+    "lines": [
+      "Found a massive repo: sickn33/antigravity-awesome-skills (https://github.com/sickn33/antigravity-awesome-skills).",
+      "It contains an incredible collection of 1,800+ agentic skills and workflows.",
+      "Need to check this out for inspiration and specific skills that could help in building ShepherEd."
+    ],
+    "tags": [
+      "tools",
+      "agents",
+      "skills",
+      "shephered",
+      "antigravity"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-17",
+    "category": "Tool Insights",
+    "title": "styles.refero.design",
+    "lines": [
+      "One of the best sites for obtaining 'design.md' files for highly animated and premium websites.",
+      "It is specifically designed for AI agents to understand and replicate complex aesthetics.",
+      "I used this site to gather the core inspiration for this portfolio."
+    ],
+    "tags": [
+      "tools",
+      "design",
+      "agents",
+      "inspiration",
+      "refero"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-18",
+    "category": "Tool Insights",
+    "title": "Impeccable (impeccable.style)",
+    "lines": [
+      "A powerful design framework and AI skill pack built specifically to stop 'AI slop' and force agents to output professional-grade UI/UX.",
+      "I haven't used it yet, but I am really looking forward to trying it out for future agent-driven designs."
+    ],
+    "tags": [
+      "tools",
+      "design",
+      "agents",
+      "impeccable"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "prod-06",
+    "category": "Production",
+    "title": "Pre-Flight Security & Stability Checklist",
+    "lines": [
+      "Input Validation: Sanitize all incoming data to strictly prevent SQL injection and XSS attacks.",
+      "Tenant Isolation: Lock users to their own ID. Enforce strict boundaries so users can never access another user's data.",
+      "CORS Configuration: Strictly configure CORS to block unauthorized external domains from making API calls.",
+      "Rate Limiting: Implement robust rate limiting to prevent spam and protect against DDoS attacks.",
+      "Observability: Always implement logging and monitoring to catch production crashes early and fix them immediately."
+    ],
+    "tags": [
+      "production",
+      "security",
+      "checklist"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-19",
+    "category": "Tool Insights",
+    "title": "Graphify",
+    "lines": [
+      "A tool designed to drastically reduce token usage in Agentic IDEs.",
+      "It works by creating a graph based on the context of the project to optimize how code is fed to the agent.",
+      "Seems really interesting, looking forward to trying it out soon."
+    ],
+    "tags": [
+      "tools",
+      "agents",
+      "graphify",
+      "optimization"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-20",
+    "category": "Tool Insights",
+    "title": "Google AI Studio",
+    "lines": [
+      "Need to explore the potential of Google's AI tools more deeply.",
+      "It provides really cool features like building entire Android apps and defining robust agents.",
+      "Google's rapid evolution in the AI space continues to be surprising and highly impressive."
+    ],
+    "tags": [
+      "tools",
+      "ai",
+      "google-ai-studio",
+      "agents"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "dev-05",
+    "category": "Development",
+    "title": "Mastering cURL",
+    "lines": [
+      "I want to learn and master using cURL with simple 2-3 word commands.",
+      "It acts just like Postman but directly in the terminal.",
+      "Perfect for testing APIs, checking links, handling file uploads, and more."
+    ],
+    "tags": [
+      "development",
+      "terminal",
+      "curl",
+      "api"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-21",
+    "category": "Tool Insights",
+    "title": "Agent Swarms: Reflo & Hermes",
+    "lines": [
+      "Discovered 'reflo' and 'hermes' on GitHub, which are properly defined swarms of agents.",
+      "Really excited to use them, though they seem to require higher token limits to operate effectively.",
+      "They are definitely on my checklist to explore and try out soon."
+    ],
+    "tags": [
+      "tools",
+      "agents",
+      "swarm",
+      "github",
+      "reflo",
+      "hermes"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-22",
+    "category": "Tool Insights",
+    "title": "The Huge Boom in MCPs",
+    "lines": [
+      "There is a massive boom right now in Model Context Protocol (MCP) servers.",
+      "MCPs keep popping up for virtually all platforms, even extending to design sites.",
+      "Really looking forward to trying out specific ones like the Zerodha MCP and Firebase MCP."
+    ],
+    "tags": [
+      "tools",
+      "mcp",
+      "integration",
+      "ai"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-23",
+    "category": "Tool Insights",
+    "title": "Playwright",
+    "lines": [
+      "I was looking for a way to test complete flows from a client's perspective, which led me to Playwright.",
+      "It became one of the best discoveries during the development of ShepherEd.",
+      "You can script complex user flows and it tests them perfectly, providing detailed reports and screenshots on failure.",
+      "It can even provide a full video recording of the test flow if requested. A genuinely incredible tool."
+    ],
+    "tags": [
+      "tools",
+      "playwright",
+      "testing",
+      "e2e",
+      "shephered"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "tools-24",
+    "category": "Tool Insights",
+    "title": "Resend",
+    "lines": [
+      "One of the most resourceful tools for a developer when building a SaaS.",
+      "Incredibly easy to send professional emails, including rich HTML templates.",
+      "Offers an amazing free tier of 100 emails a day (3k/month). A truly cool and essential tool."
+    ],
+    "tags": [
+      "tools",
+      "resend",
+      "email",
+      "saas"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "infra-01",
+    "category": "Infrastructure",
+    "title": "Cloudflare DNS over Namecheap",
+    "lines": [
+      "Hit a strict limitation with a domain purchased on Namecheap: it wouldn't allow DNS records for both email forwarding and Resend configuration simultaneously.",
+      "The ultimate solution was migrating the domain's DNS hosting to Cloudflare.",
+      "Cloudflare handled the complex records effortlessly, allowing both Resend and email forwarding to coexist."
+    ],
+    "tags": [
+      "infrastructure",
+      "cloudflare",
+      "dns",
+      "resend",
+      "namecheap"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "arch-09",
+    "category": "Architecture",
+    "title": "Asynchronous Event Processing",
+    "lines": [
+      "I realized that for huge tasks, relying on simple HTTP requests would quickly overwhelm the system.",
+      "I had to stop treating the backend as just an HTTP response server.",
+      "Treating it as an asynchronous event-processing engine changed everything."
+    ],
+    "tags": [
+      "architecture",
+      "backend",
+      "async",
+      "performance"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "db-05",
+    "category": "Database",
+    "title": "Strict Transactions",
+    "lines": [
+      "I learned how dangerous it is to leave orphan data or incomplete records.",
+      "Now, I make sure to wrap every multi-step database operation in a transaction.",
+      "If it doesn't complete perfectly, the rollback saves everything."
+    ],
+    "tags": [
+      "database",
+      "transactions",
+      "data-integrity"
+    ],
+    "date": "15/07/2026"
+  },
+  {
+    "id": "des-01",
+    "category": "Design",
+    "title": "Visual Hierarchy & Data-First Design",
+    "lines": [
+      "I used to get caught up looking at beautiful sites and completely ignored their underlying structure.",
+      "I realized I need to deeply understand the kind of site I am building before styling it.",
+      "If it's a data-heavy site or a dashboard, perfecting the visual hierarchy and adopting a 'data-first design' approach is crucial."
+    ],
+    "tags": [
+      "design",
+      "ui",
+      "ux",
+      "data-first"
+    ],
+    "date": "15/07/2026"
   }
 ]

@@ -357,9 +357,11 @@ export default function Experience() {
       {/* ── Section header ── */}
       <div
         style={{
-          padding: 'clamp(4rem, 8vh, 7rem) 5vw clamp(2.5rem, 4vh, 4rem)',
+          padding: 'clamp(4rem, 8vh, 7rem) 5vw 0',
           maxWidth: '1400px',
           margin: '0 auto',
+          position: 'relative',
+          zIndex: 10,
         }}
       >
         <div className="eyebrow mb-4">Experience</div>

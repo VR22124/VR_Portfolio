@@ -63,7 +63,18 @@ function CSSParticleFallback() {
 
 export default function Home() {
   const scrollProgress = useRef(0);
-  const [loading, setLoading] = useState(() => !window.location.hash);
+  const [loading, setLoading] = useState(() => {
+    // We cast window to any to access the custom property
+    if (typeof window !== 'undefined' && (window as any).__INITIAL_LOAD_DONE__) return false;
+    return !window.location.hash;
+  });
+
+  useEffect(() => {
+    if (!loading && typeof window !== 'undefined') {
+      (window as any).__INITIAL_LOAD_DONE__ = true;
+    }
+  }, [loading]);
+
   const [webglSupported] = useState<boolean>(() => isWebGLAvailable());
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 
