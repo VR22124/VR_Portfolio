@@ -3,9 +3,9 @@ import React from 'react';
 export default function ErrorBoundaryFallback({ error, resetErrorBoundary }: { error: Error; resetErrorBoundary: () => void }) {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center bg-[#050505] p-6 text-white text-center">
-      <h1 className="mb-2 text-xl font-bold tracking-tight text-[#f5f5f2]">Vishnu Rohith B</h1>
-      <p className="mb-6 text-sm text-[#8c8c94]">Full-Stack Developer · Salem, Tamil Nadu</p>
-      <h2 className="mb-4 text-3xl font-bold tracking-tight text-[#d4ff4f]">Something went wrong</h2>
+      <h1 className="mb-2 text-xl font-bold tracking-tight text-[var(--text-primary)]">Vishnu Rohith B</h1>
+      <p className="mb-6 text-sm text-[var(--text-secondary)]">Full-Stack Developer · Salem, Tamil Nadu</p>
+      <h2 className="mb-4 text-3xl font-bold tracking-tight text-[var(--accent)]">Something went wrong</h2>
       <p className="mb-6 max-w-md text-zinc-400">
         We encountered an unexpected error. You can try refreshing the page or contact support if the issue persists.
       </p>
@@ -14,16 +14,16 @@ export default function ErrorBoundaryFallback({ error, resetErrorBoundary }: { e
       </pre>
       <button
         onClick={resetErrorBoundary}
-        className="rounded-full bg-[#d4ff4f] px-6 py-2 text-sm font-medium text-black transition-transform hover:scale-105"
+        className="rounded-full bg-[var(--accent)] px-6 py-2 text-sm font-medium text-black transition-transform hover:scale-105"
       >
         Try Again
       </button>
-      <p className="mt-8 text-xs text-[#4a4a52]">
-        <a href="mailto:b.vishnurohith@gmail.com" className="hover:text-[#8c8c94] transition-colors">b.vishnurohith@gmail.com</a>
+      <p className="mt-8 text-xs text-[var(--text-tertiary)]">
+        <a href="mailto:b.vishnurohith@gmail.com" className="hover:text-[var(--text-secondary)] transition-colors">b.vishnurohith@gmail.com</a>
         {' · '}
-        <a href="https://github.com/VR22124" className="hover:text-[#8c8c94] transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/VR22124" className="hover:text-[var(--text-secondary)] transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
         {' · '}
-        <a href="https://www.linkedin.com/in/vishnurohithb" className="hover:text-[#8c8c94] transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/vishnurohithb" className="hover:text-[var(--text-secondary)] transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </p>
     </div>
   );

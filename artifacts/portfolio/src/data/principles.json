@@ -49,5 +49,50 @@
     "why": "There's a version of a project that works in a demo—and a version that actually holds up in production. Early on, I was focused on the first one. Over time, I started caring more about the second one. The things that make software reliable—testing, documentation, security, maintainability—aren't finishing touches. They're part of the engineering.",
     "evolution": "Somewhere during ShepherEd's development, I stopped measuring progress by features completed. I had a long list of things I wanted to build, but I found myself slowing down instead—refining authentication, improving test coverage, tightening documentation, thinking about reliability. It felt slower at the time. Looking back, it's what made the system trustworthy.",
     "today": "I measure progress by whether the system is getting more reliable, not just bigger."
+  },
+  {
+    "num": "06",
+    "title": "Isolate What Matters",
+    "accentWord": "Isolate",
+    "preview": "Complex domains need their own space to breathe.",
+    "why": "I used to build everything into one big system because it felt faster. But I've noticed that when a system gets too large, fixing one thing breaks another. I realized that if a specific part of a system is complex enough, it shouldn't just be a module—it needs its own space to breathe without tangling up the rest of the architecture.",
+    "evolution": "The Academic Module inside ShepherEd started getting incredibly complicated with terms, scales, and enrollments. Instead of forcing it to fit inside the main platform and letting it bloat the core, I decided to extract it completely into ShepherEd OpenAcademia. I did the exact same thing with the Observability Platform.",
+    "today": "If a domain gets too complicated, I isolate it into its own independent system rather than letting it bloat the core."
+  },
+  {
+    "num": "07",
+    "title": "Boundaries Protect the Data",
+    "accentWord": "Boundaries",
+    "preview": "If it's not wrapped in a strict transaction, it's a liability.",
+    "why": "Early on, I just wanted to see data hit the database. If it saved, it worked. But I learned the hard way that when things scale, half-finished saves or crossed wires between environments can silently corrupt everything.",
+    "evolution": "In my earlier builds, I used to write directly to the database. Eventually, I started seeing orphan data sets. I had to completely restructure how I saved data, moving to strict Prisma transactions so that if one thing failed, everything rolled back safely. I also had to set up clear Dev, Test, and Prod environments so I wouldn't accidentally break production while experimenting.",
+    "today": "I don't trust loose database writes. I rely on strict transactions and clean environments to protect the system's state."
+  },
+  {
+    "num": "08",
+    "title": "Automate What Drains You",
+    "accentWord": "Automate",
+    "preview": "As a solo developer, manual friction is the biggest threat to momentum.",
+    "why": "As a solo developer, time is my biggest bottleneck. I used to think I could just manually run tests and handle deployments myself. But sitting there waiting for tests to run locally just drains my energy and momentum.",
+    "evolution": "I wrote nearly 580 tests for one of my projects. Running them sequentially on my own machine started burning through my CPU and causing connection timeouts. Instead of fighting it, I offloaded the entire test suite to GitHub Actions VMs to run in parallel. It was a small step, but it made me realize how much I need automation. Now, I'm actively studying CI/CD to automate the rest of the pipeline.",
+    "today": "If a repetitive task drains my time or my machine's resources, I look for a way to automate it."
+  },
+  {
+    "num": "09",
+    "title": "Accept the Trade-off",
+    "accentWord": "Trade-off",
+    "preview": "Every architectural decision is just a trade-off in disguise.",
+    "why": "I often catch myself spending days trying to find the 'perfect' architecture that has no downsides. I eventually realized that doesn't exist. If I decouple services, I lose simplicity. If I build a monolith, I lose flexibility. Now, instead of looking for a flawless solution, I look for the trade-off I'm most willing to live with.",
+    "evolution": "Moving to a monorepo and breaking things into packages felt like the ultimate solution for code sharing, but it immediately introduced complex package dependency management and slower builds. I realized I didn't solve a problem—I just traded one set of problems for another that I preferred dealing with.",
+    "today": "I don't ask 'is this the perfect way?' I ask 'what pain am I choosing, and is it worth it?'"
+  },
+  {
+    "num": "10",
+    "title": "Learn by Breaking Things",
+    "accentWord": "Breaking",
+    "preview": "Theoretical architecture doesn't stick until you've crashed a system.",
+    "why": "I can read about CI/CD pipelines, Docker, or database idempotency all day, but I never truly understand why a pattern exists until I've personally built a system that collapsed without it. The moment my local machine froze because of heavy testing, the concept of distributed CI pipelines suddenly made perfect sense.",
+    "evolution": "I often find myself questioning if I'm following the 'industry standard' correctly. But I've learned that standard practices were just invented by engineers who broke things at scale. I have to let my own systems hit their limits before I can truly understand the architecture needed to fix them.",
+    "today": "I don't try to implement best practices just because they exist. I implement them when my system finally breaks enough to need them."
   }
 ]

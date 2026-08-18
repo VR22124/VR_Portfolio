@@ -1,30 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import * as SiIcons from 'react-icons/si';
-import { VscAzure, VscAzureDevops, VscVscode } from 'react-icons/vsc';
-import { TbLetterK } from 'react-icons/tb';
-import { FaInfinity, FaBug, FaVial, FaSpaceShuttle, FaHeart, FaMoon } from 'react-icons/fa';
+import { IconMap } from './IconMap';
 import skills from '../data/skills.json';
-
-const AntigravityIcon = ({ size = 20 }: { size?: number }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M5 20L12 5L19 20" />
-  </svg>
-);
-
-const IconMap: Record<string, React.ComponentType<{ size?: number }>> = {
-  ...(SiIcons as Record<string, React.ComponentType<{ size?: number }>>),
-  VscAzure,
-  VscAzureDevops,
-  VscVscode,
-  FaInfinity,
-  FaBug,
-  FaVial,
-  FaSpaceShuttle,
-  FaHeart,
-  FaMoon,
-  TbLetterK,
-  AntigravityIcon
-};
 
 type Skill = (typeof skills)[number];
 
@@ -41,7 +17,7 @@ const sorted = [...skills].sort(
   (a, b) => CATEGORY_ORDER.indexOf(a.category) - CATEGORY_ORDER.indexOf(b.category)
 );
 
-const ACCENT = '#d4ff4f';
+const ACCENT = 'var(--accent)';
 
 /* ------------------------------ CountUpNumber ------------------------------ */
 function CountUpNumber({
@@ -100,7 +76,7 @@ function CountUpNumber({
         display: 'inline-block',
         textAlign: 'right',
         color: glow ? ACCENT : '#3a3a44',
-        textShadow: glow ? `0 0 10px rgba(212,255,79,0.55)` : 'none',
+        textShadow: glow ? `0 0 10px color-mix(in srgb, var(--accent) 55%, transparent)` : 'none',
         transition: 'color 0.25s ease, text-shadow 0.25s ease',
       }}
       aria-label={`${target}% proficiency`}
@@ -144,23 +120,11 @@ function SkillRow({
     prevHover.current = isHovered;
   }, [isHovered]);
 
-  const nameColor = isMobile
-    ? '#d4d4d0'
-    : isHovered
-      ? '#f5f5f2'
-      : '#4a4a52';
+  const isActive = isMobile || isHovered;
 
-  const iconColor = isMobile
-    ? 'rgba(212,255,79,0.55)'
-    : isHovered
-      ? ACCENT
-      : '#3a3a44';
-
-  const tagColor = isMobile
-    ? '#5a5a64'
-    : isHovered
-      ? ACCENT
-      : '#3a3a44';
+  const nameColor = isActive ? 'var(--text-primary)' : 'var(--text-tertiary)';
+  const iconColor = isActive ? ACCENT : '#3a3a44';
+  const tagColor = isActive ? ACCENT : '#3a3a44';
 
   const rowMaxHeight = isFiltered ? 0 : 200;
   const rowOpacity = isFiltered ? 0 : isRevealed ? 1 : 0;
@@ -180,7 +144,7 @@ function SkillRow({
         aria-hidden="true"
         style={{
           height: '1px',
-          background: '#1f1f24',
+          background: 'var(--border)',
           transformOrigin: 'left center',
           transform: isRevealed ? 'scaleX(1)' : 'scaleX(0)',
           transition: `transform 0.5s cubic-bezier(0.7,0,0.3,1) ${stagger}s`,
@@ -219,9 +183,9 @@ function SkillRow({
               position: 'absolute',
               inset: 0,
               borderRadius: '50%',
-              background: isHovered
-                ? 'radial-gradient(circle, rgba(212,255,79,0.22) 0%, rgba(212,255,79,0) 70%)'
-                : 'radial-gradient(circle, rgba(212,255,79,0.06) 0%, rgba(212,255,79,0) 70%)',
+              background: isActive
+                ? 'radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent) 0%, transparent 70%)'
+                : 'radial-gradient(circle, color-mix(in srgb, var(--accent) 6%, transparent) 0%, transparent 70%)',
               transition: 'background 0.3s ease',
               pointerEvents: 'none',
             }}
@@ -244,7 +208,7 @@ function SkillRow({
             style={{
               color: iconColor,
               display: 'flex',
-              filter: isHovered ? 'drop-shadow(0 0 8px rgba(212,255,79,0.55))' : 'none',
+              filter: isActive ? 'drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 55%, transparent))' : 'none',
               transition: 'color 0.25s ease, filter 0.25s ease',
             }}
           >
@@ -463,7 +427,7 @@ export default function Skills() {
                 fontWeight: 500,
                 fontSize: 'clamp(2rem, 5vw, 4rem)',
                 letterSpacing: '-0.03em',
-                color: '#f5f5f2',
+                color: 'var(--text-primary)',
                 margin: 0,
                 lineHeight: 1.05,
               }}
@@ -486,7 +450,7 @@ export default function Skills() {
                 key={line}
                 style={{
                   fontSize: 'clamp(13px, 1vw, 15px)',
-                  color: '#8c8c94',
+                  color: 'var(--text-secondary)',
                   lineHeight: 1.6,
                   opacity: headerVisible ? 1 : 0,
                   transform: headerVisible ? 'translateY(0)' : 'translateY(8px)',
@@ -523,7 +487,7 @@ export default function Skills() {
                 fontSize: '10px',
                 letterSpacing: '0.16em',
                 textTransform: 'uppercase',
-                color: active ? '#08080a' : '#8c8c94',
+                color: active ? 'var(--bg-base)' : 'var(--text-secondary)',
                 background: active ? ACCENT : 'transparent',
                 border: `1px solid ${active ? ACCENT : 'rgba(140,140,148,0.25)'}`,
                 borderRadius: 999,
@@ -532,10 +496,10 @@ export default function Skills() {
                 transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
-                if (!active) e.currentTarget.style.color = '#f5f5f2';
+                if (!active) e.currentTarget.style.color = 'var(--text-primary)';
               }}
               onMouseLeave={(e) => {
-                if (!active) e.currentTarget.style.color = '#8c8c94';
+                if (!active) e.currentTarget.style.color = 'var(--text-secondary)';
               }}
             >
               {cat}
@@ -563,7 +527,7 @@ export default function Skills() {
             </div>
           );
         })}
-        <div style={{ borderTop: '1px solid #1f1f24' }} />
+        <div style={{ borderTop: '1px solid var(--border)' }} />
       </div>
     </section>
   );

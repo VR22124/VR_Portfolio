@@ -3,7 +3,7 @@ import projects from '../data/projects.json';
 
 type Project = (typeof projects)[number];
 
-const ACCENT = '#d4ff4f';
+const ACCENT = 'var(--accent)';
 
 function pad(n: number) {
   return String(n + 1).padStart(2, '0');
@@ -46,7 +46,7 @@ function ProjectRow({
         fontSize: '10px',
         letterSpacing: '0.22em',
         textTransform: 'uppercase',
-        color: isHovered ? '#8c8c94' : '#5a5a64',
+        color: isHovered ? 'var(--text-secondary)' : '#5a5a64',
         marginBottom: '1rem',
         transition: 'color 0.35s ease',
         flexWrap: 'wrap',
@@ -89,7 +89,7 @@ function ProjectRow({
           letterSpacing: '-0.04em',
           lineHeight: 0.95,
           margin: '0 0 1.75rem',
-          color: isHovered ? ACCENT : '#f5f5f2',
+          color: isHovered ? ACCENT : 'var(--text-primary)',
           transition: 'color 0.5s ease, letter-spacing 0.5s ease',
           cursor: 'pointer',
           overflowWrap: 'anywhere',
@@ -183,7 +183,7 @@ function ProjectRow({
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            color: isHovered ? '#08080a' : ACCENT,
+            color: isHovered ? 'var(--bg-base)' : ACCENT,
             background: isHovered ? ACCENT : 'transparent',
             transition: 'all 0.4s ease',
             textDecoration: 'none',
@@ -215,7 +215,7 @@ function ProjectRow({
             color: ACCENT,
             textDecoration: 'none',
             paddingBottom: 4,
-            borderBottom: `1px solid ${isHovered ? ACCENT : 'rgba(212,255,79,0.25)'}`,
+            borderBottom: `1px solid ${isHovered ? ACCENT : 'color-mix(in srgb, var(--accent) 25%, transparent)'}`,
             transition: 'border-color 0.35s ease',
           }}
         >
@@ -273,8 +273,8 @@ function ProjectRow({
           fontWeight: 700,
           letterSpacing: '-0.06em',
           lineHeight: 1,
-          color: '#f5f5f2',
-          opacity: isHovered ? 0.05 : 0.02,
+          color: 'var(--text-primary)',
+          opacity: isHovered ? 0.12 : 0.06,
           pointerEvents: 'none',
           userSelect: 'none',
           zIndex: 0,
@@ -410,7 +410,7 @@ export default function Projects() {
             fontSize: 'clamp(2.25rem, 5.5vw, 4.5rem)',
             letterSpacing: '-0.035em',
             lineHeight: 1.05,
-            color: '#f5f5f2',
+            color: 'var(--text-primary)',
             margin: 0,
             maxWidth: '18ch',
           }}

@@ -5,7 +5,7 @@ import testimonials from '../data/testimonials.json';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ACCENT = '#d4ff4f';
+const ACCENT = 'var(--accent)';
 const AUTO_MS = 8000;
 
 function initials(name: string) {
@@ -136,7 +136,7 @@ export default function Testimonials() {
       <div
         className="mb-10 flex items-center gap-3 text-xs uppercase"
         style={{
-          color: '#8c8c94',
+          color: 'var(--text-secondary)',
           letterSpacing: '0.28em',
           fontFamily: 'var(--font-mono, ui-monospace, monospace)',
         }}
@@ -181,7 +181,7 @@ export default function Testimonials() {
           <span
             className="font-semibold"
             style={{
-              color: '#8c8c94',
+              color: 'var(--text-secondary)',
               fontSize: 9,
               letterSpacing: '0.5em',
               textTransform: 'uppercase',
@@ -221,7 +221,7 @@ export default function Testimonials() {
               ref={quoteRef}
               className="font-display"
               style={{
-                color: '#f5f5f2',
+                color: 'var(--text-primary)',
                 fontSize: 'clamp(20px, 2.2vw, 32px)',
                 lineHeight: 1.35,
                 fontWeight: 300,
@@ -247,14 +247,14 @@ export default function Testimonials() {
                   borderRadius: 999,
                   border: '1px solid rgba(245,245,242,0.16)',
                   padding: 4,
-                  background: '#111114',
+                  background: 'var(--bg-elevated)',
                 }}
               >
                 <div
                   className="flex h-full w-full items-center justify-center font-display font-bold"
                   style={{
                     borderRadius: 999,
-                    background: 'rgba(212,255,79,0.10)',
+                    background: 'color-mix(in srgb, var(--accent) 10%, transparent)',
                     color: ACCENT,
                     fontSize: 13,
                     letterSpacing: '0.05em',
@@ -267,7 +267,7 @@ export default function Testimonials() {
                 <cite
                   className="font-display font-semibold not-italic"
                   style={{
-                    color: '#f5f5f2',
+                    color: 'var(--text-primary)',
                     fontSize: 14,
                     letterSpacing: '0.16em',
                     textTransform: 'uppercase',
@@ -277,7 +277,7 @@ export default function Testimonials() {
                 </cite>
                 <span
                   style={{
-                    color: '#8c8c94',
+                    color: 'var(--text-secondary)',
                     fontSize: 10,
                     letterSpacing: '0.18em',
                     textTransform: 'uppercase',
@@ -295,7 +295,7 @@ export default function Testimonials() {
             <div className="flex items-center gap-5">
               <span
                 style={{
-                  color: '#8c8c94',
+                  color: 'var(--text-secondary)',
                   fontSize: 11,
                   letterSpacing: '0.2em',
                   fontFamily: 'var(--font-mono, ui-monospace, monospace)',

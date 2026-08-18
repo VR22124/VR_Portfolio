@@ -120,6 +120,12 @@
     "icon": "SiGithub"
   },
   {
+    "name": "GitHub Actions",
+    "level": 90,
+    "category": "Cloud & DevOps",
+    "icon": "SiGithubactions"
+  },
+  {
     "name": "CI/CD",
     "level": 88,
     "category": "Cloud & DevOps",
