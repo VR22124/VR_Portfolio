@@ -36,7 +36,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
   const [entranceDone, setEntranceDone] = useState(false);
   const [startTaglineTyper, setStartTaglineTyper] = useState(false);
 
-  const { name, role, location, tagline, ctaPrimary, ctaSecondary, socials } = hero as any;
+  const { name, role, location, tagline, ctaPrimary, ctaSecondary, socials } = hero;
 
   const taglineFull = `${tagline.prefix}${tagline.accent}${tagline.suffix}`;
 
@@ -114,11 +114,11 @@ export default function Hero({ started = false }: { started?: boolean }) {
             className="flex flex-wrap items-center gap-4 mb-8"
             style={{ opacity: 0 }}
           >
-            <span className="text-[#d4ff4f] text-[11px] font-medium uppercase tracking-[0.3em]">
+            <span className="text-[var(--accent)] text-[11px] font-medium uppercase tracking-[0.3em]">
               {role}
             </span>
-            <div className="h-[1px] w-8 bg-[#2e2e36]" />
-            <span className="text-[#8c8c94] text-[11px] font-medium uppercase tracking-[0.25em]">
+            <div className="h-[1px] w-8 bg-[var(--border-bright)]" />
+            <span className="text-[var(--text-secondary)] text-[11px] font-medium uppercase tracking-[0.25em]">
               {location}
             </span>
           </div>
@@ -126,7 +126,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
           {/* Name */}
           <h1
             data-hero-anim
-            className="font-display font-bold uppercase tracking-[-0.02em] leading-[0.95] text-[#f5f5f2] whitespace-nowrap"
+            className="font-display font-bold uppercase tracking-[-0.02em] leading-[0.95] text-[var(--text-primary)] whitespace-nowrap"
             style={{
               opacity: 0,
               fontSize: 'clamp(2.4rem, 7.2vw, 5.75rem)',
@@ -137,14 +137,14 @@ export default function Hero({ started = false }: { started?: boolean }) {
               className="glitch"
               data-text={`${name.first} ${name.accent} ${name.last}`.toUpperCase()}
             >
-              {name.first} <span className="text-[#d4ff4f]">{name.accent}</span> {name.last}
+              {name.first} <span className="text-[var(--accent)]">{name.accent}</span> {name.last}
             </span>
           </h1>
 
           {/* Typewriter tagline */}
           <p
             data-hero-anim
-            className="mt-5 max-w-[520px] text-lg md:text-xl text-[#8c8c94] leading-relaxed"
+            className="mt-5 max-w-[520px] text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed"
             style={{ opacity: 0, minHeight: '3em' }}
           >
             <span
@@ -173,7 +173,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
                   }
                 }
               }}
-              className="bg-[#d4ff4f] text-[#08080a] px-8 py-4 text-sm font-semibold rounded-[2px] hover:bg-[#c8f03d] transition-colors"
+              className="bg-[var(--accent)] text-[var(--bg-base)] px-8 py-4 text-sm font-semibold rounded-[2px] hover:bg-[#c8f03d] transition-colors"
             >
               {ctaPrimary.label}
             </a>
@@ -181,7 +181,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
               href={ctaSecondary.target}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[#2e2e36] text-[#f5f5f2] px-8 py-4 text-sm font-semibold rounded-[2px] hover:border-[#4a4a52] hover:bg-[#111114] transition-colors"
+              className="border border-[var(--border-bright)] text-[var(--text-primary)] px-8 py-4 text-sm font-semibold rounded-[2px] hover:border-[var(--text-tertiary)] hover:bg-[var(--bg-elevated)] transition-colors"
             >
               {ctaSecondary.label}
             </a>
@@ -199,7 +199,7 @@ export default function Hero({ started = false }: { started?: boolean }) {
                 href={s.href}
                 target="_blank"
                 rel="noreferrer noopener"
-                className="text-[#8c8c94] hover:text-[#d4ff4f] text-[11px] font-medium uppercase tracking-[0.25em] transition-colors"
+                className="text-[var(--text-secondary)] hover:text-[var(--accent)] text-[11px] font-medium uppercase tracking-[0.25em] transition-colors"
               >
                 {s.label}
               </a>
@@ -211,10 +211,10 @@ export default function Hero({ started = false }: { started?: boolean }) {
       {/* Scroll indicator */}
       <div
         ref={chevronRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#4a4a52] pointer-events-none"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--text-tertiary)] pointer-events-none"
         aria-hidden="true"
       >
-        <div className="w-[1px] h-10 bg-gradient-to-b from-transparent to-[#4a4a52]" />
+        <div className="w-[1px] h-10 bg-gradient-to-b from-transparent to-[var(--text-tertiary)]" />
         <svg width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" strokeWidth="1.5">
           <path d="M1 1l4 4 4-4" />
         </svg>

@@ -5,11 +5,9 @@
   "license": "MIT",
   "scripts": {
     "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*|bun/*) ;; *) echo \"Use pnpm or bun instead\" >&2; exit 1 ;; esac'",
-    "dev": "node scripts/run-portfolio-vite.mjs --host 0.0.0.0",
-    "build": "node scripts/run-portfolio-vite.mjs build",
-    "build:dev": "node scripts/run-portfolio-vite.mjs build",
-    "typecheck:libs": "tsc --build",
-    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+    "dev": "pnpm --filter @workspace/portfolio dev",
+    "build": "pnpm --filter @workspace/portfolio build",
+    "typecheck": "pnpm --filter @workspace/portfolio typecheck"
   },
   "private": true,
   "devDependencies": {

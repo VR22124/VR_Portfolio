@@ -180,14 +180,14 @@ export default function ShepherEd() {
           <div className="lg:col-span-5 lg:sticky lg:top-24 space-y-7">
             <span
               data-shep-intro
-              className="inline-flex items-center gap-2 text-[#d4ff4f] text-xs font-display tracking-[0.28em] uppercase"
+              className="inline-flex items-center gap-2 text-[var(--accent)] text-xs font-display tracking-[0.28em] uppercase"
             >
               <span className="text-[10px]">●</span> Featured Platform
             </span>
 
             <h2
               data-shep-intro
-              className="font-display font-bold uppercase text-[#f5f5f2] leading-[0.9] tracking-tighter text-5xl sm:text-6xl md:text-7xl"
+              className="font-display font-bold uppercase text-[var(--text-primary)] leading-[0.9] tracking-tighter text-5xl sm:text-6xl md:text-7xl"
             >
               Building
               <br />
@@ -196,7 +196,7 @@ export default function ShepherEd() {
 
             <p
               data-shep-intro
-              className="text-[#8c8c94] text-base sm:text-lg leading-relaxed max-w-md"
+              className="text-[var(--text-secondary)] text-base sm:text-lg leading-relaxed max-w-md"
             >
               An enterprise-grade educational platform ecosystem designed from the ground
               up for modern institutions.
@@ -204,7 +204,7 @@ export default function ShepherEd() {
 
             <p
               data-shep-intro
-              className="text-[#8c8c94]/90 text-sm sm:text-base leading-relaxed max-w-md border-l border-[#f5f5f2]/10 pl-4"
+              className="text-[var(--text-secondary)]/90 text-sm sm:text-base leading-relaxed max-w-md border-l border-[var(--text-primary)]/10 pl-4"
             >
               ShepherEd is not a single application. It is a complete ecosystem of
               independent platforms that work together to manage identity, administration,
@@ -212,25 +212,25 @@ export default function ShepherEd() {
             </p>
 
             <div data-shep-intro className="pt-4 flex flex-col items-start gap-5">
-              <div className="inline-flex items-center gap-3 py-2.5 px-5 rounded-full border border-[#f5f5f2]/10 bg-white/[0.04] backdrop-blur-sm">
+              <div className="inline-flex items-center gap-3 py-2.5 px-5 rounded-full border border-[var(--text-primary)]/10 bg-white/[0.04] backdrop-blur-sm">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#d4ff4f] opacity-60" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#d4ff4f]" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--accent)] opacity-60" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--accent)]" />
                 </span>
-                <span className="text-[#f5f5f2] font-display text-[11px] uppercase tracking-[0.2em]">
+                <span className="text-[var(--text-primary)] font-display text-[11px] uppercase tracking-[0.2em]">
                   Status · In Active Development
                 </span>
               </div>
 
               <Link
                 to="/case-studies/shephered"
-                className="group relative inline-flex items-center gap-3 px-6 py-3.5 bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-[#d4ff4f]/40 text-[#f5f5f2] rounded-full overflow-hidden transition-all duration-300"
+                className="group relative inline-flex items-center gap-3 px-6 py-3.5 bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-[var(--accent)]/40 text-[var(--text-primary)] rounded-full overflow-hidden transition-all duration-300"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#d4ff4f]/10 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-out" />
-                <span className="font-display font-medium text-sm tracking-wide uppercase group-hover:text-[#d4ff4f] transition-colors">
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[var(--accent)]/10 to-transparent -translate-x-[200%] group-hover:translate-x-[200%] transition-transform duration-1000 ease-out" />
+                <span className="font-display font-medium text-sm tracking-wide uppercase group-hover:text-[var(--accent)] transition-colors">
                   Read Engineering Case Study
                 </span>
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/40 group-hover:text-[#d4ff4f] transition-all group-hover:translate-x-1">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-white/40 group-hover:text-[var(--accent)] transition-all group-hover:translate-x-1">
                   <path d="M2.91669 7H11.0834M11.0834 7L7.00002 2.91667M11.0834 7L7.00002 11.0833" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </Link>
@@ -245,11 +245,11 @@ export default function ShepherEd() {
             {/* Progress rail */}
             <div
               aria-hidden
-              className="hidden lg:block absolute -left-6 top-2 bottom-2 w-px bg-[#f5f5f2]/10 overflow-hidden"
+              className="hidden lg:block absolute -left-6 top-2 bottom-2 w-px bg-[var(--text-primary)]/10 overflow-hidden"
             >
               <div
                 data-shep-rail
-                className="w-full h-full origin-top bg-[#d4ff4f]/70"
+                className="w-full h-full origin-top bg-[var(--accent)]/70"
                 style={{ transform: 'scaleY(0)' }}
               />
             </div>
@@ -258,26 +258,26 @@ export default function ShepherEd() {
               <article
                 key={c.code + c.num}
                 data-shep-chapter
-                className="group relative p-6 sm:p-8 rounded-2xl border border-[#f5f5f2]/10 bg-white/[0.02] backdrop-blur-md transition-colors duration-500 hover:border-[#d4ff4f]/30"
+                className="group relative p-6 sm:p-8 rounded-2xl border border-[var(--text-primary)]/10 bg-white/[0.02] backdrop-blur-md transition-colors duration-500 hover:border-[var(--accent)]/30"
               >
                 <div className="flex justify-between items-start gap-4 mb-5">
                   <div className="flex items-baseline gap-4">
-                    <span className="font-display font-bold text-4xl sm:text-5xl text-[#f5f5f2]/15 group-hover:text-[#d4ff4f]/40 transition-colors duration-500 leading-none">
+                    <span className="font-display font-bold text-4xl sm:text-5xl text-[var(--text-primary)]/15 group-hover:text-[var(--accent)]/40 transition-colors duration-500 leading-none">
                       {c.num}
                     </span>
-                    <span className="font-display text-[#f5f5f2]/60 text-xs sm:text-sm uppercase tracking-[0.22em]">
+                    <span className="font-display text-[var(--text-primary)]/60 text-xs sm:text-sm uppercase tracking-[0.22em]">
                       {c.code}
                     </span>
                   </div>
-                  <span className="shrink-0 px-2.5 py-1 text-[10px] border border-[#d4ff4f]/40 text-[#d4ff4f] rounded-full uppercase font-display tracking-[0.18em]">
+                  <span className="shrink-0 px-2.5 py-1 text-[10px] border border-[var(--accent)]/40 text-[var(--accent)] rounded-full uppercase font-display tracking-[0.18em]">
                     {c.tag}
                   </span>
                 </div>
 
-                <h3 className="font-display font-bold uppercase text-[#f5f5f2] text-xl sm:text-2xl mb-1.5 tracking-tight">
+                <h3 className="font-display font-bold uppercase text-[var(--text-primary)] text-xl sm:text-2xl mb-1.5 tracking-tight">
                   {c.full}
                 </h3>
-                <p className="text-[#8c8c94] leading-relaxed text-sm sm:text-base mb-6 max-w-[62ch]">
+                <p className="text-[var(--text-secondary)] leading-relaxed text-sm sm:text-base mb-6 max-w-[62ch]">
                   {c.description}
                 </p>
 
@@ -286,7 +286,7 @@ export default function ShepherEd() {
                     <span
                       key={k}
                       data-shep-chip
-                      className="text-[10px] sm:text-[11px] text-[#f5f5f2]/80 font-body uppercase tracking-[0.16em] bg-[#f5f5f2]/[0.04] border border-[#f5f5f2]/8 px-2.5 py-1 rounded"
+                      className="text-[10px] sm:text-[11px] text-[var(--text-primary)]/80 font-body uppercase tracking-[0.16em] bg-[var(--text-primary)]/[0.04] border border-[var(--text-primary)]/8 px-2.5 py-1 rounded"
                     >
                       {k}
                     </span>
@@ -298,15 +298,15 @@ export default function ShepherEd() {
             {/* Closing statement */}
             <div
               data-shep-chapter
-              className="pt-10 mt-2 border-t border-[#f5f5f2]/10"
+              className="pt-10 mt-2 border-t border-[var(--text-primary)]/10"
             >
-              <p className="font-display text-[#f5f5f2] text-lg sm:text-2xl leading-snug uppercase tracking-tight max-w-2xl">
+              <p className="font-display text-[var(--text-primary)] text-lg sm:text-2xl leading-snug uppercase tracking-tight max-w-2xl">
                 Building software isn't only about writing code. It's about designing
                 systems that remain{' '}
-                <span className="text-[#d4ff4f]">maintainable, scalable, and reliable</span>{' '}
+                <span className="text-[var(--accent)]">maintainable, scalable, and reliable</span>{' '}
                 as they grow.
               </p>
-              <p className="text-[#8c8c94] text-sm sm:text-base mt-4 max-w-xl leading-relaxed">
+              <p className="text-[var(--text-secondary)] text-sm sm:text-base mt-4 max-w-xl leading-relaxed">
                 ShepherEd is my ongoing journey toward building software at enterprise
                 scale.
               </p>

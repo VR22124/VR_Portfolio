@@ -29,7 +29,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-[#08080a] flex items-center justify-center overflow-hidden"
+      className="fixed inset-0 z-[100] bg-[var(--bg-base)] flex items-center justify-center overflow-hidden"
       style={{
         opacity: exiting ? 0 : 1,
         transition: 'opacity 600ms cubic-bezier(0.7, 0, 0.84, 0)',
@@ -84,7 +84,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
         .kp-scan    { animation: kp-scan 3.4s linear forwards; }
         .kp-tick    { animation: kp-tick 1.2s ease-in-out infinite; }
         .kp-grid {
-          background-image: radial-gradient(circle at center, rgba(212,255,79,0.06) 1px, transparent 1px);
+          background-image: radial-gradient(circle at center, color-mix(in srgb, var(--accent) 6%, transparent) 1px, transparent 1px);
           background-size: 42px 42px;
         }
       `}</style>
@@ -100,32 +100,32 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 
       {/* Scanning beam */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="kp-scan absolute left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#d4ff4f]/40 to-transparent" />
+        <div className="kp-scan absolute left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[var(--accent)]/40 to-transparent" />
       </div>
 
       {/* Main construct */}
       <div className="relative kp-exit">
         {/* Central origin pulse */}
         <div
-          className="kp-pulse absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#d4ff4f]"
-          style={{ boxShadow: '0 0 24px #d4ff4f, 0 0 60px rgba(212,255,79,0.5)' }}
+          className="kp-pulse absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[var(--accent)]"
+          style={{ boxShadow: '0 0 24px var(--accent), 0 0 60px color-mix(in srgb, var(--accent) 50%, transparent)' }}
         />
 
         {/* Geometric frame (H + V lines emanating from center) */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="kp-line-h absolute left-1/2 -translate-x-1/2 -translate-y-[60px] md:-translate-y-[80px] h-[1px] bg-[#d4ff4f]/40" style={{ boxShadow: '0 0 8px rgba(212,255,79,0.5)' }} />
-          <div className="kp-line-h absolute left-1/2 -translate-x-1/2 translate-y-[60px] md:translate-y-[80px] h-[1px] bg-[#d4ff4f]/40" style={{ boxShadow: '0 0 8px rgba(212,255,79,0.5)' }} />
-          <div className="kp-line-v absolute top-1/2 -translate-y-1/2 -translate-x-[160px] md:-translate-x-[220px] w-[1px] bg-[#d4ff4f]/40" />
-          <div className="kp-line-v absolute top-1/2 -translate-y-1/2 translate-x-[160px] md:translate-x-[220px] w-[1px] bg-[#d4ff4f]/40" />
+          <div className="kp-line-h absolute left-1/2 -translate-x-1/2 -translate-y-[60px] md:-translate-y-[80px] h-[1px] bg-[var(--accent)]/40" style={{ boxShadow: '0 0 8px color-mix(in srgb, var(--accent) 50%, transparent)' }} />
+          <div className="kp-line-h absolute left-1/2 -translate-x-1/2 translate-y-[60px] md:translate-y-[80px] h-[1px] bg-[var(--accent)]/40" style={{ boxShadow: '0 0 8px color-mix(in srgb, var(--accent) 50%, transparent)' }} />
+          <div className="kp-line-v absolute top-1/2 -translate-y-1/2 -translate-x-[160px] md:-translate-x-[220px] w-[1px] bg-[var(--accent)]/40" />
+          <div className="kp-line-v absolute top-1/2 -translate-y-1/2 translate-x-[160px] md:translate-x-[220px] w-[1px] bg-[var(--accent)]/40" />
         </div>
 
         {/* Owner name */}
         <div className="relative px-8 py-10 md:px-14 md:py-12">
           <h1
-            className="kp-reveal whitespace-nowrap text-2xl sm:text-3xl md:text-5xl font-bold uppercase text-[#d4ff4f]"
+            className="kp-reveal whitespace-nowrap text-2xl sm:text-3xl md:text-5xl font-bold uppercase text-[var(--accent)]"
             style={{
               fontFamily: '"Space Grotesk", sans-serif',
-              textShadow: '0 0 24px rgba(212,255,79,0.35)',
+              textShadow: '0 0 24px color-mix(in srgb, var(--accent) 35%, transparent)',
             }}
           >
             {OWNER}
@@ -133,33 +133,33 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
 
           {/* Caption */}
           <div className="kp-caption absolute left-1/2 -translate-x-1/2 -bottom-1 w-full text-center flex items-center justify-center gap-2">
-            <span className="kp-tick w-1 h-1 rounded-full bg-[#d4ff4f]" />
+            <span className="kp-tick w-1 h-1 rounded-full bg-[var(--accent)]" />
             <span
-              className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] text-[#d4ff4f]/60"
+              className="text-[9px] md:text-[10px] uppercase tracking-[0.5em] text-[var(--accent)]/60"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >
               Initializing Portfolio
             </span>
-            <span className="kp-tick w-1 h-1 rounded-full bg-[#d4ff4f]" style={{ animationDelay: '0.4s' }} />
+            <span className="kp-tick w-1 h-1 rounded-full bg-[var(--accent)]" style={{ animationDelay: '0.4s' }} />
           </div>
 
           {/* Corner brackets */}
-          <div className="kp-corner absolute -top-0.5 -left-0.5 w-3 h-3 border-t border-l border-[#d4ff4f]" />
-          <div className="kp-corner absolute -top-0.5 -right-0.5 w-3 h-3 border-t border-r border-[#d4ff4f]" />
-          <div className="kp-corner absolute -bottom-0.5 -left-0.5 w-3 h-3 border-b border-l border-[#d4ff4f]" />
-          <div className="kp-corner absolute -bottom-0.5 -right-0.5 w-3 h-3 border-b border-r border-[#d4ff4f]" />
+          <div className="kp-corner absolute -top-0.5 -left-0.5 w-3 h-3 border-t border-l border-[var(--accent)]" />
+          <div className="kp-corner absolute -top-0.5 -right-0.5 w-3 h-3 border-t border-r border-[var(--accent)]" />
+          <div className="kp-corner absolute -bottom-0.5 -left-0.5 w-3 h-3 border-b border-l border-[var(--accent)]" />
+          <div className="kp-corner absolute -bottom-0.5 -right-0.5 w-3 h-3 border-b border-r border-[var(--accent)]" />
         </div>
       </div>
 
       {/* Telemetry (top-left / bottom-right) */}
       <div
-        className="kp-caption absolute top-6 left-6 text-[9px] uppercase tracking-[0.35em] text-[#d4ff4f]/40"
+        className="kp-caption absolute top-6 left-6 text-[9px] uppercase tracking-[0.35em] text-[var(--accent)]/40"
         style={{ fontFamily: 'Inter, sans-serif' }}
       >
         REF · 0808-0A
       </div>
       <div
-        className="kp-caption absolute bottom-6 right-6 text-[9px] uppercase tracking-[0.35em] text-[#d4ff4f]/40"
+        className="kp-caption absolute bottom-6 right-6 text-[9px] uppercase tracking-[0.35em] text-[var(--accent)]/40"
         style={{ fontFamily: 'Inter, sans-serif' }}
       >
         BUILD · v.2026.07

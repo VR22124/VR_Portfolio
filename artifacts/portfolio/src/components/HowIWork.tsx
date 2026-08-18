@@ -37,8 +37,8 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
           top: 0,
           bottom: 0,
           width: '2px',
-          background: 'linear-gradient(to bottom, #d4ff4f, rgba(212,255,79,0.15))',
-          boxShadow: isHovered ? '0 0 18px rgba(212,255,79,0.5)' : 'none',
+          background: 'linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 15%, transparent))',
+          boxShadow: isHovered ? '0 0 18px color-mix(in srgb, var(--accent) 50%, transparent)' : 'none',
           transform: isHovered ? 'scaleY(1)' : 'scaleY(0)',
           transformOrigin: 'top',
           transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease',
@@ -55,7 +55,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
           right: 0,
           height: '1px',
           background: isHovered
-            ? 'linear-gradient(to right, #d4ff4f 0%, rgba(212,255,79,0.18) 25%, #1a1a22 60%)'
+            ? 'linear-gradient(to right, var(--accent) 0%, color-mix(in srgb, var(--accent) 18%, transparent) 25%, #1a1a22 60%)'
             : '#1a1a22',
           transform: `scaleX(${isRevealed ? 1 : 0})`,
           transformOrigin: 'left',
@@ -71,7 +71,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'radial-gradient(ellipse 70% 100% at 0% 50%, rgba(212,255,79,0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 70% 100% at 0% 50%, color-mix(in srgb, var(--accent) 4%, transparent) 0%, transparent 70%)',
           opacity: isHovered ? 1 : 0,
           transition: 'opacity 0.4s ease',
           pointerEvents: 'none',
@@ -91,7 +91,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
           fontSize: isMobile ? 'clamp(120px, 40vw, 220px)' : 'clamp(140px, 20vw, 320px)',
           lineHeight: 1,
           letterSpacing: '-0.07em',
-          color: isHovered ? '#d4ff4f' : '#f5f5f2',
+          color: isHovered ? 'var(--accent)' : 'var(--text-primary)',
           opacity: isHovered ? 0.1 : (isRevealed ? 0.07 : 0),
           transition: 'opacity 0.4s ease, color 0.4s ease, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
           userSelect: 'none',
@@ -133,8 +133,8 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
               fontSize: '9px',
               letterSpacing: '0.2em',
               textTransform: 'uppercase',
-              color: isHovered ? '#d4ff4f' : '#2e2e3a',
-              border: `1px solid ${isHovered ? 'rgba(212,255,79,0.35)' : 'rgba(255,255,255,0.05)'}`,
+              color: isHovered ? 'var(--accent)' : '#2e2e3a',
+              border: `1px solid ${isHovered ? 'color-mix(in srgb, var(--accent) 35%, transparent)' : 'rgba(255,255,255,0.05)'}`,
               padding: '4px 8px',
               borderRadius: '2px',
               opacity: isRevealed ? 1 : 0,
@@ -149,7 +149,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
                 width: '5px',
                 height: '5px',
                 borderRadius: '50%',
-                background: isHovered ? '#d4ff4f' : 'transparent',
+                background: isHovered ? 'var(--accent)' : 'transparent',
                 border: isHovered ? 'none' : '1px solid #3a3a44',
                 flexShrink: 0,
                 transition: 'background 0.35s ease, border-color 0.35s ease',
@@ -163,7 +163,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
             style={{
               fontFamily: 'Menlo, monospace',
               fontSize: '11px',
-              color: isHovered ? '#d4ff4f' : '#252530',
+              color: isHovered ? 'var(--accent)' : '#252530',
               letterSpacing: '0.08em',
               opacity: isRevealed ? 1 : 0,
               transition: isRevealed
@@ -183,7 +183,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
               fontWeight: 700,
               fontSize: 'clamp(26px, 3.2vw, 56px)',
               letterSpacing: '-0.03em',
-              color: '#f5f5f2',
+              color: 'var(--text-primary)',
               lineHeight: 1.1,
               margin: '0 0 clamp(0.875rem, 1.5vh, 1.25rem) 0',
               opacity: isRevealed ? 1 : 0,
@@ -201,7 +201,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
             aria-hidden="true"
             style={{
               height: '1px',
-              background: 'linear-gradient(to right, rgba(212,255,79,0.4), transparent 65%)',
+              background: 'linear-gradient(to right, color-mix(in srgb, var(--accent) 40%, transparent), transparent 65%)',
               width: isHovered ? '55%' : '0%',
               marginBottom: 'clamp(0.875rem, 1.5vh, 1.25rem)',
               transition: 'width 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
@@ -211,7 +211,7 @@ function Step({ step, phase, isRevealed, isHovered, isMobile, onMouseEnter, onMo
           <p
             style={{
               fontSize: 'clamp(14px, 1.1vw, 16px)',
-              color: isHovered ? '#b0b0ba' : '#8c8c94',
+              color: isHovered ? '#b0b0ba' : 'var(--text-secondary)',
               lineHeight: 1.8,
               margin: 0,
               maxWidth: '520px',
@@ -308,7 +308,7 @@ export default function HowIWork() {
               fontSize: '10px',
               letterSpacing: '0.18em',
               textTransform: 'uppercase',
-              color: '#d4ff4f',
+              color: 'var(--accent)',
               marginBottom: '1.25rem',
               opacity: headerVisible ? 0.85 : 0,
               transition: 'opacity 0.5s ease',
@@ -324,7 +324,7 @@ export default function HowIWork() {
               fontSize: 'clamp(2.5rem, 6vw, 5rem)',
               letterSpacing: '-0.03em',
               lineHeight: 1.05,
-              color: '#f5f5f2',
+              color: 'var(--text-primary)',
               display: 'flex',
               flexWrap: 'wrap',
               gap: '0.3em',
@@ -370,8 +370,8 @@ export default function HowIWork() {
                   width: isHov ? '22px' : (isRev ? '10px' : '6px'),
                   height: '6px',
                   borderRadius: '3px',
-                  background: isHov ? '#d4ff4f' : (isRev ? '#3a3a44' : '#1e1e28'),
-                  boxShadow: isHov ? '0 0 10px rgba(212,255,79,0.7)' : 'none',
+                  background: isHov ? 'var(--accent)' : (isRev ? '#3a3a44' : '#1e1e28'),
+                  boxShadow: isHov ? '0 0 10px color-mix(in srgb, var(--accent) 70%, transparent)' : 'none',
                   transition: 'width 0.35s cubic-bezier(0.16, 1, 0.3, 1), background 0.35s ease, box-shadow 0.35s ease',
                 }}
               />

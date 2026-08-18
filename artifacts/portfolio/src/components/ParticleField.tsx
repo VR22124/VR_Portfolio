@@ -1,12 +1,17 @@
 import { useFrame } from '@react-three/fiber';
 import { useMemo, useRef } from 'react';
 import * as THREE from 'three';
+import { useTheme } from '../contexts/ThemeContext';
 
 const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
 const PARTICLE_COUNT = isMobile ? 1200 : 4000;
 
 export default function ParticleField({ scrollProgress }: { scrollProgress: React.MutableRefObject<number> }) {
   const pointsRef = useRef<THREE.Points>(null);
+  const materialRef = useRef<THREE.PointsMaterial>(null);
+  const colorTarget = useMemo(() => new THREE.Color(), []);
+  const colorCurrent = useMemo(() => new THREE.Color(), []);
+  const { theme } = useTheme();
   const isReducedMotion = typeof window !== 'undefined'
     ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
     : false;
@@ -93,6 +98,12 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
     if (!isReducedMotion) {
       pointsRef.current.rotation.x = p * Math.PI * 0.25;
     }
+
+    if (materialRef.current) {
+      colorTarget.set(theme === 'light' ? '#0a0a0c' : '#d4ff4f');
+      colorCurrent.lerp(colorTarget, 0.05);
+      materialRef.current.color = colorCurrent;
+    }
   });
 
   // Particle opacity: slightly reduced for text-heavy feel (0.7 instead of 0.85)
@@ -108,8 +119,9 @@ export default function ParticleField({ scrollProgress }: { scrollProgress: Reac
         />
       </bufferGeometry>
       <pointsMaterial
+        ref={materialRef}
         size={0.022}
-        color="#d4ff4f"
+        color="var(--accent)"
         sizeAttenuation
         transparent
         opacity={0.72}

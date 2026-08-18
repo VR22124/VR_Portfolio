@@ -30,6 +30,20 @@
   font-family: var(--font-body);
 }
 
+:root[data-theme="light"] {
+  --bg-base:        #f5f5f0;
+  --bg-elevated:    #ffffff;
+  --bg-elevated-2:  #eeeeeb;
+  --text-primary:   #0a0a0c;
+  --text-secondary: #52525a;
+  --text-tertiary:  #8c8c94;
+  --accent:         #0a0a0c;
+  --accent-dim:     #d0d0cc;
+  --border:         #e2e2de;
+  --border-bright:  #d0d0cc;
+  --particle-color: #0a0a0c;
+}
+
 body {
   background-color: var(--bg-base);
   color: var(--text-primary);
@@ -37,6 +51,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: clip;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 h1, h2, h3, h4, h5, h6, .font-display {
@@ -73,7 +88,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at 65% 50%, transparent 35%, rgba(8,8,10,0.92) 85%);
+  background: radial-gradient(ellipse at 65% 50%, transparent 35%, color-mix(in srgb, var(--bg-base) 92%, transparent) 85%);
 }
 
 /* ─── Layout ─── */
@@ -121,9 +136,9 @@ h1, h2, h3, h4, h5, h6, .font-display {
   inset: 0;
   background: linear-gradient(
     100deg,
-    rgba(8, 8, 10, 0.72) 0%,
-    rgba(8, 8, 10, 0.55) 42%,
-    rgba(8, 8, 10, 0.18) 65%,
+    color-mix(in srgb, var(--bg-base) 72%, transparent) 0%,
+    color-mix(in srgb, var(--bg-base) 55%, transparent) 42%,
+    color-mix(in srgb, var(--bg-base) 18%, transparent) 65%,
     transparent 80%
   );
   pointer-events: none;
@@ -131,7 +146,7 @@ h1, h2, h3, h4, h5, h6, .font-display {
 }
 @media (max-width: 767px) {
   .hero-text-scrim {
-    background: rgba(8, 8, 10, 0.65);
+    background: color-mix(in srgb, var(--bg-base) 65%, transparent);
   }
 }
 
@@ -242,16 +257,16 @@ h1, h2, h3, h4, h5, h6, .font-display {
 
 /* ─── Nav pill ─── */
 .nav-pill-bg {
-  background: rgba(8, 8, 10, 0.55);
+  background: color-mix(in srgb, var(--bg-base) 55%, transparent);
   backdrop-filter: blur(24px) saturate(160%);
   -webkit-backdrop-filter: blur(24px) saturate(160%);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid color-mix(in srgb, var(--text-primary) 6%, transparent);
   border-radius: 999px;
   transition: background 0.3s ease, border-color 0.3s ease;
 }
 .nav-pill-bg.scrolled {
-  background: rgba(8, 8, 10, 0.85);
-  border-color: rgba(255, 255, 255, 0.09);
+  background: color-mix(in srgb, var(--bg-base) 85%, transparent);
+  border-color: color-mix(in srgb, var(--text-primary) 9%, transparent);
 }
 
 /* ─── Loader styles ─── */

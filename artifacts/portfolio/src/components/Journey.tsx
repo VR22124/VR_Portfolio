@@ -34,7 +34,7 @@ function MilestoneContent({
           fontFamily: 'Menlo, monospace',
           fontSize: '10px',
           letterSpacing: '0.16em',
-          color: '#d4ff4f',
+          color: 'var(--accent)',
           marginBottom: '0.5rem',
           opacity: 0.9,
         }}
@@ -49,7 +49,7 @@ function MilestoneContent({
           fontSize: 'clamp(52px, 7vw, 88px)',
           fontWeight: 900,
           letterSpacing: '-0.04em',
-          color: '#d4ff4f',
+          color: 'var(--accent)',
           opacity: isActive ? 0.24 : 0.12,
           lineHeight: 1,
           marginBottom: '-0.12em',
@@ -67,10 +67,10 @@ function MilestoneContent({
             fontSize: '9px',
             fontFamily: 'Menlo, monospace',
             letterSpacing: '0.12em',
-            color: '#d4ff4f',
+            color: 'var(--accent)',
             textTransform: 'uppercase',
             padding: '3px 8px',
-            border: '1px solid rgba(212,255,79,0.2)',
+            border: '1px solid color-mix(in srgb, var(--accent) 20%, transparent)',
             borderRadius: '2px',
           }}
         >
@@ -84,7 +84,7 @@ function MilestoneContent({
           fontSize: 'clamp(18px, 2.2vw, 26px)',
           fontWeight: 600,
           letterSpacing: '-0.02em',
-          color: isActive ? '#f5f5f2' : '#c8c8c4',
+          color: isActive ? 'var(--text-primary)' : '#c8c8c4',
           marginBottom: '0.625rem',
           transition: 'color 0.4s ease',
         }}
@@ -95,7 +95,7 @@ function MilestoneContent({
       <p
         style={{
           fontSize: 'clamp(13px, 1vw, 15px)',
-          color: '#8c8c94',
+          color: 'var(--text-secondary)',
           lineHeight: 1.8,
           maxWidth: 280,
           marginLeft: toRight ? 'auto' : undefined,
@@ -222,14 +222,14 @@ export default function Journey() {
             fontSize: '10px',
             letterSpacing: '0.18em',
             textTransform: 'uppercase',
-            color: '#d4ff4f',
+            color: 'var(--accent)',
             marginBottom: '1rem',
             opacity: 0.85,
           }}
         >
           The Journey
         </div>
-        <p style={{ fontSize: 'clamp(14px, 1.1vw, 16px)', color: '#8c8c94', lineHeight: 1.8, margin: 0 }}>
+        <p style={{ fontSize: 'clamp(14px, 1.1vw, 16px)', color: 'var(--text-secondary)', lineHeight: 1.8, margin: 0 }}>
           Six years from first commit to independent practice — every step a sharper understanding of what building actually means.
         </p>
       </div>
@@ -241,14 +241,14 @@ export default function Journey() {
         <div
           className="absolute hidden md:block"
           aria-hidden="true"
-          style={{ left: '50%', top: 0, bottom: 0, width: 1, transform: 'translateX(-50%)', background: '#1f1f24' }}
+          style={{ left: '50%', top: 0, bottom: 0, width: 1, transform: 'translateX(-50%)', background: 'var(--border)' }}
         >
           <div
             ref={spineFillRef}
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to bottom, #d4ff4f, rgba(212,255,79,0.3))',
+              background: 'linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 30%, transparent))',
               transform: 'scaleY(0)',
               transformOrigin: 'top center',
             }}
@@ -259,14 +259,14 @@ export default function Journey() {
         <div
           className="absolute md:hidden"
           aria-hidden="true"
-          style={{ left: 0, top: 0, bottom: 0, width: 1, background: '#1f1f24' }}
+          style={{ left: 0, top: 0, bottom: 0, width: 1, background: 'var(--border)' }}
         >
           <div
             ref={mobileFillRef}
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(to bottom, #d4ff4f, rgba(212,255,79,0.3))',
+              background: 'linear-gradient(to bottom, var(--accent), color-mix(in srgb, var(--accent) 30%, transparent))',
               transform: 'scaleY(0)',
               transformOrigin: 'top center',
             }}
@@ -307,7 +307,7 @@ export default function Journey() {
                       top: 17,
                       height: 1,
                       width: 64,
-                      background: '#2e2e36',
+                      background: 'var(--border-bright)',
                       ...(isLeft
                         ? { right: 'calc(50% + 5px)', transformOrigin: 'right center' }
                         : { left: 'calc(50% + 5px)', transformOrigin: 'left center' }),
@@ -323,9 +323,9 @@ export default function Journey() {
                       width: 11,
                       height: 11,
                       borderRadius: '50%',
-                      background: '#08080a',
-                      border: `2px solid ${isActive ? '#d4ff4f' : (isDotActive ? '#8a9c3a' : '#2e2e36')}`,
-                      boxShadow: isActive ? '0 0 0 5px rgba(212,255,79,0.12), 0 0 0 10px rgba(212,255,79,0.05)' : 'none',
+                      background: 'var(--bg-base)',
+                      border: `2px solid ${isActive ? 'var(--accent)' : (isDotActive ? 'var(--accent-dim)' : 'var(--border-bright)')}`,
+                      boxShadow: isActive ? '0 0 0 5px color-mix(in srgb, var(--accent) 12%, transparent), 0 0 0 10px color-mix(in srgb, var(--accent) 5%, transparent)' : 'none',
                       position: 'relative',
                       zIndex: 2,
                       flexShrink: 0,
@@ -358,9 +358,9 @@ export default function Journey() {
                     width: 11,
                     height: 11,
                     borderRadius: '50%',
-                    background: '#08080a',
-                    border: `2px solid ${isActive ? '#d4ff4f' : (isDotActive ? '#8a9c3a' : '#2e2e36')}`,
-                    boxShadow: isActive ? '0 0 0 4px rgba(212,255,79,0.1)' : 'none',
+                    background: 'var(--bg-base)',
+                    border: `2px solid ${isActive ? 'var(--accent)' : (isDotActive ? 'var(--accent-dim)' : 'var(--border-bright)')}`,
+                    boxShadow: isActive ? '0 0 0 4px color-mix(in srgb, var(--accent) 10%, transparent)' : 'none',
                     zIndex: 2,
                     opacity: isRevealed ? 1 : 0,
                     transform: isRevealed ? 'scale(1)' : 'scale(0)',
@@ -381,7 +381,7 @@ export default function Journey() {
                       fontFamily: 'Menlo, monospace',
                       fontSize: '10px',
                       letterSpacing: '0.16em',
-                      color: '#d4ff4f',
+                      color: 'var(--accent)',
                       marginBottom: '0.4rem',
                     }}
                   >
@@ -395,7 +395,7 @@ export default function Journey() {
                       fontSize: 'clamp(44px, 10vw, 60px)',
                       fontWeight: 900,
                       letterSpacing: '-0.04em',
-                      color: '#d4ff4f',
+                      color: 'var(--accent)',
                       opacity: 0.15,
                       lineHeight: 1,
                       marginBottom: '-0.05em',
@@ -411,10 +411,10 @@ export default function Journey() {
                       fontSize: '9px',
                       fontFamily: 'Menlo, monospace',
                       letterSpacing: '0.12em',
-                      color: '#d4ff4f',
+                      color: 'var(--accent)',
                       textTransform: 'uppercase',
                       padding: '3px 8px',
-                      border: '1px solid rgba(212,255,79,0.2)',
+                      border: '1px solid color-mix(in srgb, var(--accent) 20%, transparent)',
                       borderRadius: '2px',
                       marginBottom: '0.75rem',
                     }}
@@ -428,7 +428,7 @@ export default function Journey() {
                       fontSize: 'clamp(17px, 4.5vw, 22px)',
                       fontWeight: 600,
                       letterSpacing: '-0.02em',
-                      color: '#f5f5f2',
+                      color: 'var(--text-primary)',
                       marginBottom: '0.5rem',
                       display: 'block',
                     }}
@@ -436,7 +436,7 @@ export default function Journey() {
                     {item.title}
                   </h3>
 
-                  <p style={{ fontSize: '14px', color: '#8c8c94', lineHeight: 1.8, margin: 0 }}>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.8, margin: 0 }}>
                     {item.description}
                   </p>
                 </div>

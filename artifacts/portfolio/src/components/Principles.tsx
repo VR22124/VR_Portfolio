@@ -55,7 +55,7 @@ function PrincipleRow({
           fontFamily: 'Menlo, monospace',
           fontSize: '10px',
           letterSpacing: '0.2em',
-          color: '#d4ff4f',
+          color: 'var(--accent)',
           opacity: isRevealed ? 0.35 : 0,
           marginBottom: '0.6rem',
           textAlign: isRight ? 'right' : 'left',
@@ -79,7 +79,7 @@ function PrincipleRow({
             fontSize: 'clamp(38px, 6.5vw, 108px)',
             letterSpacing: '-0.04em',
             lineHeight: 1.0,
-            color: '#f5f5f2',
+            color: 'var(--text-primary)',
             margin: 0,
             textAlign: isRight ? 'right' : 'left',
           }}
@@ -87,10 +87,10 @@ function PrincipleRow({
           {before}
           <span
             style={{
-              color: '#d4ff4f',
+              color: 'var(--accent)',
               display: 'inline-block',
               textShadow: isHovered
-                ? '0 0 40px rgba(212,255,79,0.55), 0 0 80px rgba(212,255,79,0.25)'
+                ? '0 0 40px color-mix(in srgb, var(--accent) 55%, transparent), 0 0 80px color-mix(in srgb, var(--accent) 25%, transparent)'
                 : 'none',
               transform: isHovered ? 'scale(1.03)' : 'scale(1)',
               transformOrigin: isRight ? 'right center' : 'left center',
@@ -108,10 +108,10 @@ function PrincipleRow({
         aria-hidden="true"
         style={{
           height: '1.5px',
-          background: 'linear-gradient(to right, rgba(212,255,79,0.5), transparent 70%)',
+          background: 'linear-gradient(to right, color-mix(in srgb, var(--accent) 50%, transparent), transparent 70%)',
           ...(isRight
             ? {
-                background: 'linear-gradient(to left, rgba(212,255,79,0.5), transparent 70%)',
+                background: 'linear-gradient(to left, color-mix(in srgb, var(--accent) 50%, transparent), transparent 70%)',
                 marginLeft: 'auto',
               }
             : {}),
@@ -177,7 +177,7 @@ export default function Principles() {
   useEffect(() => {
     const isReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (isReduced) {
-      setRevealedRows(new Set(principles.map((_, i) => i)));
+      setRevealedRows(new Set(principles.slice(0, 5).map((_, i) => i)));
       return;
     }
     const cleanups: (() => void)[] = [];
@@ -212,7 +212,7 @@ export default function Principles() {
             fontSize: '10px',
             letterSpacing: '0.18em',
             textTransform: 'uppercase',
-            color: '#d4ff4f',
+            color: 'var(--accent)',
             marginBottom: '1.25rem',
             opacity: headerVisible ? 0.85 : 0,
             transition: 'opacity 0.5s ease',
@@ -230,7 +230,7 @@ export default function Principles() {
             fontSize: 'clamp(2.5rem, 6vw, 5rem)',
             letterSpacing: '-0.03em',
             lineHeight: 1.05,
-            color: '#f5f5f2',
+            color: 'var(--text-primary)',
             display: 'flex',
             flexWrap: 'wrap',
             gap: '0.28em',
@@ -249,7 +249,7 @@ export default function Principles() {
                   opacity: headerVisible ? 1 : 0,
                   transform: headerVisible ? 'translateY(0)' : 'translateY(110%)',
                   transition: `opacity 0.5s ease ${0.1 + i * 0.12}s, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) ${0.1 + i * 0.12}s`,
-                  color: word === '.' ? '#d4ff4f' : undefined,
+                  color: word === '.' ? 'var(--accent)' : undefined,
                 }}
               >
                 {word}
@@ -288,7 +288,7 @@ export default function Principles() {
       />
 
       {/* Principle rows */}
-      {principles.map((p, i) => (
+      {principles.slice(0, 5).map((p, i) => (
         <div key={i} ref={(el) => { rowRefs.current[i] = el; }}>
           <PrincipleRow
             principle={p}
@@ -310,7 +310,7 @@ export default function Principles() {
                 ? '#1e1e28'
                 : 'transparent',
               boxShadow: revealedRows.has(i) && !revealedRows.has(i + 1)
-                ? '0 0 12px rgba(212,255,79,0.3)'
+                ? '0 0 12px color-mix(in srgb, var(--accent) 30%, transparent)'
                 : 'none',
               transition: 'background 0.8s ease 1.2s, box-shadow 1.4s ease 1.2s',
             }}
@@ -338,18 +338,18 @@ export default function Principles() {
             fontSize: 'clamp(11px, 0.9vw, 13px)',
             letterSpacing: '0.16em',
             textTransform: 'uppercase',
-            color: '#d4ff4f',
+            color: 'var(--accent)',
             textDecoration: 'none',
-            borderBottom: '1px solid rgba(212,255,79,0.3)',
+            borderBottom: '1px solid color-mix(in srgb, var(--accent) 30%, transparent)',
             paddingBottom: '3px',
             transition: 'border-color 0.3s ease, gap 0.3s ease',
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(212,255,79,0.8)';
+            e.currentTarget.style.borderColor = 'color-mix(in srgb, var(--accent) 80%, transparent)';
             e.currentTarget.style.gap = '0.9em';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = 'rgba(212,255,79,0.3)';
+            e.currentTarget.style.borderColor = 'color-mix(in srgb, var(--accent) 30%, transparent)';
             e.currentTarget.style.gap = '0.6em';
           }}
         >

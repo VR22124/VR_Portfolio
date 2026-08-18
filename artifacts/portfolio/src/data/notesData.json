@@ -1,0 +1,1500 @@
+[
+  {
+    "title": "Start with the Problem",
+    "slug": "start-with-the-problem",
+    "content": "Don't choose the stack first.\n\nUnderstand the domain. Understand the users.\n\nThen, design the system.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "planning"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Foundations Before Features",
+    "slug": "foundations-before-features",
+    "content": "Identity.\nAcademic structure.\nRelationships.\n\nFeatures come after.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "foundations"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Architecture Evolves",
+    "slug": "architecture-evolves",
+    "content": "I've realized that the first architecture isn't the final architecture.\n\nRefactor when the project grows. Don't try to predict everything upfront.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "refactoring"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Platform Boundaries",
+    "slug": "platform-boundaries",
+    "content": "Separate systems by responsibility, not by technology.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "design"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Modular Before Distributed",
+    "slug": "modular-before-distributed",
+    "content": "Build clear module boundaries first.\n\nDistributed systems can come later. Don't over-engineer from the start.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "modules"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Don't Overengineer",
+    "slug": "dont-overengineer",
+    "content": "Today's complexity rarely needs tomorrow's architecture.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "simplicity"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Every Module Needs One Responsibility",
+    "slug": "every-module-needs-one-responsibility",
+    "content": "One module. One purpose.\n\nNo mixed responsibilities.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "design"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Think in Iterations",
+    "slug": "think-in-iterations",
+    "content": "Never build large features all at once.\n\nI always split everything into the smallest deliverable iteration.",
+    "category": "Planning",
+    "categorySlug": "planning",
+    "tags": [
+      "planning",
+      "process"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Build a Roadmap",
+    "slug": "build-a-roadmap",
+    "content": "Know exactly what Version 1 is.\n\nMore importantly, know what *isn't* Version 1.",
+    "category": "Planning",
+    "categorySlug": "planning",
+    "tags": [
+      "planning",
+      "scope"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Every Iteration Needs an Exit Condition",
+    "slug": "every-iteration-needs-an-exit-condition",
+    "content": "Know when the iteration is complete to avoid endless development.",
+    "category": "Planning",
+    "categorySlug": "planning",
+    "tags": [
+      "planning",
+      "process"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Freeze Scope",
+    "slug": "freeze-scope",
+    "content": "Don't add features halfway through an iteration.",
+    "category": "Planning",
+    "categorySlug": "planning",
+    "tags": [
+      "planning",
+      "scope"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "AI Suggests",
+    "slug": "ai-suggests",
+    "content": "AI suggests. You decide.",
+    "category": "AI Engineering",
+    "categorySlug": "ai-engineering",
+    "tags": [
+      "ai",
+      "engineering"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Compare Multiple Models",
+    "slug": "compare-multiple-models",
+    "content": "Never trust one model blindly.\n\nI always compare their reasoning and validate the outputs.",
+    "category": "AI Engineering",
+    "categorySlug": "ai-engineering",
+    "tags": [
+      "ai",
+      "validation"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Don't Add Every Tool",
+    "slug": "dont-add-every-tool",
+    "content": "I noticed AI loves adding dependencies.\n\nQuestion every recommendation.",
+    "category": "AI Engineering",
+    "categorySlug": "ai-engineering",
+    "tags": [
+      "ai",
+      "dependencies"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "AI Doesn't Own Architecture",
+    "slug": "ai-doesnt-own-architecture",
+    "content": "Implementation can be assisted by AI, but architecture stays human.",
+    "category": "AI Engineering",
+    "categorySlug": "ai-engineering",
+    "tags": [
+      "ai",
+      "architecture"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Small Prompts Win",
+    "slug": "small-prompts-win",
+    "content": "Small iterations + Small prompts = Better output.",
+    "category": "AI Engineering",
+    "categorySlug": "ai-engineering",
+    "tags": [
+      "ai",
+      "prompting"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Give Agents Boundaries",
+    "slug": "give-agents-boundaries",
+    "content": "Read. Write. Create. Delete.\n\nEvery permission should be intentional.",
+    "category": "AI Engineering",
+    "categorySlug": "ai-engineering",
+    "tags": [
+      "ai",
+      "agents"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-11T00:00:00.000Z",
+    "updatedAt": "2026-07-11T00:00:00.000Z",
+    "publishedAt": "2026-07-11T00:00:00.000Z"
+  },
+  {
+    "title": "Validate First",
+    "slug": "validate-first",
+    "content": "Never let invalid data reach business logic.",
+    "category": "Backend",
+    "categorySlug": "backend",
+    "tags": [
+      "backend",
+      "validation"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Authentication ≠ Authorization",
+    "slug": "authentication-authorization",
+    "content": "Knowing who a user is, is completely different from knowing what they can access.",
+    "category": "Backend",
+    "categorySlug": "backend",
+    "tags": [
+      "backend",
+      "security"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Business Logic Doesn't Belong in Routes",
+    "slug": "business-logic-doesnt-belong-in-routes",
+    "content": "Routes should orchestrate. Services should think.",
+    "category": "Backend",
+    "categorySlug": "backend",
+    "tags": [
+      "backend",
+      "design"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Every API Needs One Purpose",
+    "slug": "every-api-needs-one-purpose",
+    "content": "Avoid endpoints that do too many things.",
+    "category": "Backend",
+    "categorySlug": "backend",
+    "tags": [
+      "backend",
+      "design"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Structure Core Entities",
+    "slug": "structure-core-entities",
+    "content": "Keep core models relational.\n\nDon't make everything dynamic.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "design"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "JSONB Is Configuration",
+    "slug": "jsonb-is-configuration",
+    "content": "Configuration belongs in JSONB. Business entities don't.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "jsonb"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Relationships First",
+    "slug": "relationships-first",
+    "content": "Entities are easy. Relationships define the system.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "design"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Query Simplicity Matters",
+    "slug": "query-simplicity-matters",
+    "content": "Readable queries beat clever queries.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "readability"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Production Starts Early",
+    "slug": "production-starts-early",
+    "content": "Production isn't deployment. It's every decision before deployment.",
+    "category": "Production",
+    "categorySlug": "production",
+    "tags": [
+      "production",
+      "mindset"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Security Isn't Optional",
+    "slug": "security-isnt-optional",
+    "content": "Never leave security for the final sprint.",
+    "category": "Production",
+    "categorySlug": "production",
+    "tags": [
+      "production",
+      "security"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Reliability Before Features",
+    "slug": "reliability-before-features",
+    "content": "Stable software beats feature-rich software.",
+    "category": "Production",
+    "categorySlug": "production",
+    "tags": [
+      "production",
+      "reliability"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Logging Matters",
+    "slug": "logging-matters",
+    "content": "If it can't be observed, it can't be debugged.",
+    "category": "Production",
+    "categorySlug": "production",
+    "tags": [
+      "production",
+      "observability"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Documentation Is Part of the Product",
+    "slug": "documentation-is-part-of-the-product",
+    "content": "Document *why*.\n\nCode explains *how*.",
+    "category": "Production",
+    "categorySlug": "production",
+    "tags": [
+      "production",
+      "documentation"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Test Every Iteration",
+    "slug": "test-every-iteration",
+    "content": "Don't wait until the end.",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "tags": [
+      "testing",
+      "process"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "APIs Before UI",
+    "slug": "apis-before-ui",
+    "content": "Validate the backend first, then test the interface.",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "tags": [
+      "testing",
+      "backend"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Playwright Is a Safety Net",
+    "slug": "playwright-is-a-safety-net",
+    "content": "Protect user flows. Regression should never surprise you.",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "tags": [
+      "testing",
+      "playwright"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Don't Ignore Edge Cases",
+    "slug": "dont-ignore-edge-cases",
+    "content": "Happy paths sell demos. Edge cases build products.",
+    "category": "Testing",
+    "categorySlug": "testing",
+    "tags": [
+      "testing",
+      "quality"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-12T00:00:00.000Z",
+    "updatedAt": "2026-07-12T00:00:00.000Z",
+    "publishedAt": "2026-07-12T00:00:00.000Z"
+  },
+  {
+    "title": "Refactoring Isn't Failure",
+    "slug": "refactoring-isnt-failure",
+    "content": "Changing architecture means learning.",
+    "category": "Development",
+    "categorySlug": "development",
+    "tags": [
+      "development",
+      "refactoring"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Keep the Codebase Clean",
+    "slug": "keep-the-codebase-clean",
+    "content": "Delete dead code.\n\nDon't keep 'maybe later.'",
+    "category": "Development",
+    "categorySlug": "development",
+    "tags": [
+      "development",
+      "quality"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "One Source of Truth",
+    "slug": "one-source-of-truth",
+    "content": "Avoid duplicate logic. Reuse. Don't copy.",
+    "category": "Development",
+    "categorySlug": "development",
+    "tags": [
+      "development",
+      "design"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Naming Matters",
+    "slug": "naming-matters",
+    "content": "Good names reduce documentation.",
+    "category": "Development",
+    "categorySlug": "development",
+    "tags": [
+      "development",
+      "readability"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Dynamic Isn't Always Better",
+    "slug": "dynamic-isnt-always-better",
+    "content": "I realized that unlimited flexibility created unlimited complexity.",
+    "category": "ShepherEd Lessons",
+    "categorySlug": "shephered-lessons",
+    "tags": [
+      "shephered",
+      "architecture"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Identity Became a Platform",
+    "slug": "identity-became-a-platform",
+    "content": "Authentication grew beyond ERP. It deserved its own platform.",
+    "category": "ShepherEd Lessons",
+    "categorySlug": "shephered-lessons",
+    "tags": [
+      "shephered",
+      "sip"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Reliability Before Growth",
+    "slug": "reliability-before-growth",
+    "content": "Pause features. Strengthen the foundation.",
+    "category": "ShepherEd Lessons",
+    "categorySlug": "shephered-lessons",
+    "tags": [
+      "shephered",
+      "reliability"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Monorepo Came Last",
+    "slug": "monorepo-came-last",
+    "content": "Architecture first. Repositories second.",
+    "category": "ShepherEd Lessons",
+    "categorySlug": "shephered-lessons",
+    "tags": [
+      "shephered",
+      "monorepo"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Build for Institutions",
+    "slug": "build-for-institutions",
+    "content": "Software should adapt to institutions, not the other way around.",
+    "category": "ShepherEd Lessons",
+    "categorySlug": "shephered-lessons",
+    "tags": [
+      "shephered",
+      "product"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Think Long Term",
+    "slug": "think-long-term",
+    "content": "Build software you'll enjoy maintaining.",
+    "category": "Personal Rules",
+    "categorySlug": "personal-rules",
+    "tags": [
+      "personal",
+      "mindset"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Don't Chase Trends",
+    "slug": "dont-chase-trends",
+    "content": "Use technology because it solves a problem.",
+    "category": "Personal Rules",
+    "categorySlug": "personal-rules",
+    "tags": [
+      "personal",
+      "mindset"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Simplicity Wins",
+    "slug": "simplicity-wins",
+    "content": "Simple systems are easier to evolve.",
+    "category": "Personal Rules",
+    "categorySlug": "personal-rules",
+    "tags": [
+      "personal",
+      "simplicity"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Keep Learning",
+    "slug": "keep-learning",
+    "content": "Every project should change how you think.",
+    "category": "Personal Rules",
+    "categorySlug": "personal-rules",
+    "tags": [
+      "personal",
+      "growth"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Ask Why",
+    "slug": "ask-why",
+    "content": "Understanding 'why' is more valuable than memorizing 'how.'",
+    "category": "Personal Rules",
+    "categorySlug": "personal-rules",
+    "tags": [
+      "personal",
+      "mindset"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Pre-Development Checklist",
+    "slug": "pre-development-checklist",
+    "content": "- What problem am I solving?\n- Why this architecture?\n- Why this tech stack?\n- What is Version 1?\n- What belongs outside Version 1?\n- Can this be simpler?\n- What are the platform boundaries?\n- What will need testing?\n- What will need documentation?\n- What does production require?\n- What are the security implications?\n- Where will this be deployed?\n- How will this evolve in one year?",
+    "category": "Pre-Development",
+    "categorySlug": "pre-development",
+    "tags": [
+      "planning",
+      "checklist",
+      "pre-development"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Building this Portfolio",
+    "slug": "building-this-portfolio",
+    "content": "I started the initial project in Replit, then iterated and refined the UI using Lovable. After that, I made it production-ready in Antigravity.\n\nThe domain was purchased from Name.com, and I'm tracking usage with Google Analytics and Vercel Analytics.",
+    "category": "Portfolio Stack",
+    "categorySlug": "portfolio-stack",
+    "tags": [
+      "portfolio",
+      "stack",
+      "tools"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Replit: Great for Foundations",
+    "slug": "replit-great-for-foundations",
+    "content": "I found Replit excellent for rapidly prototyping ideas.\n\nIt generates solid UI, including fluid animations, though the predefined project structure often needs clean-up. Perfect for the initial spark, but requires restructuring.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "replit",
+      "prototyping"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-13T00:00:00.000Z",
+    "updatedAt": "2026-07-13T00:00:00.000Z",
+    "publishedAt": "2026-07-13T00:00:00.000Z"
+  },
+  {
+    "title": "Lovable: Unmatched for Ideation",
+    "slug": "lovable-unmatched-for-ideation",
+    "content": "Lovable is one of the best tools I've used for UI innovation and exploring new ideas.\n\nIt's incredible for the ideation phase, but not production-ready out of the box. It requires engineering effort to finalize and scale.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "lovable",
+      "ui"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Kimi 2.6: Design to Backend",
+    "slug": "kimi-26-design-to-backend",
+    "content": "This is a highly impressive reasoning model.\n\nIt excels at generating compelling, high-quality UI designs, and is equally capable at handling complex backend logic. I found it to be a strong companion for full-stack exploration.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "kimi",
+      "ai",
+      "fullstack"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Production Readiness",
+    "slug": "production-readiness",
+    "content": "To get this portfolio production-ready, I:\n\n- Removed unused code and uninstalled bloated packages.\n- Optimized the Vite build for maximum efficiency.\n- Thoroughly validated cross-device responsiveness.\n\nAll these production-ready steps were executed using Antigravity.",
+    "category": "Portfolio Stack",
+    "categorySlug": "portfolio-stack",
+    "tags": [
+      "portfolio",
+      "production",
+      "antigravity"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "SEO & Observability",
+    "slug": "seo-observability",
+    "content": "I optimized `index.html` with favicons and Open Graph images for social previews.\n\nThen, I uploaded sitemaps to Google Search Console for indexing, and deployed Google Analytics and Vercel Insights to track the user base.",
+    "category": "Portfolio Stack",
+    "categorySlug": "portfolio-stack",
+    "tags": [
+      "portfolio",
+      "seo",
+      "analytics"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Antigravity",
+    "slug": "antigravity",
+    "content": "This is the best agentic tool I have used so far.\n\nIt has really high performance and a good token limit, making it perfect for agent orchestration and deploying subagents. The attention to detail when planning complex systems is extreme.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "antigravity",
+      "ai",
+      "agents"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Antigravity IDE",
+    "slug": "antigravity-ide",
+    "content": "I found it highly efficient and consistently delivers clean work.\n\nIt provides high-quality code reviews and is excellent at maintaining clean project structures.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "antigravity-ide",
+      "ai",
+      "ide"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Supabase",
+    "slug": "supabase",
+    "content": "Supabase stands first when it comes to cloud databases for me.\n\nIt has an incredible amount of features even in the free tier. Built-in Auth and Storage make it a complete backend solution. I also found the CLI to be fantastic, making integration incredibly easy.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "supabase",
+      "database",
+      "backend"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Neon DB",
+    "slug": "neon-db",
+    "content": "Neon is a great database with powerful branching capabilities.\n\nIt's perfect for managing multiple environments (dev, test, prod) in a single project. The CLI is highly efficient and the setup is effortless.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "neon",
+      "database",
+      "serverless"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Animation Libraries",
+    "slug": "animation-libraries",
+    "content": "I checked out a few animation libraries recently:\n\n- **Aceternity UI**: Incredible for modern, sleek animated components.\n- **Magic UI**: Great for highly polished, drop-in micro-interactions.\n- **React Bits**: Excellent collection of reusable animation snippets.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "animations",
+      "ui",
+      "react"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Design & Inspiration",
+    "slug": "design-inspiration",
+    "content": "I came across some great design resources:\n\n- **21st.dev** is an excellent resource for finding modern web design inspiration.\n- The `getdesign.md` skill pack provides strong foundational rules for agentic design.\n- The `UI UX Pro Max` skill pack drives phenomenal agent-based aesthetic execution.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "design",
+      "inspiration",
+      "skill-packs"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "The Architecture Spectrum",
+    "slug": "the-architecture-spectrum",
+    "content": "A quick reference on architectural patterns I keep in mind:\n\n- **Monolith**: A single codebase deployed as one unit. Simple to build, but tightly coupled and harder to scale as teams grow.\n- **Modular Monolith**: Still one deployment unit, but strictly separated into independent logical modules. The best of both worlds for most projects.\n- **Monorepo**: A single version-controlled repository that holds multiple distinct projects or services. Simplifies dependency management and code sharing.\n- **Microservices**: Independently deployable services communicating over a network. Infinite scalability, but introduces heavy operational complexity.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "patterns",
+      "scaling"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "GetLayers.ai",
+    "slug": "getlayersai",
+    "content": "I found GetLayers to be an excellent resource for premium animated 3D site prompts.\n\nIt offers incredibly cool designs with a mix of free and paid prompts. It's a perfect tool to explore for sparking innovative UI ideas.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "design",
+      "inspiration",
+      "3d"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Agent Skill Packs (GitHub)",
+    "slug": "agent-skill-packs-github",
+    "content": "I came across some amazing agent skill packs on GitHub:\n\n- [freshtechbro/claudedesignskills](https://github.com/freshtechbro/claudedesignskills) - This pack is amazing. It forces the AI to output actual high-quality, modern UI instead of generic 'AI slop'. Super useful for pushing aesthetic boundaries.\n- [greensock/gsap-skills](https://github.com/greensock/gsap-skills) - An absolute lifesaver. Most AI models are stuck in the past with deprecated GSAP syntax. This official pack teaches the agents to use modern hooks and best practices seamlessly.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "agents",
+      "skills",
+      "github"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "TanStack Query",
+    "slug": "tanstack-query",
+    "content": "I discovered this while looking to implement caching for a dev project.\n\nIt handles client-side caching by storing data in-memory rather than on the server. I found it to be an absolute game-changer for improving overall UI performance and data fetching.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "tanstack",
+      "caching",
+      "performance"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Specialized Design Resources",
+    "slug": "specialized-design-resources",
+    "content": "Some specific design resources I've collected:\n\n- [shadergradient.co](https://www.shadergradient.co) - Excellent for creating beautiful, complex gradients.\n- [dark.design](https://www.dark.design) - Perfect for dark site inspiration and finding free templates.\n- [supahero.io](https://supahero.io) - A great resource specifically for hero page inspiration.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "design",
+      "inspiration",
+      "ui"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "Google Flow",
+    "slug": "google-flow",
+    "content": "A really cool tool I noticed for generating videos specifically for websites.\n\nIt's highly effective for creating scroll-based 3D animations.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "google-flow",
+      "video",
+      "animations",
+      "3d"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "NVIDIA Build API",
+    "slug": "nvidia-build-api",
+    "content": "I recently came across build.nvidia.com for accessing frontier models.\n\nThey offer a limited free API, perfect for experimenting with powerful new models. I need to explore this further, especially the GLM 5.2 model by z.ai which looks really good.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "nvidia",
+      "api",
+      "ai-models"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-14T00:00:00.000Z",
+    "updatedAt": "2026-07-14T00:00:00.000Z",
+    "publishedAt": "2026-07-14T00:00:00.000Z"
+  },
+  {
+    "title": "HTTP QUERY Method",
+    "slug": "http-query-method",
+    "content": "After years, HTTP has launched a new verb: `QUERY`.\n\nIt allows safely fetching data using a complex request body (solving the 'GET with a body' dilemma while remaining cacheable). I haven't tried it yet, but I wanted to know more so it's on my list to explore soon.",
+    "category": "Backend",
+    "categorySlug": "backend",
+    "tags": [
+      "backend",
+      "http",
+      "api"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Antigravity Awesome Skills",
+    "slug": "antigravity-awesome-skills",
+    "content": "I found a massive repo: [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills).\n\nIt contains an incredible collection of 1,800+ agentic skills and workflows. I need to check this out for inspiration and specific skills that could help in building ShepherEd.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "agents",
+      "skills",
+      "shephered",
+      "antigravity"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "styles.refero.design",
+    "slug": "stylesreferodesign",
+    "content": "This is one of the best sites I've found for obtaining `design.md` files for highly animated and premium websites.\n\nIt is specifically designed for AI agents to understand and replicate complex aesthetics. I used this site to gather the core inspiration for this portfolio.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "design",
+      "agents",
+      "inspiration",
+      "refero"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Impeccable (impeccable.style)",
+    "slug": "impeccable-impeccablestyle",
+    "content": "A powerful design framework and AI skill pack built specifically to stop 'AI slop' and force agents to output professional-grade UI/UX.\n\nI haven't used it yet, but I was curious and am really looking forward to trying it out for future agent-driven designs.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "design",
+      "agents",
+      "impeccable"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Pre-Flight Security & Stability Checklist",
+    "slug": "pre-flight-security-stability-checklist",
+    "content": "My pre-flight production checklist:\n\n- **Input Validation**: Sanitize all incoming data to strictly prevent SQL injection and XSS attacks.\n- **Tenant Isolation**: Lock users to their own ID. Enforce strict boundaries so users can never access another user's data.\n- **CORS Configuration**: Strictly configure CORS to block unauthorized external domains from making API calls.\n- **Rate Limiting**: Implement robust rate limiting to prevent spam and protect against DDoS attacks.\n- **Observability**: Always implement logging and monitoring to catch production crashes early and fix them immediately.",
+    "category": "Production",
+    "categorySlug": "production",
+    "tags": [
+      "production",
+      "security",
+      "checklist"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Graphify",
+    "slug": "graphify",
+    "content": "A tool I came across designed to drastically reduce token usage in Agentic IDEs.\n\nIt works by creating a graph based on the context of the project to optimize how code is fed to the agent. Seems really interesting, I'm looking forward to trying it out soon.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "agents",
+      "graphify",
+      "optimization"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Google AI Studio",
+    "slug": "google-ai-studio",
+    "content": "I realized I need to explore the potential of Google's AI tools more deeply.\n\nIt provides really cool features like building entire Android apps and defining robust agents. Google's rapid evolution in the AI space continues to be surprising and highly impressive.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "ai",
+      "google-ai-studio",
+      "agents"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Mastering cURL",
+    "slug": "mastering-curl",
+    "content": "I want to learn and master using `curl` with simple 2-3 word commands.\n\nIt acts just like Postman but directly in the terminal, making it perfect for testing APIs, checking links, handling file uploads, and more.",
+    "category": "Development",
+    "categorySlug": "development",
+    "tags": [
+      "development",
+      "terminal",
+      "curl",
+      "api"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Agent Swarms: Reflo & Hermes",
+    "slug": "agent-swarms-reflo-hermes",
+    "content": "I discovered `reflo` and `hermes` on GitHub, which are properly defined swarms of agents.\n\nI'm really excited to use them, though they seem to require higher token limits to operate effectively. They are definitely on my checklist to explore and try out soon.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "agents",
+      "swarm",
+      "github",
+      "reflo",
+      "hermes"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "The Huge Boom in MCPs",
+    "slug": "the-huge-boom-in-mcps",
+    "content": "I noticed there is a massive boom right now in Model Context Protocol (MCP) servers.\n\nMCPs keep popping up for virtually all platforms, even extending to design sites. I'm really looking forward to trying out specific ones like the Zerodha MCP and Firebase MCP.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "mcp",
+      "integration",
+      "ai"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Playwright",
+    "slug": "playwright",
+    "content": "I was looking for a way to test complete flows from a client's perspective, which led me to Playwright.\n\nIt became one of the best discoveries during the development of ShepherEd. You can script complex user flows and it tests them perfectly, providing detailed reports and screenshots on failure. It can even provide a full video recording of the test flow if requested.\n\nA genuinely incredible tool.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "playwright",
+      "testing",
+      "e2e",
+      "shephered"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Resend",
+    "slug": "resend",
+    "content": "I found this to be one of the most resourceful tools for a developer when building a SaaS.\n\nIt's incredibly easy to send professional emails, including rich HTML templates, and offers an amazing free tier of 100 emails a day (3k/month). A truly cool and essential tool.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "resend",
+      "email",
+      "saas"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Cloudflare DNS over Namecheap",
+    "slug": "cloudflare-dns-over-namecheap",
+    "content": "I hit a strict limitation with a domain purchased on Namecheap: it wouldn't allow DNS records for both email forwarding and Resend configuration simultaneously.\n\nThe ultimate solution I found was migrating the domain's DNS hosting to Cloudflare. Cloudflare handled the complex records effortlessly, allowing both Resend and email forwarding to coexist.",
+    "category": "Infrastructure",
+    "categorySlug": "infrastructure",
+    "tags": [
+      "infrastructure",
+      "cloudflare",
+      "dns",
+      "resend",
+      "namecheap"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Asynchronous Event Processing",
+    "slug": "asynchronous-event-processing",
+    "content": "I realized that for huge tasks, relying on simple HTTP requests would quickly overwhelm the system.\n\nI had to stop treating the backend as just an HTTP response server. Treating it as an asynchronous event-processing engine changed everything.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "backend",
+      "async",
+      "performance"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Strict Transactions",
+    "slug": "strict-transactions",
+    "content": "I learned how dangerous it is to leave orphan data or incomplete records.\n\nNow, I make sure to wrap every multi-step database operation in a transaction. If it doesn't complete perfectly, the rollback saves everything.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "transactions",
+      "data-integrity"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Visual Hierarchy & Data-First Design",
+    "slug": "visual-hierarchy-data-first-design",
+    "content": "I used to get caught up looking at beautiful sites and completely ignored their underlying structure.\n\nI realized I need to deeply understand the kind of site I am building before styling it. If it's a data-heavy site or a dashboard, perfecting the visual hierarchy and adopting a 'data-first design' approach is crucial.",
+    "category": "Design",
+    "categorySlug": "design",
+    "tags": [
+      "design",
+      "ui",
+      "ux",
+      "data-first"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-15T00:00:00.000Z",
+    "updatedAt": "2026-07-15T00:00:00.000Z",
+    "publishedAt": "2026-07-15T00:00:00.000Z"
+  },
+  {
+    "title": "Extracting Academic Engine",
+    "slug": "extracting-academic-engine",
+    "content": "I noticed academic logic is too complex for standard ERP modules—custom term scales, grading constraints, enrollment workflows.\n\nCoupling it to core ShepherEd created massive DB overhead. So, I extracted it into ShepherEd OpenAcademia. It now operates as a standalone configuration-driven engine.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "architecture",
+      "decoupling",
+      "open-source"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-21T00:00:00.000Z",
+    "updatedAt": "2026-07-21T00:00:00.000Z",
+    "publishedAt": "2026-07-21T00:00:00.000Z"
+  },
+  {
+    "title": "CI/CD & Testing Infrastructure",
+    "slug": "cicd-testing-infrastructure",
+    "content": "I found that local testing doesn't scale for large monolithic sweeps. Running 580 E2E sequential tests caused heavy CPU throttle.\n\nTo solve this, I migrated test execution to GitHub Actions and utilized parallel VMs to reduce execution time. This offloads compute from my local dev environment.",
+    "category": "Infrastructure",
+    "categorySlug": "infrastructure",
+    "tags": [
+      "testing",
+      "ci-cd",
+      "infrastructure"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-21T00:00:00.000Z",
+    "updatedAt": "2026-07-21T00:00:00.000Z",
+    "publishedAt": "2026-07-21T00:00:00.000Z"
+  },
+  {
+    "title": "Strict Database State",
+    "slug": "strict-database-state",
+    "content": "I realized direct DB writes are prone to partial failures—network drops during multi-table inserts create orphan data.\n\nI migrated all complex writes to Prisma Transactions. This guarantees ACID compliance (all or nothing) and enforces state integrity across Dev/Test/Prod environments.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "integrity",
+      "state"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-21T00:00:00.000Z",
+    "updatedAt": "2026-07-21T00:00:00.000Z",
+    "publishedAt": "2026-07-21T00:00:00.000Z"
+  },
+  {
+    "title": "API Type Contracts",
+    "slug": "api-type-contracts",
+    "content": "When I tested monorepo boundaries, I realized they require strict data contracts.\n\nI extracted `academic-config` and `academic-types` packages. Now, API payloads are validated via Zod schemas at runtime, which ensures invalid requests are rejected before hitting the DB. This enforces type safety across decoupled services.",
+    "category": "Architecture",
+    "categorySlug": "architecture",
+    "tags": [
+      "types",
+      "api",
+      "contracts"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-21T00:00:00.000Z",
+    "updatedAt": "2026-07-21T00:00:00.000Z",
+    "publishedAt": "2026-07-21T00:00:00.000Z"
+  },
+  {
+    "title": "GitHub Actions as CI/CD",
+    "slug": "github-actions-as-cicd",
+    "content": "After looking into it, I found GitHub Actions provides excellent isolated 2-core, 7GB RAM Ubuntu environments.\n\nMatrix builds allow parallel execution across Node versions, automating PR validation, linting, and type-checking. It acts as the CI gatekeeper before deployment, eliminating manual pipeline friction.",
+    "category": "DevOps",
+    "categorySlug": "devops",
+    "tags": [
+      "github-actions",
+      "devops",
+      "ci-cd"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-07-21T00:00:00.000Z",
+    "updatedAt": "2026-07-21T00:00:00.000Z",
+    "publishedAt": "2026-07-21T00:00:00.000Z"
+  }
+]

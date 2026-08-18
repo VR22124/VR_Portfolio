@@ -3,7 +3,9 @@ import { useEffect } from 'react';
 import Home from './pages/Home';
 import ShepherEdCaseStudy from './pages/ShepherEdCaseStudy';
 import EngineeringPrinciples from './pages/EngineeringPrinciples';
-import EngineeringNotes from './pages/EngineeringNotes';
+import NoteList from './pages/notes/NoteList';
+
+import { ThemeProvider } from './contexts/ThemeContext';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -29,15 +31,18 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/case-studies/shephered" element={<ShepherEdCaseStudy />} />
-        <Route path="/principles" element={<EngineeringPrinciples />} />
-        <Route path="/notes" element={<EngineeringNotes />} />
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/case-studies/shephered" element={<ShepherEdCaseStudy />} />
+          <Route path="/principles" element={<EngineeringPrinciples />} />
+          <Route path="/notes" element={<NoteList />} />
+
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

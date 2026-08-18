@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import * as SiIcons from 'react-icons/si';
+import { IconMap } from './IconMap';
 import contact from '../data/contact.json';
 import meta from '../data/meta.json';
 
@@ -47,14 +47,14 @@ export default function Contact() {
     <footer
       id="contact"
       ref={sectionRef}
-      className="border-t border-[#1f1f24] relative overflow-hidden"
+      className="border-t border-[var(--border)] relative overflow-hidden"
       style={{ paddingTop: '120px', paddingBottom: '60px' }}
     >
       {/* Subtle background glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212,255,79,0.04) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 60% 50% at 50% 100%, color-mix(in srgb, var(--accent) 4%, transparent) 0%, transparent 70%)',
         }}
         aria-hidden="true"
       />
@@ -63,11 +63,11 @@ export default function Contact() {
         {/* Availability badge */}
         <div
           ref={badgeRef}
-          className="inline-flex items-center gap-2 px-4 py-2 border border-[#2e2e36] rounded-full mb-10"
+          className="inline-flex items-center gap-2 px-4 py-2 border border-[var(--border-bright)] rounded-full mb-10"
           style={{ opacity: 0 }}
         >
           <span className="w-2 h-2 rounded-full bg-[#4ade80] animate-pulse" />
-          <span className="text-xs font-medium text-[#8c8c94] tracking-wide uppercase">
+          <span className="text-xs font-medium text-[var(--text-secondary)] tracking-wide uppercase">
             Open to new projects
           </span>
         </div>
@@ -75,18 +75,18 @@ export default function Contact() {
         {/* Headline — the emotional close */}
         <div ref={headlineRef} className="mb-6" style={{ opacity: 0 }}>
           <h2
-            className="font-display font-bold text-[#f5f5f2] leading-[0.95]"
+            className="font-display font-bold text-[var(--text-primary)] leading-[0.95]"
             style={{ fontSize: 'clamp(36px, 6vw, 88px)', letterSpacing: '-0.03em' }}
           >
             Let's build
             <br />
-            <span className="text-[#d4ff4f]">something that lasts.</span>
+            <span className="text-[var(--accent)]">something that lasts.</span>
           </h2>
         </div>
 
         <p
           ref={subtextRef}
-          className="text-body text-[#8c8c94] max-w-md mb-14"
+          className="text-body text-[var(--text-secondary)] max-w-md mb-14"
           style={{ opacity: 0 }}
         >
           {contact.subtext}
@@ -100,16 +100,16 @@ export default function Contact() {
           style={{ opacity: 0 }}
         >
           <span
-            className="font-display font-bold text-[#f5f5f2] group-hover:text-[#d4ff4f] transition-colors duration-300"
+            className="font-display font-bold text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors duration-300"
             style={{ fontSize: 'clamp(22px, 3.5vw, 52px)', letterSpacing: '-0.02em' }}
           >
             {contact.email}
           </span>
           <span
-            className="flex items-center justify-center w-12 h-12 border border-[#2e2e36] rounded-full group-hover:border-[#d4ff4f] group-hover:bg-[#d4ff4f] transition-all duration-300 shrink-0"
+            className="flex items-center justify-center w-12 h-12 border border-[var(--border-bright)] rounded-full group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] transition-all duration-300 shrink-0"
           >
             <svg
-              className="group-hover:text-[#08080a] text-[#4a4a52] transition-colors duration-300"
+              className="group-hover:text-[var(--bg-base)] text-[var(--text-tertiary)] transition-colors duration-300"
               width="16" height="16" viewBox="0 0 24 24"
               fill="none" stroke="currentColor" strokeWidth="2"
             >
@@ -121,18 +121,18 @@ export default function Contact() {
         {/* Footer strip */}
         <div
           ref={footerRef}
-          className="flex flex-col gap-8 pt-10 border-t border-[#1f1f24]"
+          className="flex flex-col gap-8 pt-10 border-t border-[var(--border)]"
           style={{ opacity: 0 }}
         >
           {/* Name + Contact — NAP consistency for SEO */}
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <p className="text-sm font-semibold text-[#f5f5f2] tracking-wide">{meta.name}</p>
-              <p className="text-xs text-[#4a4a52] mt-1">Full-Stack Developer · Salem, Tamil Nadu, India</p>
+              <p className="text-sm font-semibold text-[var(--text-primary)] tracking-wide">{meta.name}</p>
+              <p className="text-xs text-[var(--text-tertiary)] mt-1">Full-Stack Developer · Salem, Tamil Nadu, India</p>
             </div>
             <a
               href={`mailto:${contact.email}`}
-              className="text-xs text-[#4a4a52] hover:text-[#d4ff4f] transition-colors duration-200"
+              className="text-xs text-[var(--text-tertiary)] hover:text-[var(--accent)] transition-colors duration-200"
             >
               {contact.email}
             </a>
@@ -142,14 +142,14 @@ export default function Contact() {
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div className="flex items-center gap-6">
               {contact.socials.map((social, i) => {
-                const Icon = (SiIcons as Record<string, React.ComponentType<{ size?: number }>>)[social.icon];
+                const Icon = IconMap[social.icon];
                 return (
                   <a
                     key={i}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-2.5 text-sm text-[#4a4a52] hover:text-[#f5f5f2] transition-colors duration-200"
+                    className="group flex items-center gap-2.5 text-sm text-[var(--text-tertiary)] hover:text-[var(--text-primary)] transition-colors duration-200"
                   >
                     {Icon && <Icon size={16} />}
                     <span className="text-xs font-medium tracking-wide">{social.label}</span>
@@ -158,11 +158,11 @@ export default function Contact() {
               })}
             </div>
 
-            <div className="flex items-center gap-8 text-xs text-[#2e2e36]">
+            <div className="flex items-center gap-8 text-xs text-[var(--border-bright)]">
               <span>© {new Date().getFullYear()} {meta.name}</span>
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="group flex items-center gap-2 hover:text-[#8c8c94] transition-colors duration-200"
+                className="group flex items-center gap-2 hover:text-[var(--text-secondary)] transition-colors duration-200"
               >
                 Back to top
                 <svg

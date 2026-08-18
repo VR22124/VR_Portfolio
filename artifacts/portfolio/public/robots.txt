@@ -1,5 +1,8 @@
 User-agent: *
 Allow: /
+Allow: /principles
+Allow: /notes
+Allow: /case-studies/shephered
 
 User-agent: GPTBot
 Allow: /

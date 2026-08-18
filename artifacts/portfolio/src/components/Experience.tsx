@@ -76,7 +76,7 @@ function Typewriter({
           display: 'inline-block',
           width: '2px',
           height: '0.85em',
-          background: '#d4ff4f',
+          background: 'var(--accent)',
           marginLeft: '1px',
           verticalAlign: 'text-bottom',
           opacity: done ? 0 : 1,
@@ -95,7 +95,7 @@ function DesktopChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
         style={{
           fontSize: 'clamp(56px, 9vw, 130px)',
           letterSpacing: '-0.035em',
-          color: '#f5f5f2',
+          color: 'var(--text-primary)',
           marginBottom: '1.75rem',
           lineHeight: 0.92,
         }}
@@ -107,7 +107,7 @@ function DesktopChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
         aria-hidden="true"
         style={{
           height: '1px',
-          backgroundColor: '#f5f5f2',
+          backgroundColor: 'var(--text-primary)',
           opacity: isActive ? 0.14 : 0,
           width: isActive ? '100%' : '0%',
           transition: isActive
@@ -120,7 +120,7 @@ function DesktopChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
       <div style={{ marginBottom: '2rem' }}>
         <div
           style={{
-            color: '#d4ff4f',
+            color: 'var(--accent)',
             fontWeight: 600,
             fontSize: 'clamp(14px, 1.4vw, 20px)',
             letterSpacing: '0.01em',
@@ -134,7 +134,7 @@ function DesktopChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
           style={{
             fontFamily: 'Menlo, monospace',
             fontSize: '10px',
-            color: '#4a4a52',
+            color: 'var(--text-tertiary)',
             letterSpacing: '0.16em',
             textTransform: 'uppercase',
             opacity: isActive ? 1 : 0,
@@ -147,7 +147,7 @@ function DesktopChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
 
       <p
         style={{
-          color: '#8c8c94',
+          color: 'var(--text-secondary)',
           fontSize: 'clamp(14px, 1.15vw, 17px)',
           lineHeight: 1.85,
           maxWidth: '520px',
@@ -171,7 +171,7 @@ function DesktopChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
               alignItems: 'center',
               gap: '0.5rem',
               fontSize: '13px',
-              color: '#8c8c94',
+              color: 'var(--text-secondary)',
               opacity: isActive ? 1 : 0,
               transform: isActive ? 'translateX(0)' : 'translateX(-20px)',
               transition: isActive
@@ -179,7 +179,7 @@ function DesktopChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
                 : 'opacity 0.15s ease, transform 0.15s ease',
             }}
           >
-            <span style={{ color: '#d4ff4f', fontSize: '10px', lineHeight: 1, flexShrink: 0 }}>→</span>
+            <span style={{ color: 'var(--accent)', fontSize: '10px', lineHeight: 1, flexShrink: 0 }}>→</span>
             {hl}
           </div>
         ))}
@@ -192,7 +192,7 @@ function MobileChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
   return (
     <div>
       <h3
-        className="font-display font-bold leading-none text-[#f5f5f2]"
+        className="font-display font-bold leading-none text-[var(--text-primary)]"
         style={{
           fontSize: 'clamp(38px, 12vw, 58px)',
           letterSpacing: '-0.03em',
@@ -202,17 +202,17 @@ function MobileChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
         {exp.company}
       </h3>
       <div
-        style={{ height: '1px', backgroundColor: '#f5f5f2', opacity: 0.1, marginBottom: '1.25rem' }}
+        style={{ height: '1px', backgroundColor: 'var(--text-primary)', opacity: 0.1, marginBottom: '1.25rem' }}
       />
       <div style={{ marginBottom: '1.25rem' }}>
-        <div style={{ color: '#d4ff4f', fontWeight: 600, fontSize: '14px', marginBottom: '0.3rem' }}>
+        <div style={{ color: 'var(--accent)', fontWeight: 600, fontSize: '14px', marginBottom: '0.3rem' }}>
           {exp.role}
         </div>
         <div
           style={{
             fontFamily: 'Menlo, monospace',
             fontSize: '10px',
-            color: '#4a4a52',
+            color: 'var(--text-tertiary)',
             letterSpacing: '0.13em',
             textTransform: 'uppercase',
           }}
@@ -220,7 +220,7 @@ function MobileChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
           {exp.period}
         </div>
       </div>
-      <p style={{ color: '#8c8c94', fontSize: '14px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+      <p style={{ color: 'var(--text-secondary)', fontSize: '14px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
         {exp.description}
       </p>
       <div style={{ display: 'flex', flexDirection: 'column', gap: '0.625rem' }}>
@@ -232,13 +232,13 @@ function MobileChapter({ exp, isActive }: { exp: Exp; isActive: boolean }) {
               alignItems: 'center',
               gap: '0.5rem',
               fontSize: '13px',
-              color: '#8c8c94',
+              color: 'var(--text-secondary)',
               opacity: isActive ? 1 : 0,
               transform: isActive ? 'translateX(0)' : 'translateX(-14px)',
               transition: `opacity 0.4s ease ${j * 0.08}s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1) ${j * 0.08}s`,
             }}
           >
-            <span style={{ color: '#d4ff4f', fontSize: '10px', flexShrink: 0 }}>→</span>
+            <span style={{ color: 'var(--accent)', fontSize: '10px', flexShrink: 0 }}>→</span>
             {hl}
           </div>
         ))}
@@ -326,8 +326,8 @@ export default function Experience() {
                 height: '2px',
                 width: isAct ? '28px' : '8px',
                 borderRadius: '1px',
-                backgroundColor: isAct ? '#d4ff4f' : isPast ? '#3a3a44' : '#1c1c22',
-                boxShadow: isAct ? '0 0 10px 2px rgba(212,255,79,0.5)' : 'none',
+                backgroundColor: isAct ? 'var(--accent)' : isPast ? '#3a3a44' : '#1c1c22',
+                boxShadow: isAct ? '0 0 10px 2px color-mix(in srgb, var(--accent) 50%, transparent)' : 'none',
                 transition: 'all 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
               }}
             />
@@ -347,7 +347,7 @@ export default function Experience() {
               flex: 1,
               height: '2px',
               borderRadius: '1px',
-              backgroundColor: i <= activeChapter ? '#d4ff4f' : '#1c1c22',
+              backgroundColor: i <= activeChapter ? 'var(--accent)' : '#1c1c22',
               transition: 'background-color 0.4s ease',
             }}
           />
@@ -366,7 +366,7 @@ export default function Experience() {
       >
         <div className="eyebrow mb-4">Experience</div>
         <h2
-          className="font-display font-medium text-[#f5f5f2]"
+          className="font-display font-medium text-[var(--text-primary)]"
           style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', letterSpacing: '-0.02em' }}
         >
           Where I've worked.
@@ -384,7 +384,7 @@ export default function Experience() {
               ref={el => { wrapperRefs.current[i] = el; }}
               style={{
                 padding: '3.5rem 5vw',
-                borderTop: '1px solid #1f1f24',
+                borderTop: '1px solid var(--border)',
                 opacity: isActive ? 1 : 0,
                 transform: isActive ? 'translateY(0)' : 'translateY(36px)',
                 transition: 'opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)',
