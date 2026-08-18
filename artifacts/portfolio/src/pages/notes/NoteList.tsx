@@ -388,6 +388,69 @@ export default function NotesPage() {
 
             {/* Note Content */}
             <article>
+              {active.slug === 'semantic-versioning-semver' && (
+                <div className="mb-8 p-6 bg-[var(--bg-elevated-2)] border border-[var(--border)] rounded-2xl flex flex-col items-center">
+                  <div className="text-sm font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-6">Semantic Versioning</div>
+                  <div className="flex gap-2 md:gap-8 items-start justify-center">
+                    <div className="flex flex-col items-center gap-3 w-24 md:w-28">
+                      <span className="text-5xl font-black text-[var(--text-primary)] font-mono tracking-tighter">2</span>
+                      <div className="h-4 w-px bg-[var(--border)]"></div>
+                      <div className="h-px w-full bg-[var(--border)]"></div>
+                      <span className="text-[10px] md:text-xs font-bold text-center mt-2 text-[var(--accent)] uppercase">MAJOR</span>
+                      <span className="text-[9px] md:text-[10px] text-center text-[var(--text-tertiary)] leading-tight">Bump for incompatible API changes</span>
+                    </div>
+                    <span className="text-4xl md:text-5xl font-black text-[var(--text-tertiary)] pt-1 leading-none">.</span>
+                    <div className="flex flex-col items-center gap-3 w-24 md:w-28">
+                      <span className="text-5xl font-black text-[var(--text-primary)] font-mono tracking-tighter">7</span>
+                      <div className="h-4 w-px bg-[var(--border)]"></div>
+                      <div className="h-px w-full bg-[var(--border)]"></div>
+                      <span className="text-[10px] md:text-xs font-bold text-center mt-2 text-[var(--accent)] uppercase">MINOR</span>
+                      <span className="text-[9px] md:text-[10px] text-center text-[var(--text-tertiary)] leading-tight">Bump for backward-compatible new features</span>
+                    </div>
+                    <span className="text-4xl md:text-5xl font-black text-[var(--text-tertiary)] pt-1 leading-none">.</span>
+                    <div className="flex flex-col items-center gap-3 w-24 md:w-28">
+                      <span className="text-5xl font-black text-[var(--text-primary)] font-mono tracking-tighter">123</span>
+                      <div className="h-4 w-px bg-[var(--border)]"></div>
+                      <div className="h-px w-full bg-[var(--border)]"></div>
+                      <span className="text-[10px] md:text-xs font-bold text-center mt-2 text-[var(--accent)] uppercase">PATCH</span>
+                      <span className="text-[9px] md:text-[10px] text-center text-[var(--text-tertiary)] leading-tight">Bump for backward-compatible bug fixes</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              {active.slug === 'pride-versioning' && (
+                <div className="mb-8 p-6 bg-[var(--bg-elevated-2)] border border-[var(--border)] rounded-2xl flex flex-col items-center relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--accent)] opacity-[0.03] blur-3xl rounded-full pointer-events-none" />
+                  <div className="text-sm font-semibold uppercase tracking-widest text-[var(--text-secondary)] mb-6 relative z-10">Pride Versioning</div>
+                  <div className="flex gap-2 md:gap-8 items-start justify-center relative z-10">
+                    <div className="flex flex-col items-center gap-3 w-24 md:w-28">
+                      <span className="text-5xl font-black text-[var(--text-primary)] font-mono tracking-tighter">2</span>
+                      <div className="h-4 w-px bg-[var(--border)]"></div>
+                      <div className="h-px w-full bg-[var(--border)]"></div>
+                      <span className="text-[10px] md:text-xs font-bold text-center mt-2 text-[var(--text-primary)] uppercase">PROUD</span>
+                      <span className="text-[9px] md:text-[10px] text-center text-[var(--text-tertiary)] leading-tight">Bump when you are proud of the release</span>
+                    </div>
+                    <span className="text-4xl md:text-5xl font-black text-[var(--text-tertiary)] pt-1 leading-none">.</span>
+                    <div className="flex flex-col items-center gap-3 w-24 md:w-28">
+                      <span className="text-5xl font-black text-[var(--text-primary)] font-mono tracking-tighter">7</span>
+                      <div className="h-4 w-px bg-[var(--border)]"></div>
+                      <div className="h-px w-full bg-[var(--border)]"></div>
+                      <span className="text-[10px] md:text-xs font-bold text-center mt-2 text-[var(--text-secondary)] uppercase">DEFAULT</span>
+                      <span className="text-[9px] md:text-[10px] text-center text-[var(--text-tertiary)] leading-tight">Just normal / okay releases</span>
+                    </div>
+                    <span className="text-4xl md:text-5xl font-black text-[var(--text-tertiary)] pt-1 leading-none">.</span>
+                    <div className="flex flex-col items-center gap-3 w-24 md:w-32">
+                      <span className="text-5xl font-black text-[var(--text-primary)] font-mono tracking-tighter">123</span>
+                      <div className="h-4 w-px bg-[var(--border)]"></div>
+                      <div className="h-px w-full bg-[var(--border)]"></div>
+                      <span className="text-[10px] md:text-xs font-bold text-center mt-2 text-rose-500 uppercase">SHAME</span>
+                      <span className="text-[9px] md:text-[10px] text-center text-[var(--text-tertiary)] leading-tight">Bump when fixing things too embarrassing to admit</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <Markdown content={active.content} />
             </article>
 

@@ -1496,5 +1496,493 @@
     "createdAt": "2026-07-21T00:00:00.000Z",
     "updatedAt": "2026-07-21T00:00:00.000Z",
     "publishedAt": "2026-07-21T00:00:00.000Z"
+  },
+  {
+    "title": "APIVault",
+    "slug": "apivault",
+    "content": "I came across [apivault.dev](https://apivault.dev) while looking for free public APIs.\n\nIt has a massive directory categorized by domain, which makes it super handy for quick prototyping and mock integrations without dealing with paid keys upfront.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "api",
+      "resources",
+      "prototyping"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Animaster Lib",
+    "slug": "animaster-lib",
+    "content": "I found [animasterlib.dev](https://animasterlib.dev), which has around 300 animated UI components and interactions.\n\nIt seems packed with great scroll effects, hero sections, and micro-interactions. Definitely want to test this out for adding smooth motion to landing pages.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "animations",
+      "ui",
+      "components"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Skiper UI",
+    "slug": "skiper-ui",
+    "content": "I checked out [skiper-ui.com](https://skiper-ui.com), a component library built on top of Tailwind CSS and shadcn/ui.\n\nIt provides ready-to-use hero sections, pricing tables, and cards. Looks like a solid shortcut for assembling clean SaaS interfaces quickly.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "ui",
+      "tailwind",
+      "shadcn",
+      "components"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Vengeance UI",
+    "slug": "vengeance-ui",
+    "content": "I came across [vengenceui.com](https://vengenceui.com), an animation-focused React library powered by Framer Motion and Tailwind.\n\nIt has really slick 3D buttons, gooey text reveals, and bento components with a simple copy-paste / CLI workflow. Looking forward to experimenting with it.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "animations",
+      "framer-motion",
+      "tailwind",
+      "components"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Google Jules",
+    "slug": "google-jules",
+    "content": "Google doesn't just have Antigravity; they've been releasing some other really cool developer tools like [jules.google.com](https://jules.google.com).\n\nIt's an autonomous async coding agent that works in the background on GitHub repos—handling multi-file refactors, fixing failing tests, and raising PRs independently. Definitely on my checklist to try.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "google",
+      "ai",
+      "agents",
+      "coding",
+      "automation",
+      "jules"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Google Opal",
+    "slug": "google-opal",
+    "content": "Another interesting Google Labs project I noticed is [opal.google](https://opal.google).\n\nIt's basically an AI-native, visual alternative to n8n. You describe workflows in plain English and it builds node-based pipelines chaining Gemini models and tools together. Really curious to build a few experimental workflows on it.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "google",
+      "ai",
+      "workflows",
+      "n8n",
+      "automation",
+      "no-code",
+      "opal"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Google Stitch",
+    "slug": "google-stitch",
+    "content": "I also came across [stitch.withgoogle.com](https://stitch.withgoogle.com) from Google Labs.\n\nIt's an AI-native design canvas where you can prompt or sketch UI layouts and iterate on them conversationally, then export directly to React or HTML/CSS. Seems super helpful for rapid UI ideation.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "google",
+      "ai",
+      "design",
+      "ui",
+      "prototyping",
+      "stitch"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Spec Kit (Spec-Driven Development)",
+    "slug": "spec-kit-sdd",
+    "content": "I came across [github.com/github/spec-kit](https://github.com/github/spec-kit), an open-source toolkit built for Spec-Driven Development (SDD).\n\nInstead of freeform prompting, you feed it structured specs and it generates detailed architecture plans, constitutions, and task breakdowns for AI agents to execute. Super effective for keeping coding agents aligned and avoiding code drift.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "agents",
+      "spec-kit",
+      "planning",
+      "ai-engineering",
+      "github"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Husky Git Hooks",
+    "slug": "husky-git-hooks",
+    "content": "I've been looking into `husky` ([github.com/typicode/husky](https://github.com/typicode/husky)) for automating Git hooks locally.\n\nIt runs linting, type-checking, and build validation right on `pre-commit` or `pre-push`. If anything fails, it blocks the commit immediately. Super useful for catching regressions locally before they ever reach GitHub CI.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "husky",
+      "git-hooks",
+      "devops",
+      "code-quality",
+      "github"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "ACID Transactions",
+    "slug": "acid-transactions",
+    "content": "My quick mental model for relational database transaction guarantees:\n\n- **Atomicity**: All operations commit together or everything rolls back.\n- **Consistency**: State changes strictly respect constraints and schema rules.\n- **Isolation**: Concurrent transactions don't bleed into each other.\n- **Durability**: Committed data survives crashes and restarts.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "transactions",
+      "acid",
+      "architecture"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "BASE Model",
+    "slug": "base-model",
+    "content": "The distributed/NoSQL counterpart to ACID when prioritizing availability over immediate consistency:\n\n- **Basically Available**: Responds even under partial node failures.\n- **Soft State**: System state can drift without active writes.\n- **Eventual Consistency**: Replicas synchronize and converge over time.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "distributed-systems",
+      "nosql",
+      "base"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "CAP Theorem",
+    "slug": "cap-theorem",
+    "content": "Whenever dealing with distributed data systems, network partitions (**P**) are unavoidable, forcing a direct architectural trade-off:\n\n- **CP (Consistency)**: Guaranteed up-to-date data, but requests may error if nodes can't sync.\n- **AP (Availability)**: Every node returns a response, but some reads might return stale data.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "distributed-systems",
+      "cap-theorem",
+      "architecture"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "OLTP vs. OLAP",
+    "slug": "oltp-vs-olap",
+    "content": "A distinction I always keep clear when designing data layers:\n\n- **OLTP**: Row-oriented databases (Postgres, MySQL) built for fast, high-volume transactional CRUD operations from users.\n- **OLAP**: Columnar data warehouses (ClickHouse, BigQuery) built for heavy analytical queries and aggregate reporting over historical data.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "oltp",
+      "olap",
+      "analytics",
+      "architecture"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "ETL Pipelines",
+    "slug": "etl-pipelines",
+    "content": "The standard data engineering pipeline for moving data into an analytics warehouse:\n\n- **Extract**: Pull raw data from production DBs, APIs, and logs.\n- **Transform**: Clean, normalize, deduplicate, and reshape schema.\n- **Load**: Write the clean data into the destination warehouse for OLAP queries.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "etl",
+      "data-engineering",
+      "pipelines"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Common Table Expressions (CTE)",
+    "slug": "common-table-expressions-cte",
+    "content": "I use `WITH` clauses (CTEs) whenever SQL queries start getting messy with nested subqueries.\n\nThey make multi-step logic readable and modular, and enable recursive queries for hierarchical structures like comment trees and org charts.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "sql",
+      "cte",
+      "queries"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Entity Relationship Diagrams (ERD)",
+    "slug": "entity-relationship-diagrams-erd",
+    "content": "I always map out the ERD before touching any migration files.\n\nVisualizing tables, foreign keys, and cardinalities (`1:1`, `1:N`, `M:N`) upfront saves hours of messy database refactoring and bad schema coupling later.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "erd",
+      "schema",
+      "modeling"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "RDBMS Fundamentals",
+    "slug": "rdbms-fundamentals",
+    "content": "Core principles of relational database systems:\n\n- Structured tabular storage with strictly-typed columns.\n- Foreign keys and constraints enforcing data integrity at the database level.\n- Declarative SQL with query planners optimizing execution.\n- Full ACID transaction support.",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "rdbms",
+      "sql",
+      "relational"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "CRUD Operations",
+    "slug": "crud-operations",
+    "content": "The foundational persistence operations mapped across SQL and REST:\n\n- **Create**: SQL `INSERT` | HTTP `POST`\n- **Read**: SQL `SELECT` | HTTP `GET`\n- **Update**: SQL `UPDATE` | HTTP `PUT` / `PATCH`\n- **Delete**: SQL `DELETE` | HTTP `DELETE`",
+    "category": "Database",
+    "categorySlug": "database",
+    "tags": [
+      "database",
+      "crud",
+      "api",
+      "backend"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Semantic Versioning (SemVer)",
+    "slug": "semantic-versioning-semver",
+    "content": "I realized that strictly adhering to Semantic Versioning (SemVer) is the industry standard for communicating technical changes.\n\nIt follows a strict `MAJOR.MINOR.PATCH` structure. For example, in version `2.7.123`:\n\n- **2 (MAJOR)**: Breaking changes. You increment this when making incompatible API changes.\n- **7 (MINOR)**: New features. You increment this when adding functionality in a backward-compatible manner.\n- **123 (PATCH)**: Bug fixes. You increment this when making backward-compatible fixes.\n\nSemVer removes the guesswork from dependency management. If the Major version doesn't change, updates are safe to pull.",
+    "category": "Development",
+    "categorySlug": "development",
+    "tags": [
+      "development",
+      "versioning",
+      "semver",
+      "standards"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Pride Versioning",
+    "slug": "pride-versioning",
+    "content": "While SemVer is the technical standard, I came across Pride Versioning—a hilarious, emotionally honest alternative that captures the reality of shipping code.\n\nInstead of `MAJOR.MINOR.PATCH`, it uses `PROUD.DEFAULT.SHAME`. For example, in version `2.7.123`:\n\n- **2 (PROUD)**: Incremented when you release a feature you are genuinely proud of. (You can reset the others to zero for a clean slate).\n- **7 (DEFAULT)**: Incremented for standard, 'just okay' releases that meet baseline expectations.\n- **123 (SHAME)**: Incremented when you push messy hotfixes for bugs that are too embarrassing to admit.\n\nIt's a satirical meme, but it perfectly highlights how arbitrary versioning feels when pushing endless hotfixes to production.",
+    "category": "Development",
+    "categorySlug": "development",
+    "tags": [
+      "development",
+      "versioning",
+      "humor",
+      "standards"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Neuform (DESIGN.md)",
+    "slug": "neuform-design-md",
+    "content": "I came across [neuform.ai](https://neuform.ai), an AI-powered design tool focused entirely on `DESIGN.md` files.\n\nIt lets you generate production-ready UI components from text prompts while maintaining a consistent design system via the markdown file. It's really useful for remixing visual 'DNA' across different AI tools without losing your core aesthetic.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "design",
+      "ai",
+      "neuform",
+      "design-system"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "Scroll World (Agent Skill)",
+    "slug": "scroll-world-agent-skill",
+    "content": "I came across **Scroll World** (`oso95/scroll-world`), an open-source AI agent skill designed to orchestrate cinematic, scroll-driven 3D web experiences.\n\nIt plugs directly into agents like Claude Code, Codex, and Antigravity. Instead of you writing complex GSAP or Three.js logic by hand, the agent reads the skill's `SKILL.md` instructions and automatically wires up video frames or 3D models to the user's scroll position. Perfect for building those high-end, 'one-shot camera flight' landing pages entirely through vibe coding.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "agents",
+      "animations",
+      "vibe-coding",
+      "scroll-world"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "StringTune Animations",
+    "slug": "stringtune-animations",
+    "content": "I came across [StringTune](https://string-tune.fiddle.digital/skill-hub) by Fiddle.Digital, a modular JavaScript library for adding high-performance scroll and interaction animations.\n\nInstead of writing heavy custom JS, you just use simple HTML data attributes to trigger parallax, magnetic cursors, and text splits. Looks really cool, waiting to try it out on a future landing page build.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "animations",
+      "javascript",
+      "stringtune",
+      "ui"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "The SVG (Tech Logos)",
+    "slug": "the-svg-tech-logos",
+    "content": "I found a great bookmark for UI work: [thesvg.org](https://thesvg.org).\n\nIt's a massive, searchable repository where you can find all the clean, vector SVG logos for pretty much any tech stack, framework, or tool you need. Super useful for building out portfolio sections or architecture diagrams without hunting down high-res pngs on Google Images.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "assets",
+      "svg",
+      "design",
+      "logos"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "MotionSites.ai (AI Landing Pages)",
+    "slug": "motionsites-ai",
+    "content": "I came across [motionsites.ai](https://motionsites.ai), which is basically a massive library of premium, motion-rich landing page prompts and assets tailored for AI tools.\n\nInstead of struggling to get Claude or Cursor to design something good from scratch, you copy highly detailed, 'production-ready' prompts from MotionSites that include layout rules, Framer Motion curves, and styling. The AI then generates an extreme-level, agency-quality landing page for you based on that prompt.",
+    "category": "Tool Insights",
+    "categorySlug": "tool-insights",
+    "tags": [
+      "tools",
+      "design",
+      "ai",
+      "landing-pages",
+      "prompts"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
+  },
+  {
+    "title": "The 9 Must-Have UI States",
+    "slug": "must-have-ui-states",
+    "content": "A checklist I keep for every web project. If you want a robust, production-ready app, you absolutely must design and build components for these 9 critical states:\n\n1. **Empty State**: What happens when there's no data yet.\n2. **Loading State**: Skeletons or spinners during data fetching.\n3. **Error State**: Graceful fallbacks when something crashes.\n4. **No Internet State**: Alerting the user when they drop offline.\n5. **Slow Network State**: Feedback when a request is taking unusually long.\n6. **No Search Results**: Helpful dead-ends when queries fail.\n7. **Permission Denied**: Clear 403 pages when users hit unauthorized routes.\n8. **Session Expired**: Smooth redirects when auth tokens die.\n9. **Form Validation & Success**: Inline errors during input and clear success feedback after submission.\n\nDon't just design the 'happy path'. The edge cases define the UX.",
+    "category": "Development",
+    "categorySlug": "development",
+    "tags": [
+      "design",
+      "ui",
+      "ux",
+      "architecture",
+      "checklist"
+    ],
+    "pinned": false,
+    "published": true,
+    "createdAt": "2026-08-18T00:00:00.000Z",
+    "updatedAt": "2026-08-18T00:00:00.000Z",
+    "publishedAt": "2026-08-18T00:00:00.000Z"
   }
 ]
