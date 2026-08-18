@@ -1,5 +1,11 @@
 {
   "buildCommand": "pnpm run build",
   "outputDirectory": "artifacts/portfolio/dist/public",
-  "framework": "vite"
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
