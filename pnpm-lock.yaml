@@ -4,39 +4,6 @@ settings:
   autoInstallPeers: false
   excludeLinksFromLockfile: false
 
-catalogs:
-  default:
-    '@tailwindcss/vite':
-      specifier: ^4.3.2
-      version: 4.3.2
-    '@types/node':
-      specifier: ^25.3.3
-      version: 25.9.4
-    '@types/react':
-      specifier: ^19.2.17
-      version: 19.2.17
-    '@types/react-dom':
-      specifier: ^19.2.3
-      version: 19.2.3
-    '@vitejs/plugin-react':
-      specifier: ^5.0.4
-      version: 5.2.0
-    lucide-react:
-      specifier: ^0.545.0
-      version: 0.545.0
-    react:
-      specifier: 19.1.0
-      version: 19.1.0
-    react-dom:
-      specifier: 19.1.0
-      version: 19.1.0
-    tailwindcss:
-      specifier: ^4.3.2
-      version: 4.3.2
-    vite:
-      specifier: ^7.3.2
-      version: 7.3.6
-
 overrides:
   esbuild>@esbuild/darwin-arm64: '-'
   esbuild>@esbuild/darwin-x64: '-'
@@ -152,14 +119,23 @@ importers:
         specifier: ^3.15.0
         version: 3.15.0
       lucide-react:
-        specifier: 'catalog:'
+        specifier: ^0.545.0
         version: 0.545.0(react@19.1.0)
+      react:
+        specifier: 19.1.0
+        version: 19.1.0
+      react-dom:
+        specifier: 19.1.0
+        version: 19.1.0(react@19.1.0)
       react-error-boundary:
         specifier: ^6.1.2
         version: 6.1.2(react@19.1.0)
       react-helmet-async:
         specifier: ^3.0.0
         version: 3.0.0(react@19.1.0)
+      react-icons:
+        specifier: ^5.4.0
+        version: 5.7.0(react@19.1.0)
       react-router-dom:
         specifier: ^7.18.1
         version: 7.18.1(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -168,37 +144,28 @@ importers:
         version: 0.185.0
     devDependencies:
       '@tailwindcss/vite':
-        specifier: 'catalog:'
+        specifier: ^4.3.2
         version: 4.3.2(vite@7.3.6(@types/node@25.9.4)(jiti@2.7.0)(lightningcss@1.32.0))
       '@types/node':
-        specifier: 'catalog:'
+        specifier: ^25.3.3
         version: 25.9.4
       '@types/react':
-        specifier: 'catalog:'
+        specifier: ^19.2.17
         version: 19.2.17
       '@types/react-dom':
-        specifier: 'catalog:'
+        specifier: ^19.2.3
         version: 19.2.3(@types/react@19.2.17)
       '@types/three':
         specifier: ^0.185.0
         version: 0.185.0
       '@vitejs/plugin-react':
-        specifier: 'catalog:'
+        specifier: ^5.0.4
         version: 5.2.0(vite@7.3.6(@types/node@25.9.4)(jiti@2.7.0)(lightningcss@1.32.0))
-      react:
-        specifier: 'catalog:'
-        version: 19.1.0
-      react-dom:
-        specifier: 'catalog:'
-        version: 19.1.0(react@19.1.0)
-      react-icons:
-        specifier: ^5.4.0
-        version: 5.7.0(react@19.1.0)
       tailwindcss:
-        specifier: 'catalog:'
+        specifier: ^4.3.2
         version: 4.3.2
       vite:
-        specifier: 'catalog:'
+        specifier: ^7.3.2
         version: 7.3.6(@types/node@25.9.4)(jiti@2.7.0)(lightningcss@1.32.0)
 
 packages:
@@ -628,10 +595,6 @@ packages:
 
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
-
-  picomatch@4.0.4:
-    resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
-    engines: {node: '>=12'}
 
   picomatch@4.0.5:
     resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
@@ -1138,10 +1101,6 @@ snapshots:
 
   escalade@3.2.0: {}
 
-  fdir@6.5.0(picomatch@4.0.4):
-    optionalDependencies:
-      picomatch: 4.0.4
-
   fdir@6.5.0(picomatch@4.0.5):
     optionalDependencies:
       picomatch: 4.0.5
@@ -1214,8 +1173,6 @@ snapshots:
   node-releases@2.0.50: {}
 
   picocolors@1.1.1: {}
-
-  picomatch@4.0.4: {}
 
   picomatch@4.0.5: {}
 
@@ -1324,8 +1281,8 @@ snapshots:
   vite@7.3.6(@types/node@25.9.4)(jiti@2.7.0)(lightningcss@1.32.0):
     dependencies:
       esbuild: 0.27.3
-      fdir: 6.5.0(picomatch@4.0.4)
-      picomatch: 4.0.4
+      fdir: 6.5.0(picomatch@4.0.5)
+      picomatch: 4.0.5
       postcss: 8.5.16
       rollup: 4.62.2
       tinyglobby: 0.2.17
