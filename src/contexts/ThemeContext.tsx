@@ -14,7 +14,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     // Check local storage or system preference on mount
-    const saved = localStorage.getItem('temple-theme') as Theme;
+    const saved = localStorage.getItem('vr-portfolio-theme') as Theme;
     if (saved === 'light' || saved === 'dark') {
       setTheme(saved);
       document.documentElement.setAttribute('data-theme', saved);
@@ -29,7 +29,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const toggleTheme = () => {
     setTheme(prev => {
       const next = prev === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('temple-theme', next);
+      localStorage.setItem('vr-portfolio-theme', next);
       document.documentElement.setAttribute('data-theme', next);
       return next;
     });
